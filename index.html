@@ -50,6 +50,33 @@
   th,td{border-bottom:1px solid #eee;padding:6px 4px;text-align:left}
   .admin button{background:var(--maroon);color:#ffe9b0;border:none;padding:9px 14px;border-radius:8px;cursor:pointer;font-size:13px;margin-top:12px}
   .err{color:#b3261e;font-size:13px;margin-top:8px;display:none}
+  .bots{margin-top:16px;background:#fffdf6;border-radius:18px;padding:18px 20px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-family:Arial,sans-serif}
+  .bots h2{font-family:Georgia,serif;color:var(--maroon);font-size:20px}
+  .bots p.sub{font-size:12.5px;color:#777;margin:4px 0 12px}
+  .phone{max-width:330px;margin:0 auto;background:#0b141a;border-radius:22px;padding:10px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .wa-head{background:#075e54;color:#fff;border-radius:14px 14px 0 0;padding:9px 12px;font-size:13.5px}
+  .wa-head b{display:block;font-size:14.5px}
+  .wa-body{background:#e5ddd5;border-radius:0 0 14px 14px;padding:12px 9px;min-height:300px;display:flex;flex-direction:column;gap:7px}
+  .msg{max-width:85%;padding:8px 10px;border-radius:9px;font-size:13.5px;line-height:1.45;white-space:pre-line;box-shadow:0 1px 1px rgba(0,0,0,.12)}
+  .msg.bot{background:#fff;align-self:flex-start}
+  .msg.me{background:#dcf8c6;align-self:flex-end}
+  .wa-btns{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+  .wa-btns button{background:#fff;border:1.5px solid #25d366;color:#075e54;border-radius:99px;padding:8px 13px;font-size:13px;font-weight:bold;cursor:pointer}
+  .wa-note{font-size:12px;color:#777;margin-top:12px;text-align:center}
+  #chatFab{position:fixed;right:18px;bottom:18px;width:58px;height:58px;border-radius:50%;border:none;background:linear-gradient(135deg,var(--maroon),var(--maroon2));color:#fff;font-size:26px;cursor:pointer;box-shadow:0 8px 22px rgba(0,0,0,.4);z-index:50}
+  #chatPanel{position:fixed;right:18px;bottom:86px;width:min(92vw,350px);background:#fff;border-radius:16px;box-shadow:0 16px 44px rgba(0,0,0,.45);display:none;flex-direction:column;overflow:hidden;z-index:50;font-family:Arial,sans-serif}
+  #chatPanel.open{display:flex}
+  .chat-head{background:linear-gradient(90deg,var(--maroon),var(--maroon2));color:#ffe9b0;padding:12px 14px}
+  .chat-head b{font-size:15px}.chat-head span{display:block;font-size:11.5px;opacity:.85}
+  #chatMsgs{padding:12px;display:flex;flex-direction:column;gap:7px;max-height:300px;overflow-y:auto;background:#fdf8ec}
+  .cmsg{max-width:86%;padding:8px 11px;border-radius:12px;font-size:13.5px;line-height:1.45;white-space:pre-line}
+  .cmsg.bot{background:#fff;border:1px solid #ecd9ac;align-self:flex-start}
+  .cmsg.me{background:#6d0f1b;color:#ffe9b0;align-self:flex-end}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 10px;background:#fdf8ec}
+  .chips button{background:#fff;border:1.5px solid var(--gold);color:var(--maroon);border-radius:99px;padding:6px 11px;font-size:12.5px;cursor:pointer;font-weight:bold}
+  .chat-in{display:flex;border-top:1px solid #eee}
+  .chat-in input{flex:1;border:none;padding:12px;font-size:14.5px;outline:none}
+  .chat-in button{background:var(--maroon);color:#ffe9b0;border:none;padding:0 17px;font-size:15px;cursor:pointer}
 </style>
 </head>
 <body>
@@ -97,6 +124,22 @@
       <p id="confirmText" style="margin-top:6px;font-size:14px"></p>
       <p style="font-size:13px;margin-top:6px">In the live version this screen shows a UPI pay button, and the same confirmation is WhatsApped to the student instantly.</p>
     </div>
+  </div>
+
+  <div class="bots">
+    <h2>WhatsApp bot — try it like a student</h2>
+    <p class="sub">In the live version this bot sits on Saaram's own WhatsApp number (81790 39767). A student just says Hi — the bot answers, books and confirms. No DM queue, replies in seconds, 24×7. Tap the buttons:</p>
+    <div class="phone">
+      <div class="wa-head"><b>Saaram Studio</b>business account · online</div>
+      <div class="wa-body" id="waBody"></div>
+    </div>
+    <div class="wa-btns" id="waBtns" style="justify-content:center">
+      <button data-wa="hi">👋 Say Hi</button>
+      <button data-wa="price">💰 Price & slots</button>
+      <button data-wa="location">📍 Location</button>
+      <button data-wa="book">🎟️ Book a slot</button>
+    </div>
+    <p class="wa-note">Same bot also sends the payment link, the booking confirmation and a day-before reminder — automatically.</p>
   </div>
 
   <div class="admin">
@@ -182,6 +225,117 @@ document.getElementById('csvBtn').addEventListener('click', () => {
 });
 document.getElementById('resetBtn').addEventListener('click', () => { bookings = SEED.slice(); render(); });
 render();
+
+/* ---------- WhatsApp bot simulator ---------- */
+const waBody = document.getElementById('waBody');
+function waAdd(text, who){
+  const d = document.createElement('div');
+  d.className = 'msg ' + who; d.textContent = text;
+  waBody.appendChild(d); waBody.scrollTop = waBody.scrollHeight;
+}
+function waBot(text){ setTimeout(() => waAdd(text, 'bot'), 450); }
+const waFlows = {
+  hi: {me:'Hi', bot:'Hello! Welcome to Saaram Studio 🙏\nDance Workshop 4 — "Endhayya Saami" (Full Song, semi-classical) with @harshiteju_\n📅 Sunday, 25 Oct · 🕥 10:30 AM\nTap a button below — Price, Location, or Book your slot.'},
+  price: {me:'Price & slots', bot:''},
+  location: {me:'Location', bot:'📍 Saaram Studio, near Moosapet Metro Station, Kukatpally, Hyderabad.\nTap for directions: the studio location link goes here in the live bot.\nReporting time: 10:00 AM.'},
+  book: {me:'Book a slot', bot:''}
+};
+document.getElementById('waBtns').addEventListener('click', e => {
+  const key = e.target.getAttribute('data-wa');
+  if(!key) return;
+  const f = waFlows[key];
+  waAdd(f.me, 'me');
+  if(key === 'price'){
+    const left = CAP - bookedQty();
+    const next = bookedQty() < T1 ? '₹699' : '₹799';
+    waBot('💰 First 10 slots ₹699 · Next 20 slots ₹799 · On the spot ₹899.\nRight now: ' + left + ' of 30 slots left — your price today is ' + next + '.\nTap "Book a slot" and I\'ll take your name right here.');
+  } else if(key === 'book'){
+    const left = CAP - bookedQty();
+    if(left <= 0){ waBot('Sorry, all 30 slots are full 🙏 I\'ve added you to the waitlist — if a slot opens, you get the first message.'); return; }
+    const {total} = priceFor(bookedQty(), 1);
+    const id = 'SW4-' + Math.floor(1000 + Math.random()*9000);
+    waBot('Done! 🎉 (demo)\nBooking ' + id + ' · 1 slot · ₹' + total + '\n📅 Sun 25 Oct, 10:30 AM · Saaram Studio\nA UPI payment link would arrive in this same chat, and a reminder the day before. No human had to reply — this took 5 seconds.');
+  } else {
+    waBot(f.bot);
+  }
+});
+waAdd('Hello! Welcome to Saaram Studio 🙏 Tap "Say Hi" below to start — just like a student would.', 'bot');
+</script>
+
+<button id="chatFab" title="Chat with us">💬</button>
+<div id="chatPanel">
+  <div class="chat-head"><b>Saaram Assistant</b><span>Website chatbot · replies instantly</span></div>
+  <div id="chatMsgs"></div>
+  <div class="chips" id="chatChips">
+    <button data-q="price">Price?</button>
+    <button data-q="slots">Slots left?</button>
+    <button data-q="when">Date & time?</button>
+    <button data-q="location">Location?</button>
+    <button data-q="beginner">I'm a beginner</button>
+    <button data-q="book">How to book?</button>
+  </div>
+  <div class="chat-in">
+    <input id="chatText" placeholder="Ask about the workshop…">
+    <button id="chatSend">➤</button>
+  </div>
+</div>
+
+<script>
+/* ---------- Website chatbot ---------- */
+const panel = document.getElementById('chatPanel');
+const msgs = document.getElementById('chatMsgs');
+let chatOpened = false;
+document.getElementById('chatFab').addEventListener('click', () => {
+  panel.classList.toggle('open');
+  if(!chatOpened){
+    chatOpened = true;
+    cBot('Hi! I\'m the Saaram assistant 💃 Ask me about the Endhayya Saami workshop — price, slots, location — or tap a question below.');
+  }
+});
+function cAdd(text, who){
+  const d = document.createElement('div');
+  d.className = 'cmsg ' + who; d.textContent = text;
+  msgs.appendChild(d); msgs.scrollTop = msgs.scrollHeight;
+}
+function cBot(text){ setTimeout(() => cAdd(text, 'bot'), 350); }
+function answer(q){
+  const t = q.toLowerCase();
+  const left = (typeof CAP !== 'undefined') ? CAP - bookedQty() : 17;
+  if(t.includes('price') || t.includes('cost') || t.includes('fee') || t.includes('699') || t.includes('799'))
+    return '💰 First 10 slots ₹699, next 20 slots ₹799, on the spot ₹899. Only 30 slots in total.';
+  if(t.includes('slot') || t.includes('left') || t.includes('available') || t.includes('full'))
+    return left > 0 ? '🎟️ ' + left + ' of 30 slots are still open. The form at the top of this page books in under a minute.' : 'All 30 slots are full — spot entry is ₹899 at the door, subject to space.';
+  if(t.includes('when') || t.includes('date') || t.includes('time') || t.includes('day'))
+    return '📅 Sunday, 25 October 2026, at 10:30 AM. Please reach by 10:00 AM.';
+  if(t.includes('where') || t.includes('location') || t.includes('address') || t.includes('metro'))
+    return '📍 Saaram Studio, near Moosapet Metro Station, Kukatpally, Hyderabad. Call 81790 39767 if you need directions.';
+  if(t.includes('beginner') || t.includes('experience') || t.includes('learn') || t.includes('know dance'))
+    return '🌸 Beginners are welcome! It\'s a semi-classical workshop and Harshi ma\'am teaches the full song step by step.';
+  if(t.includes('book') || t.includes('register') || t.includes('join') || t.includes('pay'))
+    return '📝 Fill the booking form at the top of this page — name, WhatsApp number, slots. In the live version you pay by UPI and get an instant WhatsApp confirmation with a booking ID.';
+  if(t.includes('song') || t.includes('endhayya'))
+    return '🎵 The song is "Endhayya Saami" — this workshop teaches the FULL song, semi-classical version.';
+  if(t.includes('call') || t.includes('phone') || t.includes('contact') || t.includes('number'))
+    return '📞 You can call Saaram Studio on 81790 39767.';
+  if(t.includes('hi') || t.includes('hello') || t.includes('hey'))
+    return 'Hello! 🙏 Ask me about price, slots, date or location — or tap "How to book?" below.';
+  return 'I can help with price, slots left, date & time, location, and how to book. For anything else, call the studio on 81790 39767 — in the live version, a human takes over here seamlessly.';
+}
+function askChat(q){
+  if(!q.trim()) return;
+  cAdd(q, 'me'); cBot(answer(q));
+}
+document.getElementById('chatSend').addEventListener('click', () => {
+  const inp = document.getElementById('chatText');
+  askChat(inp.value); inp.value = '';
+});
+document.getElementById('chatText').addEventListener('keydown', e => {
+  if(e.key === 'Enter'){ const inp = e.target; askChat(inp.value); inp.value = ''; }
+});
+document.getElementById('chatChips').addEventListener('click', e => {
+  const q = e.target.getAttribute('data-q');
+  if(q) askChat(e.target.textContent);
+});
 </script>
 </body>
 </html>
