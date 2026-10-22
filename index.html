@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dance Workshop 4 — Endhayya Saami | Saaram Studio</title>
+<style>
+  :root{--maroon:#6d0f1b;--maroon2:#8f1830;--gold:#c9973f;--cream:#fdf3dd;--ink:#2b1a12;--green:#1d7a3a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Georgia,'Times New Roman',serif;background:linear-gradient(160deg,#3d0a12,#6d0f1b 55%,#4a0d18);color:var(--ink);min-height:100vh;padding:18px 14px 40px}
+  .wrap{max-width:520px;margin:0 auto}
+  .demo-banner{background:#00000055;color:#ffd98a;border:1px dashed var(--gold);border-radius:10px;padding:8px 12px;font-size:13px;text-align:center;margin-bottom:14px;font-family:Arial,sans-serif}
+  .card{background:var(--cream);border-radius:18px;overflow:hidden;box-shadow:0 18px 50px rgba(0,0,0,.45)}
+  .hero{padding:28px 22px 8px;text-align:center;background:radial-gradient(ellipse at top,#fff8e7,var(--cream))}
+  .hero .kicker{letter-spacing:3px;font-size:11px;color:var(--maroon2);font-family:Arial,sans-serif;font-weight:bold}
+  .hero h1{font-size:44px;color:var(--maroon);line-height:1.02;margin-top:6px}
+  .hero h1 span{font-style:italic;font-weight:normal;font-size:34px;color:var(--maroon2)}
+  .song{display:inline-block;margin:14px auto 4px;border:1.5px solid var(--gold);border-radius:12px;padding:8px 18px;background:#fffaf0}
+  .song small{display:block;letter-spacing:2px;font-size:10px;font-family:Arial,sans-serif;color:#8a6a2f}
+  .song b{font-size:20px;font-style:italic;color:var(--maroon)}
+  .meta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;padding:14px 10px 4px;font-family:Arial,sans-serif;font-size:13.5px}
+  .meta div{text-align:left}
+  .meta b{color:var(--maroon)}
+  .slots{margin:18px 22px 0;background:#fffaf0;border:1px solid #ecd9ac;border-radius:12px;padding:14px 16px;font-family:Arial,sans-serif}
+  .slots .row{display:flex;justify-content:space-between;font-size:14px;padding:5px 0;border-bottom:1px dotted #d9c28a}
+  .slots .row:last-child{border-bottom:none}
+  .soldout{color:#b3261e;font-weight:bold}.open{color:var(--green);font-weight:bold}
+  .bar{height:10px;background:#eadfbe;border-radius:99px;overflow:hidden;margin-top:10px}
+  .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--maroon2));width:0%}
+  .left{font-size:12.5px;color:#7a5b23;margin-top:6px}
+  form{padding:18px 22px 6px;font-family:Arial,sans-serif}
+  label{display:block;font-size:13px;font-weight:bold;margin:12px 0 5px;color:#5b3a16}
+  input,select{width:100%;padding:12px;border:1.5px solid #d9c28a;border-radius:10px;font-size:16px;background:#fff}
+  .price-box{margin-top:16px;background:#fdf0d2;border:1.5px solid var(--gold);border-radius:12px;padding:12px 14px;font-size:14.5px;display:flex;justify-content:space-between;align-items:center}
+  .price-box b{font-size:20px;color:var(--maroon)}
+  button.cta{width:100%;margin:16px 0 8px;background:linear-gradient(90deg,var(--maroon),var(--maroon2));color:#ffe9b0;border:none;padding:15px;border-radius:12px;font-size:17px;font-weight:bold;cursor:pointer;letter-spacing:.5px}
+  button.cta:active{transform:scale(.99)}
+  .tiny{font-size:12px;color:#8a6a2f;text-align:center;padding:0 22px 18px;font-family:Arial,sans-serif}
+  .confirm{display:none;margin:0 22px 20px;background:#eaf7ee;border:1.5px solid var(--green);border-radius:12px;padding:16px;font-family:Arial,sans-serif}
+  .confirm h3{color:var(--green);margin-bottom:6px}
+  .confirm .id{font-size:20px;font-weight:bold;letter-spacing:1px}
+  .admin{margin-top:16px;background:#fffdf6;border-radius:18px;padding:18px 20px;box-shadow:0 10px 30px rgba(0,0,0,.3);font-family:Arial,sans-serif}
+  .admin h2{font-family:Georgia,serif;color:var(--maroon);font-size:20px}
+  .admin p{font-size:12.5px;color:#777;margin:4px 0 10px}
+  .stats{display:flex;gap:10px;flex-wrap:wrap}
+  .stat{flex:1;min-width:100px;background:#fdf3dd;border:1px solid #ecd9ac;border-radius:10px;padding:10px;text-align:center}
+  .stat b{display:block;font-size:19px;color:var(--maroon)}
+  .stat span{font-size:11.5px;color:#7a5b23}
+  table{width:100%;border-collapse:collapse;font-size:12.5px;margin-top:12px}
+  th,td{border-bottom:1px solid #eee;padding:6px 4px;text-align:left}
+  .admin button{background:var(--maroon);color:#ffe9b0;border:none;padding:9px 14px;border-radius:8px;cursor:pointer;font-size:13px;margin-top:12px}
+  .err{color:#b3261e;font-size:13px;margin-top:8px;display:none}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="demo-banner">DEMO built by SA Technologies — sample booking data, no real payments. One link replaces DM registrations.</div>
+  <div class="card">
+    <div class="hero">
+      <div class="kicker">SAARAM STUDIO × HARSHITEJU</div>
+      <h1>DANCE <span>Workshop 4</span></h1>
+      <div class="song"><small>SONG</small><b>Endhayya Saami (Full Song)</b></div>
+      <div class="meta">
+        <div>📅 <b>Sunday, 25 Oct 2026</b></div>
+        <div>🕥 <b>10:30 AM</b></div>
+        <div>📍 <b>Saaram Studio, near Moosapet Metro</b></div>
+      </div>
+    </div>
+
+    <div class="slots">
+      <div class="row"><span>First 10 slots</span><span>₹699 <span id="t1" class="open"></span></span></div>
+      <div class="row"><span>Next 20 slots</span><span>₹799 <span id="t2" class="open"></span></span></div>
+      <div class="row"><span>On the spot</span><span>₹899</span></div>
+      <div class="bar"><i id="barFill"></i></div>
+      <div class="left" id="leftText"></div>
+    </div>
+
+    <form id="bookForm">
+      <label>Your name</label>
+      <input id="name" placeholder="e.g. Ananya Reddy" autocomplete="name">
+      <label>WhatsApp number</label>
+      <input id="phone" placeholder="10-digit mobile" inputmode="numeric" autocomplete="tel">
+      <label>Number of slots</label>
+      <select id="qty">
+        <option value="1">1 slot</option><option value="2">2 slots</option>
+        <option value="3">3 slots</option><option value="4">4 slots</option>
+      </select>
+      <div class="price-box"><span id="priceBreak">Your price</span><b id="priceTotal">₹699</b></div>
+      <div class="err" id="err"></div>
+      <button class="cta" type="submit">Book my slot →</button>
+    </form>
+    <div class="tiny">Pay by UPI on the next step. Confirmation + location land on your WhatsApp automatically — no DM chasing.</div>
+
+    <div class="confirm" id="confirm">
+      <h3>✅ Slot booked (demo)</h3>
+      <div class="id" id="bookId"></div>
+      <p id="confirmText" style="margin-top:6px;font-size:14px"></p>
+      <p style="font-size:13px;margin-top:6px">In the live version this screen shows a UPI pay button, and the same confirmation is WhatsApped to the student instantly.</p>
+    </div>
+  </div>
+
+  <div class="admin">
+    <h2>Organiser view — what Harshi / Saaram see</h2>
+    <p>Live list, no screenshots-of-payment hunting, no notebook. Reminders go out automatically the day before.</p>
+    <div class="stats">
+      <div class="stat"><b id="stBooked">0</b><span>slots booked</span></div>
+      <div class="stat"><b id="stLeft">30</b><span>slots left</span></div>
+      <div class="stat"><b id="stCollected">₹0</b><span>collected</span></div>
+    </div>
+    <table><thead><tr><th>Booking</th><th>Name</th><th>Slots</th><th>Paid</th></tr></thead><tbody id="rows"></tbody></table>
+    <button id="csvBtn">Download registrations (CSV)</button>
+    <button id="resetBtn" style="background:#888">Reset demo</button>
+  </div>
+</div>
+
+<script>
+const CAP = 30, T1 = 10;
+const SEED = [
+  {id:'SW4-1042', name:'Demo Student 1', phone:'98•••••210', qty:2, total:1398},
+  {id:'SW4-1043', name:'Demo Student 2', phone:'90•••••544', qty:1, total:699},
+  {id:'SW4-1044', name:'Demo Student 3', phone:'81•••••907', qty:3, total:2097},
+  {id:'SW4-1045', name:'Demo Student 4', phone:'99•••••331', qty:2, total:1398},
+  {id:'SW4-1046', name:'Demo Student 5', phone:'94•••••618', qty:5, total:3995}
+];
+let bookings = JSON.parse(localStorage.getItem('sw4') || 'null') || SEED.slice();
+const bookedQty = () => bookings.reduce((s,b)=>s+b.qty,0);
+function priceFor(startQty, qty){
+  let total = 0, parts = [];
+  for(let i=0;i<qty;i++){
+    const n = startQty + i + 1;
+    const p = n <= T1 ? 699 : (n <= CAP ? 799 : 899);
+    total += p; parts.push(p);
+  }
+  return {total, parts};
+}
+function render(){
+  const bq = bookedQty();
+  document.getElementById('t1').textContent = bq >= T1 ? '· FULL' : '· ' + (T1-bq) + ' left';
+  document.getElementById('t1').className = bq >= T1 ? 'soldout' : 'open';
+  document.getElementById('t2').textContent = bq >= CAP ? '· FULL' : '';
+  document.getElementById('barFill').style.width = Math.min(100, bq/CAP*100) + '%';
+  document.getElementById('leftText').textContent = bq >= CAP ? 'All 30 slots full — spot entry ₹899 at the door.' : 'Only ' + (CAP-bq) + ' of 30 slots left';
+  document.getElementById('stBooked').textContent = bq;
+  document.getElementById('stLeft').textContent = Math.max(0, CAP-bq);
+  document.getElementById('stCollected').textContent = '₹' + bookings.reduce((s,b)=>s+b.total,0).toLocaleString('en-IN');
+  document.getElementById('rows').innerHTML = bookings.map(b =>
+    '<tr><td>'+b.id+'</td><td>'+b.name+'</td><td>'+b.qty+'</td><td>₹'+b.total.toLocaleString('en-IN')+'</td></tr>').join('');
+  updatePrice();
+  localStorage.setItem('sw4', JSON.stringify(bookings));
+}
+function updatePrice(){
+  const qty = parseInt(document.getElementById('qty').value, 10);
+  const {total, parts} = priceFor(bookedQty(), qty);
+  document.getElementById('priceTotal').textContent = '₹' + total.toLocaleString('en-IN');
+  document.getElementById('priceBreak').textContent = qty === 1 ? '1 slot × ₹' + parts[0] : qty + ' slots (' + parts.map(p=>'₹'+p).join(' + ') + ')';
+}
+document.getElementById('qty').addEventListener('change', updatePrice);
+document.getElementById('bookForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const name = document.getElementById('name').value.trim();
+  const phone = document.getElementById('phone').value.replace(/\D/g,'').slice(-10);
+  const qty = parseInt(document.getElementById('qty').value, 10);
+  const err = document.getElementById('err');
+  if(name.length < 2){ err.textContent = 'Please enter your name.'; err.style.display='block'; return; }
+  if(phone.length !== 10){ err.textContent = 'Please enter a valid 10-digit WhatsApp number.'; err.style.display='block'; return; }
+  if(bookedQty() + qty > CAP){ err.textContent = 'Not enough slots left — try fewer slots.'; err.style.display='block'; return; }
+  err.style.display = 'none';
+  const {total} = priceFor(bookedQty(), qty);
+  const id = 'SW4-' + Math.floor(1000 + Math.random()*9000);
+  bookings.push({id, name, phone, qty, total});
+  render();
+  const c = document.getElementById('confirm');
+  c.style.display = 'block';
+  document.getElementById('bookId').textContent = id;
+  document.getElementById('confirmText').textContent = name + ' · ' + qty + ' slot(s) · ₹' + total.toLocaleString('en-IN') + ' · Sun 25 Oct, 10:30 AM, Saaram Studio';
+  c.scrollIntoView({behavior:'smooth'});
+});
+document.getElementById('csvBtn').addEventListener('click', () => {
+  const csv = 'Booking,Name,Phone,Slots,Paid\n' + bookings.map(b=>[b.id,b.name,b.phone,b.qty,b.total].join(',')).join('\n');
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(new Blob([csv], {type:'text/csv'})); a.download = 'workshop4-registrations.csv'; a.click();
+});
+document.getElementById('resetBtn').addEventListener('click', () => { bookings = SEED.slice(); render(); });
+render();
+</script>
+</body>
+</html>
