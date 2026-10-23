@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palak's Cakes N Bakes — Order Your Eggless Cake Online | Zirakpur</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FBF5EC; --cream2:#F6EBDD; --blush:#F2D7C9; --blush2:#E9BBA6;
+  --rose:#C97B63; --cocoa:#4A2C22; --cocoa2:#6E4636; --gold:#B9822E;
+  --ink:#3A2721; --muted:#8A6F63; --line:#EADBCB; --green:#5B7A4E;
+  --card:#FFFDF9; --shadow:0 18px 40px rgba(74,44,34,.12);
+  --r:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:600;color:var(--cocoa)}
+img,svg{display:block}
+a{color:inherit}
+.wrap{max-width:1140px;margin:0 auto;padding:0 20px}
+
+/* ---------- header ---------- */
+header{position:sticky;top:0;z-index:60;background:rgba(251,245,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand .mark{width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#E9BBA6,#C97B63);display:flex;align-items:center;justify-content:center;font-family:'Fraunces',serif;font-weight:700;color:#FFF7EE;font-size:20px;box-shadow:inset 0 0 0 2px rgba(255,255,255,.45)}
+.brand .bname{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:var(--cocoa);line-height:1.1}
+.brand .bsub{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose)}
+.hnav{display:flex;align-items:center;gap:10px}
+.pill{display:inline-flex;align-items:center;gap:7px;font-size:13px;font-weight:500;padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:#fff;text-decoration:none;white-space:nowrap}
+.pill.eggless{background:var(--green);border-color:var(--green);color:#F4F8EE}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:none;cursor:pointer;font-family:'Jost',sans-serif;font-weight:600;border-radius:999px;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease, background .15s ease}
+.btn:active{transform:scale(.98)}
+.btn-wa{background:#4E7A45;color:#F6FBF1;padding:10px 18px;font-size:14.5px;box-shadow:0 8px 20px rgba(78,122,69,.28)}
+.btn-wa:hover{background:#42693B}
+.btn-primary{background:var(--cocoa);color:#FBF1E4;padding:15px 30px;font-size:16.5px;box-shadow:0 14px 28px rgba(74,44,34,.25)}
+.btn-primary:hover{background:#3A211A}
+.btn-primary:disabled{background:#CBB7A9;color:#F4E9DE;cursor:not-allowed;box-shadow:none}
+.btn-ghost{background:#fff;border:1.5px solid var(--cocoa);color:var(--cocoa);padding:13px 26px;font-size:15.5px}
+@media(max-width:640px){.hnav .pill.eggless{display:none}.brand .bname{font-size:17px}}
+
+/* ---------- hero ---------- */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,#FDF8F1 0%,var(--cream2) 55%,var(--blush) 130%)}
+.hero::after{content:"";position:absolute;right:-140px;top:-140px;width:430px;height:430px;border-radius:50%;background:radial-gradient(circle,rgba(201,123,99,.20),transparent 65%)}
+.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:36px;align-items:center;padding:52px 0 58px;position:relative;z-index:1}
+.eyebrow{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--rose);font-weight:600;margin-bottom:14px}
+.hero h1{font-size:clamp(34px,5.4vw,56px);line-height:1.06;font-weight:600}
+.hero h1 em{font-style:italic;color:var(--rose)}
+.hero p.lede{margin:18px 0 24px;font-size:17.5px;color:var(--cocoa2);max-width:520px;font-weight:300}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.trustrow{display:flex;gap:8px 20px;flex-wrap:wrap;margin-top:28px}
+.trustrow span{font-size:13.5px;color:var(--cocoa2);display:inline-flex;gap:7px;align-items:center}
+.trustrow b{color:var(--green)}
+.hero-art{display:flex;justify-content:center}
+.cake-stage{width:min(340px,80vw);filter:drop-shadow(0 30px 30px rgba(74,44,34,.18))}
+@media(max-width:860px){.hero-grid{grid-template-columns:1fr;padding:38px 0 44px}.hero-art{order:-1}.cake-stage{width:210px}}
+
+/* ---------- sections ---------- */
+section{padding:56px 0}
+.sec-head{max-width:640px;margin-bottom:30px}
+.sec-head .eyebrow{margin-bottom:8px}
+.sec-head h2{font-size:clamp(26px,3.6vw,38px);line-height:1.15}
+.sec-head p{color:var(--muted);margin-top:8px;font-size:16px;font-weight:300}
+
+/* gallery */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:920px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.gal-grid{grid-template-columns:1fr}}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;cursor:pointer;transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;text-align:left;font-family:inherit;width:100%}
+.gcard:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.gcard.sel{border-color:var(--rose);box-shadow:0 0 0 2px var(--rose), var(--shadow)}
+.gcard .gart{height:158px;display:flex;align-items:flex-end;justify-content:center;position:relative}
+.gcard .gbody{padding:16px 18px 18px}
+.gcard h3{font-size:19px;margin-bottom:3px}
+.gcard p{font-size:14px;color:var(--muted);font-weight:300}
+.gcard .gtag{position:absolute;top:12px;left:12px;background:rgba(255,253,249,.92);color:var(--cocoa);font-size:11.5px;font-weight:600;letter-spacing:.06em;padding:5px 10px;border-radius:999px;text-transform:uppercase}
+.gcard .gfrom{position:absolute;top:12px;right:12px;background:var(--cocoa);color:#F7E9DA;font-size:11.5px;font-weight:600;padding:5px 10px;border-radius:999px}
+
+/* builder layout */
+.builder-shell{display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:start}
+@media(max-width:920px){.builder-shell{grid-template-columns:1fr}}
+.stepcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:18px}
+.stepcard h3{font-size:20px;display:flex;align-items:center;gap:11px;margin-bottom:5px}
+.stepnum{width:29px;height:29px;flex:none;border-radius:50%;background:var(--blush);color:var(--cocoa);font-family:'Jost',sans-serif;font-size:14px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
+.stepcard .hint{font-size:13.5px;color:var(--muted);margin:0 0 14px 40px;font-weight:300}
+.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font-family:'Jost',sans-serif;font-size:14.5px;font-weight:500;color:var(--cocoa2);cursor:pointer;transition:all .15s ease}
+.chip:hover{border-color:var(--blush2)}
+.chip.sel{background:var(--cocoa);border-color:var(--cocoa);color:#FBF1E4}
+.chip:disabled{opacity:.38;cursor:not-allowed;text-decoration:line-through}
+.fgroup{margin-bottom:16px}
+.fgroup:last-child{margin-bottom:0}
+.fgroup .glabel{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);font-weight:600;margin-bottom:8px}
+.fnote{font-size:12.5px;color:var(--muted);margin-top:9px;font-weight:300}
+input[type="text"],input[type="tel"],input[type="date"],textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-family:'Jost',sans-serif;font-size:15.5px;background:#fff;color:var(--ink);outline:none;transition:border-color .15s ease}
+input:focus,textarea:focus{border-color:var(--rose)}
+.warn{display:none;background:#FBEEE3;border:1px solid #EBCBA8;color:#7A4A21;font-size:13.5px;border-radius:12px;padding:10px 13px;margin-top:12px}
+.warn.show{display:block}
+
+/* cake preview */
+.previewbox{background:linear-gradient(170deg,#FDF3E7,#F6E3D3);border:1px dashed var(--blush2);border-radius:var(--r);padding:18px;text-align:center;margin-top:16px}
+.previewbox .pmsg{font-family:'Fraunces',serif;font-style:italic;font-size:20px;color:var(--cocoa);min-height:28px}
+.previewbox .psub{font-size:12.5px;color:var(--muted);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+
+/* summary */
+.summary{position:sticky;top:84px;background:var(--cocoa);color:#F3E6D8;border-radius:var(--r);padding:26px;box-shadow:var(--shadow)}
+.summary h3{color:#FBF1E4;font-size:22px;margin-bottom:4px}
+.summary .ssub{font-size:13.5px;color:#D8BFA9;margin-bottom:18px;font-weight:300}
+.srow{display:flex;justify-content:space-between;gap:16px;padding:9px 0;border-bottom:1px solid rgba(243,230,216,.16);font-size:14.5px}
+.srow .k{color:#D8BFA9;flex:none}
+.srow .v{text-align:right;font-weight:500}
+.srow.total{border-bottom:none;padding-top:15px;align-items:baseline}
+.srow.total .k{color:#FBF1E4;font-weight:600;font-size:15.5px}
+.srow.total .v{font-family:'Fraunces',serif;font-size:19px;color:#F2C894}
+.price-note{font-size:12px;color:#CFA887;margin-top:2px;text-align:right;font-weight:300}
+.summary .btn{width:100%;margin-top:18px;background:#F2C894;color:var(--cocoa)}
+.summary .btn:hover{background:#EBC07C}
+.summary .btn:disabled{background:#7A5C4C;color:#CBB09C}
+.sum-note{font-size:12.5px;color:#D8BFA9;text-align:center;margin-top:12px;font-weight:300}
+@media(max-width:920px){.summary{position:static}}
+
+/* payment / success */
+.paycard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.paymethods{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:18px}
+.paygrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:560px){.paygrid{grid-template-columns:1fr}}
+.secureline{display:flex;gap:8px;align-items:center;font-size:13px;color:var(--muted);margin-top:14px;font-weight:300}
+#successView{display:none;text-align:center;padding:14px 6px}
+#successView .tick{width:74px;height:74px;margin:0 auto 16px;border-radius:50%;background:#EDF3E6;display:flex;align-items:center;justify-content:center}
+#successView h3{font-size:26px;margin-bottom:6px}
+.refchip{display:inline-block;background:var(--cream2);border:1px dashed var(--blush2);border-radius:12px;padding:10px 18px;font-size:16px;margin:12px 0 4px}
+.refchip b{font-family:'Fraunces',serif;letter-spacing:.04em}
+.success-note{max-width:520px;margin:14px auto 0;color:var(--cocoa2);font-weight:300;font-size:15.5px}
+.hidden{display:none!important}
+
+/* strip */
+.strip{background:var(--cocoa);color:#F3E6D8;border-radius:22px;padding:30px 32px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+@media(max-width:820px){.strip{grid-template-columns:1fr}}
+.strip h3{color:#F2C894;font-size:19px;margin-bottom:5px}
+.strip p{font-size:14.5px;font-weight:300;color:#E4CDB4}
+
+/* footer */
+footer{background:#38221B;color:#D9C2AE;margin-top:20px}
+.foot{padding:44px 0 30px;display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:28px}
+@media(max-width:820px){.foot{grid-template-columns:1fr}}
+footer .fname{font-family:'Fraunces',serif;font-size:24px;color:#FBF1E4;margin-bottom:6px}
+footer p,footer a{font-size:14.5px;font-weight:300}
+footer a{color:#F2C894;text-decoration:none}
+footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:#B98D6B;margin-bottom:12px;font-weight:600}
+.fbottom{border-top:1px solid rgba(217,194,174,.18);padding:16px 0 20px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12.5px;color:#A98A74}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap hbar">
+    <a class="brand" href="#">
+      <span class="mark">P</span>
+      <span><span class="bname">Palak's Cakes N Bakes</span><br><span class="bsub">Eggless Cake Studio · Zirakpur</span></span>
+    </a>
+    <nav class="hnav">
+      <span class="pill eggless">● 100% Eggless</span>
+      <a class="pill" href="#gallery">Cakes</a>
+      <a class="btn btn-wa" href="https://wa.me/919115703157" target="_blank" rel="noopener">WhatsApp Us</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Peer Muchalla · Zirakpur · Tricity Delivery</div>
+      <h1>100% eggless cakes that turn celebrations into <em>memories.</em></h1>
+      <p class="lede">Premium, preservative-free and naturally flavoured — designed around your story, baked fresh in our Zirakpur studio, and now orderable online in about a minute.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#builder">Build Your Cake →</a>
+        <a class="btn btn-ghost" href="#gallery">Browse the Range</a>
+      </div>
+      <div class="trustrow">
+        <span><b>★ 5.0</b> loved by Tricity families</span>
+        <span><b>35+</b> flavours to choose from</span>
+        <span><b>0</b> preservatives, ever</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <svg class="cake-stage" viewBox="0 0 300 300" role="img" aria-label="Illustrated three-tier celebration cake">
+        <ellipse cx="150" cy="272" rx="118" ry="14" fill="#E4C9B2"/>
+        <rect x="52" y="256" width="196" height="10" rx="5" fill="#C99B77"/>
+        <rect x="66" y="206" width="168" height="52" rx="9" fill="#F6E3D3"/>
+        <path d="M66 215 q14 12 28 0 q14 12 28 0 q14 12 28 0 q14 12 28 0 q14 12 28 0 q12 10 28 2 v-9 H66 z" fill="#C97B63"/>
+        <rect x="86" y="158" width="128" height="50" rx="9" fill="#F2D7C9"/>
+        <path d="M86 166 q12 11 24 0 q12 11 24 0 q12 11 24 0 q12 11 24 0 q12 11 24 0 q10 8 22 2 v-8 H86 z" fill="#B9822E" opacity=".75"/>
+        <rect x="104" y="112" width="92" height="48" rx="9" fill="#FBF5EC"/>
+        <path d="M104 120 q10 10 20 0 q10 10 20 0 q10 10 20 0 q10 10 20 0 q8 8 20 2 v-8 h-112 z" fill="#C97B63" opacity=".8"/>
+        <g fill="#A8542F">
+          <rect x="128" y="82" width="5" height="26" rx="2.5" fill="#E9BBA6"/>
+          <rect x="148" y="78" width="5" height="30" rx="2.5" fill="#E9BBA6"/>
+          <rect x="168" y="82" width="5" height="26" rx="2.5" fill="#E9BBA6"/>
+        </g>
+        <ellipse cx="130.5" cy="76" rx="6" ry="10" fill="#F2A93B"/>
+        <ellipse cx="150.5" cy="71" rx="6" ry="11" fill="#F2A93B"/>
+        <ellipse cx="170.5" cy="76" rx="6" ry="10" fill="#F2A93B"/>
+        <g fill="#5B7A4E">
+          <circle cx="92" cy="196" r="6"/><circle cx="208" cy="196" r="6"/><circle cx="112" cy="148" r="5"/><circle cx="188" cy="148" r="5"/>
+        </g>
+        <g fill="#C97B63">
+          <circle cx="100" cy="188" r="5"/><circle cx="200" cy="188" r="5"/><circle cx="120" cy="140" r="4.4"/><circle cx="180" cy="140" r="4.4"/>
+        </g>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The Range</div>
+      <h2>Start with a style you love.</h2>
+      <p>Every cake below comes from our real studio range — tap one to start building, or design your own from scratch. All 100% eggless, always.</p>
+    </div>
+    <div class="gal-grid">
+      <button class="gcard" type="button" data-design="Theme cake" data-scrollbuilder>
+        <div class="gart" style="background:linear-gradient(160deg,#F6E3D3,#E9BBA6)"><span class="gtag">Most loved</span><span class="gfrom">from 1 kg</span>
+          <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><rect x="28" y="58" width="94" height="34" rx="6" fill="#FBF5EC"/><rect x="44" y="30" width="62" height="30" rx="6" fill="#C97B63"/><circle cx="55" cy="24" r="7" fill="#A8542F"/><circle cx="75" cy="18" r="8" fill="#B9822E"/><circle cx="95" cy="24" r="7" fill="#5B7A4E"/></svg>
+        </div>
+        <div class="gbody"><h3>Custom Theme Cakes</h3><p>Birthdays, characters &amp; stories — sculpted toppers, tiers and name prints, designed around your celebration.</p></div>
+      </button>
+      <button class="gcard" type="button" data-design="Photo print cake" data-scrollbuilder>
+        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#F2D7C9)"><span class="gtag">Personal</span><span class="gfrom">from 1 kg</span>
+          <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><rect x="24" y="46" width="102" height="46" rx="8" fill="#F6E3D3"/><rect x="52" y="24" width="46" height="34" rx="5" fill="#FFFDF9" stroke="#C99B77" stroke-width="2"/><circle cx="75" cy="37" r="7" fill="#E9BBA6"/><path d="M64 56 q11 -10 22 0 v2 h-22 z" fill="#C97B63"/></svg>
+        </div>
+        <div class="gbody"><h3>Photo Print Cakes</h3><p>Your favourite picture, printed edible and framed in cream — a favourite for birthdays and anniversaries.</p></div>
+      </button>
+      <button class="gcard" type="button" data-design="Tiered celebration cake" data-scrollbuilder>
+        <div class="gart" style="background:linear-gradient(160deg,#F6E3D3,#EBD3B8)"><span class="gtag">Weddings</span><span class="gfrom">from 2 kg</span>
+          <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="99" rx="64" ry="6" fill="#D9B894"/><rect x="22" y="70" width="106" height="26" rx="5" fill="#FBF5EC"/><rect x="38" y="44" width="74" height="27" rx="5" fill="#F2D7C9"/><rect x="52" y="20" width="46" height="25" rx="5" fill="#FBF5EC"/><circle cx="62" cy="14" r="5" fill="#C97B63"/><circle cx="75" cy="10" r="6" fill="#B9822E"/><circle cx="88" cy="14" r="5" fill="#C97B63"/></svg>
+        </div>
+        <div class="gbody"><h3>Wedding &amp; Tiered Cakes</h3><p>Elegant multi-tier showpieces for weddings and big milestones — planned with you, layer by layer.</p></div>
+      </button>
+      <button class="gcard" type="button" data-design="Simple cream finish" data-scrollbuilder>
+        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#EFE0CE)"><span class="gtag">Everyday</span><span class="gfrom">from ½ kg</span>
+          <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><rect x="30" y="52" width="90" height="40" rx="8" fill="#FFFDF9"/><path d="M30 60 q11 10 22 0 q11 10 22 0 q11 10 22 0 q11 10 24 0 v-8 h-90 z" fill="#E9BBA6"/><circle cx="58" cy="44" r="7" fill="#C0392B" opacity=".8"/><circle cx="78" cy="40" r="7" fill="#C0392B" opacity=".85"/><circle cx="96" cy="45" r="7" fill="#C0392B" opacity=".8"/></svg>
+        </div>
+        <div class="gbody"><h3>Classic Cream Cakes</h3><p>Simple, beautiful cream finishes in our classic flavours — ready in 1–2 days, from ½ kg.</p></div>
+      </button>
+      <button class="gcard" type="button" data-design="Wholesome bundt" data-scrollbuilder>
+        <div class="gart" style="background:linear-gradient(160deg,#F1E7D2,#E3CCA3)"><span class="gtag">Wholesome</span><span class="gfrom">from 1 kg</span>
+          <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><path d="M32 92 a43 34 0 1 1 86 0 z" fill="#B9822E"/><circle cx="75" cy="66" r="11" fill="#F6E3D3"/><g fill="#6E4636"><circle cx="52" cy="52" r="3"/><circle cx="98" cy="52" r="3"/><circle cx="75" cy="42" r="3"/><circle cx="44" cy="72" r="3"/><circle cx="106" cy="72" r="3"/></g></svg>
+        </div>
+        <div class="gbody"><h3>Wholesome Bundt Cakes</h3><p>Whole wheat, no maida, no refined sugar or oil — sweetened with jaggery and loaded with premium nuts.</p></div>
+      </button>
+      <button class="gcard" type="button" data-design="Dry cake / tea-time" data-scrollbuilder>
+        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#EBD9BE)"><span class="gtag">Tea-time</span><span class="gfrom">½ kg &amp; 1 kg</span>
+          <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><rect x="26" y="56" width="98" height="36" rx="7" fill="#C99B77"/><path d="M26 63 h98 v-3 a7 7 0 0 0 -7 -4 h-84 a7 7 0 0 0 -7 4 z" fill="#A8763E"/><g fill="#6E4636"><circle cx="48" cy="76" r="3"/><circle cx="75" cy="80" r="3"/><circle cx="102" cy="76" r="3"/></g></svg>
+        </div>
+        <div class="gbody"><h3>Tea-Time Dry Cakes</h3><p>Homely, keeps beautifully for 4–5 days, and perfect with evening chai. Brownies &amp; cupcake boxes too — just ask.</p></div>
+      </button>
+    </div>
+  </div>
+</section>
+
+<section id="builder" style="padding-top:8px">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Build a Cake</div>
+      <h2>Your cake, in four little steps.</h2>
+      <p>Pick a flavour, a size and a date — your order confirms the moment you pay. No waiting on WhatsApp for a price reply.</p>
+    </div>
+    <div class="builder-shell">
+      <div>
+        <div class="stepcard">
+          <h3><span class="stepnum">1</span> What's the occasion?</h3>
+          <p class="hint">Optional — it helps Palak design in the right mood.</p>
+          <div class="chips" id="occasionChips">
+            <button type="button" class="chip" data-occasion="Birthday">Birthday</button>
+            <button type="button" class="chip" data-occasion="Anniversary">Anniversary</button>
+            <button type="button" class="chip" data-occasion="Wedding">Wedding</button>
+            <button type="button" class="chip" data-occasion="Baby shower">Baby shower</button>
+            <button type="button" class="chip" data-occasion="Kids' theme party">Kids' theme party</button>
+            <button type="button" class="chip" data-occasion="Just because">Just because</button>
+          </div>
+        </div>
+
+        <div class="stepcard">
+          <h3><span class="stepnum">2</span> Choose a flavour</h3>
+          <p class="hint">From Palak's 35+ flavour kitchen — every single one eggless.</p>
+          <div class="fgroup">
+            <div class="glabel">Classic flavours · from ½ kg</div>
+            <div class="chips" id="classicFlavours"></div>
+          </div>
+          <div class="fgroup">
+            <div class="glabel">Premium flavours · from 1 kg</div>
+            <div class="chips" id="premiumFlavours"></div>
+          </div>
+          <p class="fnote">Demo flavour list — Palak's full 35+ flavour menu appears here on the live page.</p>
+        </div>
+
+        <div class="stepcard">
+          <h3><span class="stepnum">3</span> Size &amp; design</h3>
+          <p class="hint">Custom designs start from 1 kg, just like at the studio.</p>
+          <div class="fgroup">
+            <div class="glabel">How big?</div>
+            <div class="chips" id="sizeChips"></div>
+          </div>
+          <div class="fgroup">
+            <div class="glabel">Design</div>
+            <div class="chips" id="designChips">
+              <button type="button" class="chip" data-design="Simple cream finish">Simple cream finish</button>
+              <button type="button" class="chip" data-design="Photo print cake" data-custom="1">Photo print</button>
+              <button type="button" class="chip" data-design="Theme cake" data-custom="1">Theme + topper</button>
+              <button type="button" class="chip" data-design="Tiered celebration cake" data-custom="1">Tiered</button>
+              <button type="button" class="chip" data-design="Wholesome bundt" data-custom="1">Wholesome bundt</button>
+            </div>
+            <p class="fnote" id="designNote">Simple cream finishes are available in every size. Photo, theme, tiered and bundt designs need 1 kg or more.</p>
+          </div>
+          <div class="fgroup">
+            <div class="glabel">Message on the cake <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(optional)</span></div>
+            <input type="text" id="cakeMsg" maxlength="32" placeholder="e.g. Happy Birthday, Aarav!">
+            <div class="previewbox">
+              <svg width="190" height="86" viewBox="0 0 190 86" aria-hidden="true"><ellipse cx="95" cy="78" rx="80" ry="6" fill="#E4C9B2"/><rect x="35" y="34" width="120" height="40" rx="8" fill="#FFFDF9"/><path d="M35 42 q12 11 24 0 q12 11 24 0 q12 11 24 0 q12 11 24 0 q10 9 24 2 v-8 H35 z" fill="#C97B63"/><rect x="90" y="12" width="4" height="18" rx="2" fill="#E9BBA6"/><ellipse cx="92" cy="8" rx="4.5" ry="7" fill="#F2A93B"/></svg>
+              <div class="pmsg" id="msgPreview">Your message appears here</div>
+              <div class="psub">piped by hand, with love</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stepcard">
+          <h3><span class="stepnum">4</span> When do you need it?</h3>
+          <p class="hint">Regular cakes need 1–2 days; custom themes need 3–4 days to plan.</p>
+          <input type="date" id="cakeDate">
+          <div class="warn" id="dateWarn"></div>
+          <div class="fgroup" style="margin-top:16px">
+            <div class="glabel">Pickup or delivery?</div>
+            <div class="chips" id="fulfilChips">
+              <button type="button" class="chip" data-fulfil="Pickup — Peer Muchalla studio">Pickup · studio</button>
+              <button type="button" class="chip" data-fulfil="Delivery — Tricity">Delivery · Tricity</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="summary" id="summaryBox">
+        <h3>Your order</h3>
+        <p class="ssub">Updates live as you build your cake.</p>
+        <div class="srow"><span class="k">Occasion</span><span class="v" id="sumOccasion">—</span></div>
+        <div class="srow"><span class="k">Flavour</span><span class="v" id="sumFlavour">Pick a flavour</span></div>
+        <div class="srow"><span class="k">Size</span><span class="v" id="sumSize">—</span></div>
+        <div class="srow"><span class="k">Design</span><span class="v" id="sumDesign">—</span></div>
+        <div class="srow"><span class="k">Message</span><span class="v" id="sumMsg">—</span></div>
+        <div class="srow"><span class="k">Date</span><span class="v" id="sumDate">Pick a date</span></div>
+        <div class="srow"><span class="k">Fulfilment</span><span class="v" id="sumFulfil">—</span></div>
+        <div class="srow total"><span class="k">Total</span><span><span class="v">₹ ———</span><div class="price-note">exact price from Palak's price list<br>shows here before you pay · demo placeholder</div></span></div>
+        <button class="btn" id="toPayment" disabled>Proceed to Payment</button>
+        <p class="sum-note" id="gateNote">Choose a flavour, a size and a date to continue.</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="strip">
+      <div><h3>Confirmed instantly</h3><p>Your order is booked the second payment succeeds — no "please confirm the price on WhatsApp" wait.</p></div>
+      <div><h3>Baked fresh, close to your date</h3><p>No preservatives and nothing sitting on a shelf — your cake goes in the oven for your day.</p></div>
+      <div><h3>Pickup or Tricity delivery</h3><p>Collect from our Peer Muchalla studio, or get it delivered across Zirakpur, Panchkula, Chandigarh &amp; Mohali.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="payment" class="hidden" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Almost done</div>
+      <h2>Pay &amp; confirm your order.</h2>
+      <p>This is a demo checkout — on the live page, this is where UPI and cards confirm the order instantly.</p>
+    </div>
+    <div class="paycard" id="payCard">
+      <div id="payForm">
+        <div class="paymethods chips">
+          <button type="button" class="chip sel" data-pay="UPI">UPI</button>
+          <button type="button" class="chip" data-pay="Card">Card</button>
+          <button type="button" class="chip" data-pay="Net banking">Net banking</button>
+        </div>
+        <div class="paygrid">
+          <div class="fgroup"><div class="glabel">Your name</div><input type="text" id="custName" placeholder="e.g. Simran Kaur"></div>
+          <div class="fgroup"><div class="glabel">Mobile (for order updates)</div><input type="tel" id="custPhone" placeholder="e.g. 98765 43210" maxlength="13"></div>
+        </div>
+        <div class="fgroup" style="margin-top:14px"><div class="glabel" id="payFieldLabel">UPI ID</div><input type="text" id="payField" placeholder="yourname@upi"></div>
+        <button class="btn btn-primary" id="payNow" style="width:100%;margin-top:20px">Pay &amp; Confirm Order (demo)</button>
+        <div class="secureline">🔒 Demo payment — no real money moves. On the live page this is a secure checkout, and your order confirms the moment it succeeds.</div>
+      </div>
+      <div id="successView">
+        <div class="tick"><svg width="38" height="38" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 L9.5 18 L20 6.5" stroke="#5B7A4E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <h3>Order confirmed!</h3>
+        <p style="color:var(--muted);font-weight:300">Palak has your order — freshly queued for your date.</p>
+        <div class="refchip">Order reference&nbsp;<b id="orderRef">PCB-0000</b></div>
+        <p class="success-note" id="successRecap"></p>
+        <p class="success-note"><b style="color:var(--cocoa)">That's it — your order confirmed instantly.</b> No waiting for a WhatsApp price confirmation, no back-and-forth. A confirmation lands on your phone right away.</p>
+        <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px">
+          <a class="btn btn-wa" href="https://wa.me/919115703157" target="_blank" rel="noopener">Questions? WhatsApp Palak</a>
+          <button class="btn btn-ghost" id="orderAgain" type="button">Order another cake</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <div class="fname">Palak's Cakes N Bakes</div>
+        <p>100% eggless, preservative-free custom cakes — hand-crafted fresh by Chef Palak Sukhija in our in-house studio.</p>
+        <p style="margin-top:10px">Flat 17, Aastha City, Peer Muchalla,<br>Zirakpur, Punjab 140603</p>
+      </div>
+      <div>
+        <h4>Talk to us</h4>
+        <p>WhatsApp &amp; calls<br><a href="https://wa.me/919115703157" target="_blank" rel="noopener">+91 91157 03157</a></p>
+        <p style="margin-top:10px">Instagram<br><a href="https://www.instagram.com/palaks_cakes_n_bakes" target="_blank" rel="noopener">@palaks_cakes_n_bakes</a></p>
+      </div>
+      <div>
+        <h4>Good to know</h4>
+        <p>Open all days · 9 AM – 9 PM<br>Regular cakes: 1–2 days' notice<br>Custom themes: 3–4 days' notice<br>Serving Zirakpur · Panchkula · Chandigarh · Mohali</p>
+      </div>
+    </div>
+    <div class="fbottom">
+      <span>© Palak's Cakes N Bakes · Zirakpur</span>
+      <span>Concept demo prepared by SA Technologies</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  /* Demo flavour list — Palak's full 35+ flavour menu loads here on the live page.
+     Tiers (Classic from 1/2 kg, Premium from 1 kg) and size rules are Palak's own, from palakcakes.in. */
+  var CLASSIC = ["Black Forest","Chocolate Truffle","Butterscotch Crunch","Pineapple","Fresh Strawberry","Vanilla Bean","Mango (seasonal)","Coffee Mocha"];
+  var PREMIUM = ["Rasmalai","Red Velvet","Belgian Chocolate","Nutella Hazelnut","Blueberry Cheesecake","Kesar Pista","Lotus Biscoff","Choco Chip Overload"];
+  var SIZES = [
+    {id:"0.5", label:"½ kg", serves:"serves 4–6", kg:0.5},
+    {id:"1",   label:"1 kg", serves:"serves 8–10", kg:1},
+    {id:"1.5", label:"1.5 kg", serves:"serves 12–15", kg:1.5},
+    {id:"2",   label:"2 kg", serves:"serves 18–20", kg:2},
+    {id:"3",   label:"3 kg", serves:"serves 28–30", kg:3}
+  ];
+  var state = {occasion:null, flavour:null, tier:null, size:null, design:null, custom:false, msg:"", date:null, fulfil:null, pay:"UPI"};
+
+  function $(id){return document.getElementById(id);}
+  function mkChip(text, attrs){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip"; b.textContent = text;
+    for (var k in attrs) b.setAttribute(k, attrs[k]);
+    return b;
+  }
+  /* flavours */
+  CLASSIC.forEach(function(f){
+    var c = mkChip(f, {"data-flavour":f, "data-tier":"Classic"});
+    c.addEventListener("click", function(){ pickFlavour(f, "Classic", c); });
+    $("classicFlavours").appendChild(c);
+  });
+  PREMIUM.forEach(function(f){
+    var c = mkChip(f, {"data-flavour":f, "data-tier":"Premium"});
+    c.addEventListener("click", function(){ pickFlavour(f, "Premium", c); });
+    $("premiumFlavours").appendChild(c);
+  });
+  /* sizes */
+  SIZES.forEach(function(s){
+    var c = mkChip(s.label + " · " + s.serves, {"data-size":s.id});
+    c.addEventListener("click", function(){ pickSize(s, c); });
+    $("sizeChips").appendChild(c);
+  });
+  function markSel(container, btn){
+    var kids = container.querySelectorAll(".chip");
+    for (var i=0;i<kids.length;i++) kids[i].classList.remove("sel");
+    if (btn) btn.classList.add("sel");
+  }
+  function pickFlavour(f, tier, btn){
+    state.flavour = f; state.tier = tier;
+    markSel($("classicFlavours"), tier==="Classic" ? btn : null);
+    markSel($("premiumFlavours"), tier==="Premium" ? btn : null);
+    if (tier === "Premium") {
+      var sc = $("sizeChips").querySelectorAll(".chip");
+      if (state.size && state.size.kg < 1) { state.size = null; markSel($("sizeChips"), null); }
+    }
+    refreshSizes(); render();
+  }
+  function pickSize(s, btn){
+    state.size = s; markSel($("sizeChips"), btn); refreshDesigns(); render();
+  }
+  function refreshSizes(){
+    var sc = $("sizeChips").querySelectorAll(".chip");
+    SIZES.forEach(function(s, i){
+      var dis = (state.tier === "Premium" && s.kg < 1);
+      sc[i].disabled = dis;
+      sc[i].title = dis ? "Premium flavours start from 1 kg" : "";
+    });
+  }
+  /* occasions */
+  $("occasionChips").addEventListener("click", function(e){
+    var b = e.target.closest("[data-occasion]"); if (!b) return;
+    state.occasion = (state.occasion === b.dataset.occasion) ? null : b.dataset.occasion;
+    markSel($("occasionChips"), state.occasion ? b : null); render();
+  });
+  /* designs */
+  function refreshDesigns(){
+    var small = state.size && state.size.kg < 1;
+    var dc = $("designChips").querySelectorAll("[data-custom]");
+    dc.forEach(function(c){
+      c.disabled = !!small;
+      c.title = small ? "Custom designs start from 1 kg" : "";
+    });
+    if (small && state.custom) {
+      state.design = null; state.custom = false;
+      markSel($("designChips"), null);
+      $("designNote").textContent = "Custom designs need 1 kg or more — pick a bigger size to unlock photo, theme, tiered and bundt designs.";
+    } else {
+      $("designNote").textContent = "Simple cream finishes are available in every size. Photo, theme, tiered and bundt designs need 1 kg or more.";
+    }
+  }
+  $("designChips").addEventListener("click", function(e){
+    var b = e.target.closest("[data-design]"); if (!b || b.disabled) return;
+    state.design = b.dataset.design; state.custom = !!b.dataset.custom;
+    markSel($("designChips"), b); render();
+  });
+  /* gallery cards preselect design */
+  document.querySelectorAll("[data-scrollbuilder]").forEach(function(card){
+    card.addEventListener("click", function(){
+      document.querySelectorAll(".gcard").forEach(function(g){ g.classList.remove("sel"); });
+      card.classList.add("sel");
+      var d = card.dataset.design;
+      var chips = $("designChips").querySelectorAll("[data-design]");
+      chips.forEach(function(c){
+        if (c.dataset.design === d && !c.disabled) { c.click(); }
+      });
+      if (d === "Dry cake / tea-time") { /* dry cakes: no design gate, just guide to builder */ }
+      document.getElementById("builder").scrollIntoView({behavior:"smooth"});
+    });
+  });
+  /* message */
+  $("cakeMsg").addEventListener("input", function(e){
+    state.msg = e.target.value.trim();
+    $("msgPreview").textContent = state.msg || "Your message appears here";
+    render();
+  });
+  /* date */
+  var dateInput = $("cakeDate");
+  var today = new Date(); var tmr = new Date(today.getTime() + 86400000);
+  function iso(d){ return d.toISOString().slice(0,10); }
+  dateInput.min = iso(tmr);
+  dateInput.addEventListener("change", function(){
+    state.date = dateInput.value || null; render();
+  });
+  /* fulfilment */
+  $("fulfilChips").addEventListener("click", function(e){
+    var b = e.target.closest("[data-fulfil]"); if (!b) return;
+    state.fulfil = b.dataset.fulfil; markSel($("fulfilChips"), b); render();
+  });
+  function fmtDate(v){
+    if (!v) return "Pick a date";
+    var d = new Date(v + "T00:00:00");
+    return d.toLocaleDateString("en-IN", {weekday:"short", day:"numeric", month:"short"});
+  }
+  function render(){
+    $("sumOccasion").textContent = state.occasion || "—";
+    $("sumFlavour").textContent = state.flavour ? state.flavour + " (" + state.tier + ")" : "Pick a flavour";
+    $("sumSize").textContent = state.size ? state.size.label + " · " + state.size.serves : "—";
+    $("sumDesign").textContent = state.design || "—";
+    $("sumMsg").textContent = state.msg ? "“" + state.msg + "”" : "—";
+    $("sumDate").textContent = fmtDate(state.date);
+    $("sumFulfil").textContent = state.fulfil || "—";
+    /* lead-time warning, using Palak's own notice periods */
+    var warn = $("dateWarn");
+    if (state.date) {
+      var need = state.custom ? 4 : 2;
+      var days = Math.round((new Date(state.date + "T00:00:00") - new Date(iso(today) + "T00:00:00")) / 86400000);
+      if (days < need) {
+        warn.textContent = state.custom
+          ? "Custom themes usually need 3–4 days. This date is sooner — Palak will confirm on WhatsApp if she can still make it happen."
+          : "Regular cakes are best ordered 1–2 days ahead. This date is tight — Palak will confirm availability right away.";
+        warn.classList.add("show");
+      } else { warn.classList.remove("show"); }
+    } else { warn.classList.remove("show"); }
+    /* payment gate: flavour + size + date, exactly as specified */
+    var ok = !!(state.flavour && state.size && state.date);
+    $("toPayment").disabled = !ok;
+    $("gateNote").textContent = ok
+      ? "Looking good — one tap to payment."
+      : "Still needed: " + [!state.flavour && "a flavour", !state.size && "a size", !state.date && "a date"].filter(Boolean).join(", ") + ".";
+  }
+  /* payment */
+  $("toPayment").addEventListener("click", function(){
+    var p = $("payment"); p.classList.remove("hidden");
+    p.scrollIntoView({behavior:"smooth"});
+  });
+  document.querySelectorAll("[data-pay]").forEach(function(b){
+    b.addEventListener("click", function(){
+      document.querySelectorAll("[data-pay]").forEach(function(x){ x.classList.remove("sel"); });
+      b.classList.add("sel"); state.pay = b.dataset.pay;
+      var lbl = $("payFieldLabel"), fld = $("payField");
+      if (state.pay === "UPI") { lbl.textContent = "UPI ID"; fld.placeholder = "yourname@upi"; }
+      if (state.pay === "Card") { lbl.textContent = "Card number"; fld.placeholder = "1234 5678 9012 3456"; }
+      if (state.pay === "Net banking") { lbl.textContent = "Bank"; fld.placeholder = "Select your bank (demo)"; }
+    });
+  });
+  $("payNow").addEventListener("click", function(){
+    var ref = "PCB-" + new Date().getFullYear() + "-" + Math.floor(1000 + Math.random()*9000);
+    $("orderRef").textContent = ref;
+    var bits = [];
+    bits.push((state.size ? state.size.label + " " : "") + (state.flavour || "cake"));
+    if (state.design) bits.push(state.design.toLowerCase());
+    if (state.msg) bits.push("message “" + state.msg + "”");
+    bits.push("for " + fmtDate(state.date));
+    if (state.fulfil) bits.push("· " + state.fulfil.split(" — ")[0].toLowerCase());
+    var name = $("custName").value.trim();
+    $("successRecap").textContent = (name ? "Thank you, " + name.split(" ")[0] + "! " : "") + "Your " + bits.join(", ") + " is confirmed.";
+    $("payForm").classList.add("hidden");
+    $("successView").style.display = "block";
+    $("successView").scrollIntoView({behavior:"smooth", block:"center"});
+  });
+  $("orderAgain").addEventListener("click", function(){
+    $("payForm").classList.remove("hidden");
+    $("successView").style.display = "none";
+    document.getElementById("builder").scrollIntoView({behavior:"smooth"});
+  });
+  render();
+})();
+</script>
+</body>
+</html>
