@@ -7,7 +7,7 @@
 <meta name="description" content="100% eggless, preservative-free custom cakes by Chef Palak Sukhija — Zirakpur studio serving Zirakpur, Panchkula, Chandigarh & Mohali.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Jost:wght@300;400;500;600&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Gurmukhi:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --cream:#FBF5EC; --cream2:#F6EBDD; --blush:#F2D7C9; --blush2:#E9BBA6;
@@ -16,12 +16,12 @@
   --card:#FFFDF9; --shadow:0 18px 40px rgba(74,44,34,.12);
   --shadow-lg:0 34px 60px -18px rgba(74,44,34,.30), 0 12px 22px rgba(74,44,34,.10);
   --r:18px;
-  --ease:cubic-bezier(.22,.9,.28,1);
+  --ease:cubic-bezier(.16,1,.3,1);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-h1,h2,h3,.serif{font-family:'Fraunces',serif;font-weight:600;color:var(--cocoa)}
+body{font-family:'Jost','Noto Sans Devanagari','Noto Sans Gurmukhi',sans-serif;background:var(--cream);color:var(--ink);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,.serif{font-family:'Fraunces','Noto Sans Devanagari','Noto Sans Gurmukhi',serif;font-weight:600;color:var(--cocoa)}
 img,svg{display:block}
 a{color:inherit}
 button{font-family:inherit}
@@ -93,14 +93,14 @@ header.scrolled{box-shadow:0 12px 30px -14px rgba(74,44,34,.28)}
 
 /* ---------- sections ---------- */
 section{padding:56px 0}
-.sec-head{max-width:640px;margin-bottom:30px;position:relative}
+.sec-head{max-width:640px;margin-bottom:32px;position:relative}
 .sec-head .eyebrow{margin-bottom:8px}
 .sec-head h2{font-size:clamp(26px,3.6vw,38px);line-height:1.15}
 .sec-head h2 em{font-style:italic;color:var(--rose)}
 .sec-head p{color:var(--muted);margin-top:8px;font-size:16px;font-weight:300}
 
 /* gallery — asymmetric editorial grid, tilt + glare */
-.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
 @media(min-width:921px){.gal-grid>.gcard:nth-child(2){margin-top:30px}.gal-grid>.gcard:nth-child(5){margin-top:30px}}
 @media(max-width:920px){.gal-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:560px){.gal-grid{grid-template-columns:1fr}}
@@ -113,7 +113,7 @@ section{padding:56px 0}
 .gcard .gart>svg{transition:transform .35s var(--ease)}
 .gcard:hover .gart>svg{transform:translateZ(30px) scale(1.045)}
 .gnum{position:absolute;right:12px;bottom:2px;font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:56px;line-height:1;color:rgba(74,44,34,.10);pointer-events:none}
-.gcard .gbody{padding:16px 18px 18px;position:relative}
+.gcard .gbody{padding:16px 16px 24px;position:relative}
 .gcard h3{font-size:19px;margin-bottom:3px}
 .gcard p{font-size:14px;color:var(--muted);font-weight:300}
 .gcard .gtag{position:absolute;top:12px;left:12px;z-index:3;background:rgba(255,253,249,.92);color:var(--cocoa);font-size:11.5px;font-weight:600;letter-spacing:.06em;padding:5px 10px;border-radius:999px;text-transform:uppercase}
@@ -132,13 +132,13 @@ section{padding:56px 0}
 .stat .l{font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:5px;font-weight:500}
 
 /* builder layout */
-.builder-shell{display:grid;grid-template-columns:1.5fr 1fr;gap:26px;align-items:start}
+.builder-shell{display:grid;grid-template-columns:1.5fr 1fr;gap:24px;align-items:start}
 @media(max-width:920px){.builder-shell{grid-template-columns:1fr}}
-.stepcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:18px;box-shadow:0 10px 24px -18px rgba(74,44,34,.25)}
+.stepcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:16px;box-shadow:0 10px 24px -18px rgba(74,44,34,.25)}
 .stepcard h3{font-size:20px;display:flex;align-items:center;gap:11px;margin-bottom:5px}
 .stepnum{width:29px;height:29px;flex:none;border-radius:50%;background:var(--blush);color:var(--cocoa);font-family:'Jost',sans-serif;font-size:14px;font-weight:600;display:inline-flex;align-items:center;justify-content:center}
 .stepcard .hint{font-size:13.5px;color:var(--muted);margin:0 0 14px 40px;font-weight:300}
-.chips{display:flex;flex-wrap:wrap;gap:9px}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{border:1.5px solid var(--line);background:#fff;border-radius:999px;padding:9px 16px;font-family:'Jost',sans-serif;font-size:14.5px;font-weight:500;color:var(--cocoa2);cursor:pointer;transition:all .15s ease}
 .chip:hover{border-color:var(--blush2);transform:translateY(-1px)}
 .chip.sel{background:var(--cocoa);border-color:var(--cocoa);color:#FBF1E4}
@@ -282,7 +282,7 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 .game-timer b{font-family:'Fraunces',serif;font-size:21px;background:var(--cocoa);color:#F2C894;border-radius:999px;min-width:52px;padding:3px 10px;letter-spacing:0}
 #gameSvg{width:100%;max-width:370px;margin:6px auto 0}
 .game-caption{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--cocoa2);margin-top:8px;min-height:25px}
-.gstep{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-bottom:16px;box-shadow:0 10px 24px -18px rgba(74,44,34,.25);transition:opacity .3s ease}
+.gstep{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px;margin-bottom:16px;box-shadow:0 10px 24px -18px rgba(74,44,34,.25);transition:opacity .3s ease}
 .gstep.locked{opacity:.42;pointer-events:none}
 .gstep .glabel{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);font-weight:600;margin-bottom:10px}
 .gstep .btnrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
@@ -290,8 +290,8 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 .gstep .btnrow .btn-ghost{padding:11px 20px;font-size:14.5px}
 .fchip{display:inline-flex;align-items:center;gap:8px}
 .fchip .sw{width:15px;height:15px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55),0 1px 3px rgba(74,44,34,.3)}
-.layer-drop{animation:gdrop .5s var(--ease)}
-@keyframes gdrop{from{transform:translateY(-58px);opacity:0}to{transform:translateY(0);opacity:1}}
+.layer-drop{animation:gdrop .62s cubic-bezier(.34,1.4,.64,1)}
+@keyframes gdrop{0%{transform:translateY(-58px);opacity:0}55%{opacity:1}72%{transform:translateY(6px)}88%{transform:translateY(-2px)}100%{transform:translateY(0);opacity:1}}
 .top-pop{animation:tpop .3s var(--ease)}
 @keyframes tpop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
 @media (prefers-reduced-motion: reduce){.layer-drop,.top-pop{animation:none}}
@@ -311,21 +311,70 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 .game-result .copy-btn:hover{background:#F2C894;color:var(--cocoa)}
 .game-result .wa-order-note{color:#CFA887}
 @media(max-width:640px){.hnav .pill.gamenav{display:none}}
+/* ---------- v4: cinematic finish ---------- */
+.grain{position:fixed;inset:0;z-index:80;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='240' height='240' filter='url(%23n)'/%3E%3C/svg%3E");background-size:240px 240px}
+.hero::before{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:radial-gradient(560px 340px at 8% -6%, rgba(242,200,148,.34), transparent 62%),radial-gradient(640px 420px at -10% 108%, rgba(201,123,99,.20), transparent 60%),radial-gradient(120% 92% at 50% 42%, transparent 56%, rgba(74,44,34,.13) 100%)}
+.hero-bgword{z-index:0}
+.hero [data-intro]{opacity:0;transform:translateY(16px);transition:opacity .6s var(--ease),transform .6s var(--ease);transition-delay:var(--d,0s)}
+body.loaded .hero [data-intro]{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.hero [data-intro]{opacity:1;transform:none;transition:none}}
+
+/* ---------- v4: language switcher ---------- */
+.langsw{display:inline-flex;background:#fff;border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px;flex:none}
+.langsw button{border:none;background:transparent;cursor:pointer;font-family:'Jost','Noto Sans Devanagari','Noto Sans Gurmukhi',sans-serif;font-size:12.5px;font-weight:600;color:var(--cocoa2);padding:5px 11px;border-radius:999px;transition:background .15s ease,color .15s ease;line-height:1.3}
+.langsw button.on{background:var(--cocoa);color:#FBF1E4}
+@media(max-width:640px){.hnav .pill.cakenav{display:none}.langsw button{padding:5px 8px;font-size:12px}}
+
+/* ---------- v4: order journey ---------- */
+.jsteps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+@media(max-width:820px){.jsteps{grid-template-columns:1fr;gap:4px}}
+.jpath{position:absolute;top:52px;left:16.5%;width:67%;height:56px;overflow:visible;pointer-events:none}
+@media(max-width:820px){.jpath{display:none}}
+.jpath path{fill:none;stroke:var(--blush2);stroke-width:2.4;stroke-linecap:round;stroke-dasharray:6 9}
+.jpath path.draw{stroke:var(--rose);stroke-dasharray:640;stroke-dashoffset:640;transition:stroke-dashoffset 1.6s var(--ease) .2s}
+.jsteps.in .jpath path.draw{stroke-dashoffset:0}
+@media (prefers-reduced-motion: reduce){.jpath path.draw{transition:none;stroke-dashoffset:0}}
+.jstep{position:relative;text-align:center;padding:0 8px}
+@media(max-width:820px){.jstep{padding:16px 8px}}
+.jstep .jnum{font-family:'Fraunces',serif;font-style:italic;font-weight:700;font-size:15px;color:var(--rose);letter-spacing:.05em}
+.jico{width:96px;height:96px;margin:10px auto 14px;border-radius:50%;background:radial-gradient(circle at 34% 28%,#FFFDF9,var(--cream2));border:1px solid var(--line);box-shadow:0 16px 30px -14px rgba(74,44,34,.28), inset 0 0 0 6px rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;position:relative;z-index:1}
+.jstep h3{font-size:21px;margin-bottom:6px}
+.jstep p{font-size:14.5px;color:var(--muted);font-weight:300;max-width:302px;margin:0 auto}
+.jstep p b{color:var(--cocoa2);font-weight:500}
+
+/* ---------- v4: game extras ---------- */
+@keyframes sparkle{0%{transform:scale(.35) rotate(0deg);opacity:1}100%{transform:scale(1.6) rotate(40deg);opacity:0}}
+.spark{transform-box:fill-box;transform-origin:center;animation:sparkle .55s ease-out forwards;pointer-events:none}
+@media (prefers-reduced-motion: reduce){.spark{animation:none;opacity:0}}
+#confettiCv{position:fixed;inset:0;z-index:300;pointer-events:none}
+.game-result .btn-save{background:transparent;border:1.5px solid #F2C894;color:#F2C894;padding:12px 22px;font-size:15px}
+.game-result .btn-save:hover{background:rgba(242,200,148,.14)}
+
+/* ---------- v4: chat icon ---------- */
+.fab-ico{display:flex;animation:bob 3.4s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-2.5px)}}
+@media (prefers-reduced-motion: reduce){.fab-ico{animation:none}}
+.chat-head .avatar{background:radial-gradient(circle at 35% 30%,#F6E3D3,#E9BBA6)}
+[data-magnet]{will-change:transform}
+
 </style>
+<noscript><style>.hero [data-intro]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
 <body>
+<div class="grain" aria-hidden="true"></div>
 
 <header id="siteHeader">
   <div class="wrap hbar">
     <a class="brand" href="#">
       <span class="mark">P</span>
-      <span><span class="bname">Palak's Cakes N Bakes</span><br><span class="bsub">Eggless Cake Studio · Zirakpur</span></span>
+      <span><span class="bname">Palak's Cakes N Bakes</span><br><span class="bsub" data-i18n="brand.sub">Eggless Cake Studio · Zirakpur</span></span>
     </a>
     <nav class="hnav">
-      <span class="pill eggless">● 100% Eggless</span>
-      <a class="pill" href="#gallery">Cakes</a>
-      <a class="pill gamenav" href="#game">Cake Studio</a>
-      <a class="btn btn-wa" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20have%20a%20question%20about%20a%20cake." target="_blank" rel="noopener">WhatsApp Us</a>
+      <span class="langsw" role="group" aria-label="Language"><button type="button" data-lang="en" class="on">EN</button><button type="button" data-lang="hi">हिंदी</button><button type="button" data-lang="pa">ਪੰਜਾਬੀ</button></span>
+      <span class="pill eggless" data-i18n="nav.eggless">● 100% Eggless</span>
+      <a class="pill cakenav" href="#gallery" data-i18n="nav.cakes">Cakes</a>
+      <a class="pill gamenav" href="#game" data-i18n="nav.studio">Cake Studio</a>
+      <a class="btn btn-wa" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20have%20a%20question%20about%20a%20cake." target="_blank" rel="noopener" data-i18n="nav.wa">WhatsApp Us</a>
     </nav>
   </div>
 </header>
@@ -334,25 +383,25 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
   <div class="hero-bgword" data-depth="6" aria-hidden="true">baked fresh</div>
   <div class="wrap hero-grid">
     <div>
-      <div class="eyebrow">Peer Muchalla · Zirakpur · Tricity Delivery</div>
-      <h1>100% eggless cakes that turn celebrations into <em>memories.</em></h1>
-      <p class="lede">Premium, preservative-free and naturally flavoured — designed around your story, baked fresh in our Zirakpur studio, and now orderable online in about a minute.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary" href="#builder">Build Your Cake →</a>
-        <a class="btn btn-ghost" href="#gallery">Browse the Range</a>
+      <div class="eyebrow" data-intro style="--d:0s" data-i18n="hero.eyebrow">Peer Muchalla · Zirakpur · Tricity Delivery</div>
+      <h1 data-intro style="--d:.06s" data-i18n-html="hero.h1">100% eggless cakes that turn celebrations into <em>memories.</em></h1>
+      <p class="lede" data-intro style="--d:.12s" data-i18n="hero.lede">Premium, preservative-free and naturally flavoured — designed around your story, baked fresh in our Zirakpur studio, and now orderable online in about a minute.</p>
+      <div class="hero-cta" data-intro style="--d:.18s">
+        <a class="btn btn-primary" href="#builder" data-magnet data-i18n="hero.ctaBuild">Build Your Cake →</a>
+        <a class="btn btn-ghost" href="#gallery" data-i18n="hero.ctaBrowse">Browse the Range</a>
       </div>
-      <div class="trustrow">
-        <span><b>★ 5.0</b> loved by Tricity families</span>
-        <span><b>35+</b> flavours to choose from</span>
-        <span><b>0</b> preservatives, ever</span>
+      <div class="trustrow" data-intro style="--d:.24s">
+        <span data-i18n-html="hero.trust1"><b>★ 5.0</b> loved by Tricity families</span>
+        <span data-i18n-html="hero.trust2"><b>35+</b> flavours to choose from</span>
+        <span data-i18n-html="hero.trust3"><b>0</b> preservatives, ever</span>
       </div>
     </div>
-    <div class="hero-art">
+    <div class="hero-art" data-intro style="--d:.1s">
       <div class="cake-scene" id="cakeScene">
         <svg class="cake-halo" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="188" fill="none" stroke="#C97B63" stroke-opacity=".35" stroke-width="1.4" stroke-dasharray="3 11"/><circle cx="200" cy="200" r="160" fill="none" stroke="#B9822E" stroke-opacity=".22" stroke-width="1" stroke-dasharray="2 9"/></svg>
         <div class="hero3d" id="cake3dWrap">
           <canvas id="cakeCanvas" aria-label="Interactive 3D cake — drag to spin"></canvas>
-          <div class="drag-hint" id="dragHint">Drag to spin</div>
+          <div class="drag-hint" id="dragHint" data-i18n="hero.drag">Drag to spin</div>
         </div>
         <div class="cake3d" id="cake3d">
           <svg class="cake-stage" viewBox="0 0 300 300" role="img" aria-label="Illustrated three-tier celebration cake">
@@ -391,7 +440,7 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
         <div class="float-wrap" data-depth="-24" style="bottom:6%;right:-3%">
           <svg class="float-el" style="animation-delay:-1.1s" width="58" height="26" viewBox="0 0 58 26" aria-hidden="true"><g><rect x="2" y="8" width="15" height="5.5" rx="2.75" fill="#C97B63" transform="rotate(-18 9 10)"/><rect x="22" y="3" width="15" height="5.5" rx="2.75" fill="#B9822E" transform="rotate(14 29 5)"/><rect x="40" y="12" width="15" height="5.5" rx="2.75" fill="#5B7A4E" transform="rotate(-10 47 14)"/></g></svg>
         </div>
-        <div class="hero-note">baked to order — never stocked</div>
+        <div class="hero-note" data-i18n="hero.note">baked to order — never stocked</div>
       </div>
     </div>
   </div>
@@ -406,46 +455,46 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 <section id="gallery">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">The Range</div>
-      <h2>Start with a style <em>you love.</em></h2>
-      <p>Every cake below comes from our real studio range — tap one to start building, or design your own from scratch. All 100% eggless, always.</p>
+      <div class="eyebrow" data-i18n="gal.eyebrow">The Range</div>
+      <h2 data-i18n-html="gal.h2">Start with a style <em>you love.</em></h2>
+      <p data-i18n="gal.p">Every cake below comes from our real studio range — tap one to start building, or design your own from scratch. All 100% eggless, always.</p>
     </div>
     <div class="gal-grid">
       <button class="gcard rv" style="--d:.02s" type="button" data-design="Theme cake" data-scrollbuilder data-tilt>
-        <div class="gart" style="background:linear-gradient(160deg,#F6E3D3,#E9BBA6)"><span class="gtag">Most loved</span><span class="gfrom">from 1 kg</span><span class="gnum">01</span>
+        <div class="gart" style="background:linear-gradient(160deg,#F6E3D3,#E9BBA6)"><span class="gtag" data-i18n="gal.tag1">Most loved</span><span class="gfrom" data-i18n="gal.from1kg">from 1 kg</span><span class="gnum">01</span>
           <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><rect x="28" y="58" width="94" height="34" rx="6" fill="#FBF5EC"/><rect x="44" y="30" width="62" height="30" rx="6" fill="#C97B63"/><circle cx="55" cy="24" r="7" fill="#A8542F"/><circle cx="75" cy="18" r="8" fill="#B9822E"/><circle cx="95" cy="24" r="7" fill="#5B7A4E"/></svg>
         </div>
-        <div class="gbody"><h3>Custom Theme Cakes</h3><p>Birthdays, characters &amp; stories — sculpted toppers, tiers and name prints, designed around your celebration.</p></div>
+        <div class="gbody"><h3 data-i18n="gal.t1">Custom Theme Cakes</h3><p data-i18n="gal.d1">Birthdays, characters &amp; stories — sculpted toppers, tiers and name prints, designed around your celebration.</p></div>
       </button>
       <button class="gcard rv" style="--d:.08s" type="button" data-design="Photo print cake" data-scrollbuilder data-tilt>
-        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#F2D7C9)"><span class="gtag">Personal</span><span class="gfrom">from 1 kg</span><span class="gnum">02</span>
+        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#F2D7C9)"><span class="gtag" data-i18n="gal.tag2">Personal</span><span class="gfrom" data-i18n="gal.from1kg">from 1 kg</span><span class="gnum">02</span>
           <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><rect x="24" y="46" width="102" height="46" rx="8" fill="#F6E3D3"/><rect x="52" y="24" width="46" height="34" rx="5" fill="#FFFDF9" stroke="#C99B77" stroke-width="2"/><circle cx="75" cy="37" r="7" fill="#E9BBA6"/><path d="M64 56 q11 -10 22 0 v2 h-22 z" fill="#C97B63"/></svg>
         </div>
-        <div class="gbody"><h3>Photo Print Cakes</h3><p>Your favourite picture, printed edible and framed in cream — a favourite for birthdays and anniversaries.</p></div>
+        <div class="gbody"><h3 data-i18n="gal.t2">Photo Print Cakes</h3><p data-i18n="gal.d2">Your favourite picture, printed edible and framed in cream — a favourite for birthdays and anniversaries.</p></div>
       </button>
       <button class="gcard rv" style="--d:.14s" type="button" data-design="Tiered celebration cake" data-scrollbuilder data-tilt>
-        <div class="gart" style="background:linear-gradient(160deg,#F6E3D3,#EBD3B8)"><span class="gtag">Weddings</span><span class="gfrom">from 2 kg</span><span class="gnum">03</span>
+        <div class="gart" style="background:linear-gradient(160deg,#F6E3D3,#EBD3B8)"><span class="gtag" data-i18n="gal.tag3">Weddings</span><span class="gfrom" data-i18n="gal.from2kg">from 2 kg</span><span class="gnum">03</span>
           <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="99" rx="64" ry="6" fill="#D9B894"/><rect x="22" y="70" width="106" height="26" rx="5" fill="#FBF5EC"/><rect x="38" y="44" width="74" height="27" rx="5" fill="#F2D7C9"/><rect x="52" y="20" width="46" height="25" rx="5" fill="#FBF5EC"/><circle cx="62" cy="14" r="5" fill="#C97B63"/><circle cx="75" cy="10" r="6" fill="#B9822E"/><circle cx="88" cy="14" r="5" fill="#C97B63"/></svg>
         </div>
-        <div class="gbody"><h3>Wedding &amp; Tiered Cakes</h3><p>Elegant multi-tier showpieces for weddings and big milestones — planned with you, layer by layer.</p></div>
+        <div class="gbody"><h3 data-i18n="gal.t3">Wedding &amp; Tiered Cakes</h3><p data-i18n="gal.d3">Elegant multi-tier showpieces for weddings and big milestones — planned with you, layer by layer.</p></div>
       </button>
       <button class="gcard rv" style="--d:.02s" type="button" data-design="Simple cream finish" data-scrollbuilder data-tilt>
-        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#EFE0CE)"><span class="gtag">Everyday</span><span class="gfrom">from ½ kg</span><span class="gnum">04</span>
+        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#EFE0CE)"><span class="gtag" data-i18n="gal.tag4">Everyday</span><span class="gfrom" data-i18n="gal.fromHalf">from ½ kg</span><span class="gnum">04</span>
           <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><rect x="30" y="52" width="90" height="40" rx="8" fill="#FFFDF9"/><path d="M30 60 q11 10 22 0 q11 10 22 0 q11 10 22 0 q11 10 24 0 v-8 h-90 z" fill="#E9BBA6"/><circle cx="58" cy="44" r="7" fill="#C0392B" opacity=".8"/><circle cx="78" cy="40" r="7" fill="#C0392B" opacity=".85"/><circle cx="96" cy="45" r="7" fill="#C0392B" opacity=".8"/></svg>
         </div>
-        <div class="gbody"><h3>Classic Cream Cakes</h3><p>Simple, beautiful cream finishes in our classic flavours — ready in 1–2 days, from ½ kg.</p></div>
+        <div class="gbody"><h3 data-i18n="gal.t4">Classic Cream Cakes</h3><p data-i18n="gal.d4">Simple, beautiful cream finishes in our classic flavours — ready in 1–2 days, from ½ kg.</p></div>
       </button>
       <button class="gcard rv" style="--d:.08s" type="button" data-design="Wholesome bundt" data-scrollbuilder data-tilt>
-        <div class="gart" style="background:linear-gradient(160deg,#F1E7D2,#E3CCA3)"><span class="gtag">Wholesome</span><span class="gfrom">from 1 kg</span><span class="gnum">05</span>
+        <div class="gart" style="background:linear-gradient(160deg,#F1E7D2,#E3CCA3)"><span class="gtag" data-i18n="gal.tag5">Wholesome</span><span class="gfrom" data-i18n="gal.from1kg">from 1 kg</span><span class="gnum">05</span>
           <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><path d="M32 92 a43 34 0 1 1 86 0 z" fill="#B9822E"/><circle cx="75" cy="66" r="11" fill="#F6E3D3"/><g fill="#6E4636"><circle cx="52" cy="52" r="3"/><circle cx="98" cy="52" r="3"/><circle cx="75" cy="42" r="3"/><circle cx="44" cy="72" r="3"/><circle cx="106" cy="72" r="3"/></g></svg>
         </div>
-        <div class="gbody"><h3>Wholesome Bundt Cakes</h3><p>Whole wheat, no maida, no refined sugar or oil — sweetened with jaggery and loaded with premium nuts.</p></div>
+        <div class="gbody"><h3 data-i18n="gal.t5">Wholesome Bundt Cakes</h3><p data-i18n="gal.d5">Whole wheat, no maida, no refined sugar or oil — sweetened with jaggery and loaded with premium nuts.</p></div>
       </button>
       <button class="gcard rv" style="--d:.14s" type="button" data-design="Dry cake / tea-time" data-scrollbuilder data-tilt>
-        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#EBD9BE)"><span class="gtag">Tea-time</span><span class="gfrom">½ kg &amp; 1 kg</span><span class="gnum">06</span>
+        <div class="gart" style="background:linear-gradient(160deg,#FDF3E7,#EBD9BE)"><span class="gtag" data-i18n="gal.tag6">Tea-time</span><span class="gfrom">½ kg &amp; 1 kg</span><span class="gnum">06</span>
           <svg width="150" height="105" viewBox="0 0 150 105"><ellipse cx="75" cy="97" rx="62" ry="6" fill="#D9B894"/><rect x="26" y="56" width="98" height="36" rx="7" fill="#C99B77"/><path d="M26 63 h98 v-3 a7 7 0 0 0 -7 -4 h-84 a7 7 0 0 0 -7 4 z" fill="#A8763E"/><g fill="#6E4636"><circle cx="48" cy="76" r="3"/><circle cx="75" cy="80" r="3"/><circle cx="102" cy="76" r="3"/></g></svg>
         </div>
-        <div class="gbody"><h3>Tea-Time Dry Cakes</h3><p>Homely, keeps beautifully for 4–5 days, and perfect with evening chai. Brownies &amp; cupcake boxes too — just ask.</p></div>
+        <div class="gbody"><h3 data-i18n="gal.t6">Tea-Time Dry Cakes</h3><p data-i18n="gal.d6">Homely, keeps beautifully for 4–5 days, and perfect with evening chai. Brownies &amp; cupcake boxes too — just ask.</p></div>
       </button>
     </div>
   </div>
@@ -454,16 +503,47 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 <section style="padding-top:6px">
   <div class="wrap story-grid">
     <div class="rv">
-      <div class="eyebrow">From Palak's Kitchen</div>
-      <h2>One studio, one pair of hands, <em>every cake made to order.</em></h2>
-      <p>Every cake at Palak's is hand-crafted fresh by Chef Palak Sukhija in her in-house studio at Peer Muchalla — nothing sits on a shelf, and nothing is baked before your order comes in. Natural flavours, zero preservatives, and always, always eggless.</p>
-      <div class="sign">— that's the whole secret, really</div>
+      <div class="eyebrow" data-i18n="story.eyebrow">From Palak's Kitchen</div>
+      <h2 data-i18n-html="story.h2">One studio, one pair of hands, <em>every cake made to order.</em></h2>
+      <p data-i18n="story.p">Every cake at Palak's is hand-crafted fresh by Chef Palak Sukhija in her in-house studio at Peer Muchalla — nothing sits on a shelf, and nothing is baked before your order comes in. Natural flavours, zero preservatives, and always, always eggless.</p>
+      <div class="sign" data-i18n="story.sign">— that's the whole secret, really</div>
     </div>
     <div class="statlist rv" style="--d:.12s">
-      <div class="stat"><div class="n">35<i>+</i></div><div class="l">Flavours in the kitchen</div></div>
-      <div class="stat"><div class="n">0</div><div class="l">Preservatives, ever</div></div>
-      <div class="stat"><div class="n">5.0<i>★</i></div><div class="l">Loved across the Tricity</div></div>
-      <div class="stat"><div class="n">9–9</div><div class="l">Open all days, AM to PM</div></div>
+      <div class="stat"><div class="n" data-cu="35">35<i>+</i></div><div class="l" data-i18n="stat.l1">Flavours in the kitchen</div></div>
+      <div class="stat"><div class="n">0</div><div class="l" data-i18n="stat.l2">Preservatives, ever</div></div>
+      <div class="stat"><div class="n" data-cu="5" data-cu-dec="1">5.0<i>★</i></div><div class="l" data-i18n="stat.l3">Loved across the Tricity</div></div>
+      <div class="stat"><div class="n" data-cu="9" data-cu-range="9">9–9</div><div class="l" data-i18n="stat.l4">Open all days, AM to PM</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="journey" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow" data-i18n="journey.eyebrow">The Journey</div>
+      <h2 data-i18n-html="journey.h2">From our oven to <em>your celebration.</em></h2>
+      <p data-i18n="journey.p">No phone tag, no guesswork — here is exactly how your cake travels, from a happy idea to the first slice.</p>
+    </div>
+    <div class="jsteps rv" id="jSteps" style="--d:.08s">
+      <svg class="jpath" viewBox="0 0 600 56" preserveAspectRatio="none" aria-hidden="true"><path d="M6 30 C 150 4, 260 54, 306 28 S 470 6, 594 26"/><path class="draw" pathLength="640" d="M6 30 C 150 4, 260 54, 306 28 S 470 6, 594 26"/></svg>
+      <div class="jstep">
+        <div class="jnum" data-i18n="journey.step1">Step 1</div>
+        <div class="jico"><svg width="58" height="58" viewBox="0 0 64 64" aria-hidden="true"><ellipse cx="30" cy="54" rx="20" ry="3.4" fill="#E4C9B2"/><rect x="12" y="38" width="36" height="14" rx="3.5" fill="#F2D7C9"/><path d="M12 41 q6 5 12 0 q6 5 12 0 q6 5 12 0 v-3 h-36z" fill="#C97B63"/><rect x="19" y="26" width="22" height="13" rx="3.5" fill="#FBF5EC"/><path d="M19 29 q5 4 11 0 q5 4 11 0 v-3 h-22z" fill="#B9822E" opacity=".8"/><circle cx="30" cy="21" r="3.4" fill="#C0392B"/><path d="M30 18 q2 -5 7 -6" stroke="#5B7A4E" stroke-width="1.8" fill="none" stroke-linecap="round"/><g transform="rotate(38 50 34)"><rect x="47" y="22" width="5" height="17" rx="1.6" fill="#B9822E"/><path d="M47 39 h5 l-2.5 6z" fill="#F2D7C9"/><path d="M48.6 42.4 h1.8 l-.9 2.4z" fill="#4A2C22"/></g><path d="M53 6 l1.2 3 3 1.2 -3 1.2 -1.2 3 -1.2 -3 -3 -1.2 3 -1.2z" fill="#B9822E"/><circle cx="7" cy="15" r="1.8" fill="#C97B63"/></svg></div>
+        <h3 data-i18n="journey.s1t">You design it</h3>
+        <p data-i18n-html="journey.s1p">Pick a flavour, size and design in the builder below — or dream it up in the Cake Studio. <b>Your order confirms the moment you pay</b>, so there is no price ping-pong on WhatsApp.</p>
+      </div>
+      <div class="jstep">
+        <div class="jnum" data-i18n="journey.step2">Step 2</div>
+        <div class="jico"><svg width="58" height="58" viewBox="0 0 64 64" aria-hidden="true"><path d="M22 7 q3 4 0 8 M32 6 q3 4 0 8 M42 7 q3 4 0 8" stroke="#E9BBA6" stroke-width="2.6" fill="none" stroke-linecap="round"/><rect x="10" y="18" width="44" height="38" rx="6" fill="#4A2C22"/><rect x="10" y="18" width="44" height="9" rx="4.5" fill="#6E4636"/><circle cx="19" cy="22.5" r="1.8" fill="#F2C894"/><circle cx="27" cy="22.5" r="1.8" fill="#F2C894"/><circle cx="45" cy="22.5" r="1.8" fill="#C97B63"/><rect x="16" y="31" width="32" height="19" rx="4" fill="#FDF3E7"/><path d="M16 35 h32" stroke="#E4C9B2" stroke-width="1.6"/><rect x="21" y="41" width="22" height="7" rx="2.4" fill="#C97B63"/><path d="M21 43 q5 3.4 11 0 q5 3.4 11 0 v-2 h-22z" fill="#A8542F"/><circle cx="32" cy="37.5" r="2.6" fill="#C0392B"/></svg></div>
+        <h3 data-i18n="journey.s2t">Palak bakes it fresh</h3>
+        <p data-i18n-html="journey.s2p">Chef Palak bakes every cake herself in her Peer Muchalla studio — <b>100% eggless, preservative-free, baked to order, never stocked</b>. Regular cakes need 1–2 days; custom themes, 3–4.</p>
+      </div>
+      <div class="jstep">
+        <div class="jnum" data-i18n="journey.step3">Step 3</div>
+        <div class="jico"><svg width="58" height="58" viewBox="0 0 64 64" aria-hidden="true"><path d="M4 53 q14 -7 27 -2 t29 -1" stroke="#C99B77" stroke-width="2.4" fill="none" stroke-dasharray="5 5" stroke-linecap="round"/><rect x="10" y="31" width="34" height="19" rx="3.5" fill="#F6E3D3"/><path d="M10 35 h34" stroke="#E9BBA6" stroke-width="2"/><path d="M27 31 v19" stroke="#E9BBA6" stroke-width="2"/><path d="M16 31 q-3 -10 6 -13 q4 6 5 13 M38 31 q3 -10 -6 -13 q-4 6 -5 13" fill="none" stroke="#C97B63" stroke-width="2.4" stroke-linecap="round"/><circle cx="27" cy="16" r="3" fill="#C97B63"/><path d="M52 5 c5 0 8 3.4 8 7.6 c0 5.4 -8 12.4 -8 12.4 s-8 -7 -8 -12.4 c0 -4.2 3 -7.6 8 -7.6z" fill="#A8542F"/><circle cx="52" cy="12.6" r="3.2" fill="#FBF5EC"/></svg></div>
+        <h3 data-i18n="journey.s3t">Delivered to your celebration</h3>
+        <p data-i18n-html="journey.s3p">Collect it from the studio, or get it delivered across <b>Zirakpur · Panchkula · Chandigarh · Mohali</b> — boxed with care and ready for the first slice.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -471,102 +551,102 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 <section id="builder" style="padding-top:8px">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">Build a Cake</div>
-      <h2>Your cake, in four <em>little steps.</em></h2>
-      <p>Pick a flavour, a size and a date — your order confirms the moment you pay. No waiting on WhatsApp for a price reply.</p>
+      <div class="eyebrow" data-i18n="b.eyebrow">Build a Cake</div>
+      <h2 data-i18n-html="b.h2">Your cake, in four <em>little steps.</em></h2>
+      <p data-i18n="b.p">Pick a flavour, a size and a date — your order confirms the moment you pay. No waiting on WhatsApp for a price reply.</p>
     </div>
     <div class="builder-shell">
       <div>
         <div class="stepcard rv">
-          <h3><span class="stepnum">1</span> What's the occasion?</h3>
-          <p class="hint">Optional — it helps Palak design in the right mood.</p>
+          <h3><span class="stepnum">1</span> <span data-i18n="b.s1t">What's the occasion?</span></h3>
+          <p class="hint" data-i18n="b.s1hint">Optional — it helps Palak design in the right mood.</p>
           <div class="chips" id="occasionChips">
-            <button type="button" class="chip" data-occasion="Birthday">Birthday</button>
-            <button type="button" class="chip" data-occasion="Anniversary">Anniversary</button>
-            <button type="button" class="chip" data-occasion="Wedding">Wedding</button>
-            <button type="button" class="chip" data-occasion="Baby shower">Baby shower</button>
-            <button type="button" class="chip" data-occasion="Kids' theme party">Kids' theme party</button>
-            <button type="button" class="chip" data-occasion="Just because">Just because</button>
+            <button type="button" class="chip" data-occasion="Birthday" data-i18n="b.occ1">Birthday</button>
+            <button type="button" class="chip" data-occasion="Anniversary" data-i18n="b.occ2">Anniversary</button>
+            <button type="button" class="chip" data-occasion="Wedding" data-i18n="b.occ3">Wedding</button>
+            <button type="button" class="chip" data-occasion="Baby shower" data-i18n="b.occ4">Baby shower</button>
+            <button type="button" class="chip" data-occasion="Kids' theme party" data-i18n="b.occ5">Kids' theme party</button>
+            <button type="button" class="chip" data-occasion="Just because" data-i18n="b.occ6">Just because</button>
           </div>
         </div>
 
         <div class="stepcard rv">
-          <h3><span class="stepnum">2</span> Choose a flavour</h3>
-          <p class="hint">From Palak's 35+ flavour kitchen — every single one eggless.</p>
+          <h3><span class="stepnum">2</span> <span data-i18n="b.s2t">Choose a flavour</span></h3>
+          <p class="hint" data-i18n="b.s2hint">From Palak's 35+ flavour kitchen — every single one eggless.</p>
           <div class="fgroup">
-            <div class="glabel">Classic flavours · from ½ kg</div>
+            <div class="glabel" data-i18n="b.classic">Classic flavours · from ½ kg</div>
             <div class="chips" id="classicFlavours"></div>
           </div>
           <div class="fgroup">
-            <div class="glabel">Premium flavours · from 1 kg</div>
+            <div class="glabel" data-i18n="b.premium">Premium flavours · from 1 kg</div>
             <div class="chips" id="premiumFlavours"></div>
           </div>
-          <p class="fnote">Demo flavour list — Palak's full 35+ flavour menu appears here on the live page.</p>
+          <p class="fnote" data-i18n="b.demoNote">Demo flavour list — Palak's full 35+ flavour menu appears here on the live page.</p>
         </div>
 
         <div class="stepcard rv">
-          <h3><span class="stepnum">3</span> Size &amp; design</h3>
-          <p class="hint">Custom designs start from 1 kg, just like at the studio.</p>
+          <h3><span class="stepnum">3</span> <span data-i18n="b.s3t">Size &amp; design</span></h3>
+          <p class="hint" data-i18n="b.s3hint">Custom designs start from 1 kg, just like at the studio.</p>
           <div class="fgroup">
-            <div class="glabel">How big?</div>
+            <div class="glabel" data-i18n="b.howbig">How big?</div>
             <div class="chips" id="sizeChips"></div>
           </div>
           <div class="fgroup">
-            <div class="glabel">Design</div>
+            <div class="glabel" data-i18n="b.design">Design</div>
             <div class="chips" id="designChips">
-              <button type="button" class="chip" data-design="Simple cream finish">Simple cream finish</button>
-              <button type="button" class="chip" data-design="Photo print cake" data-custom="1">Photo print</button>
-              <button type="button" class="chip" data-design="Theme cake" data-custom="1">Theme + topper</button>
-              <button type="button" class="chip" data-design="Tiered celebration cake" data-custom="1">Tiered</button>
-              <button type="button" class="chip" data-design="Wholesome bundt" data-custom="1">Wholesome bundt</button>
+              <button type="button" class="chip" data-design="Simple cream finish" data-i18n="b.design1">Simple cream finish</button>
+              <button type="button" class="chip" data-design="Photo print cake" data-custom="1" data-i18n="b.design2">Photo print</button>
+              <button type="button" class="chip" data-design="Theme cake" data-custom="1" data-i18n="b.design3">Theme + topper</button>
+              <button type="button" class="chip" data-design="Tiered celebration cake" data-custom="1" data-i18n="b.design4">Tiered</button>
+              <button type="button" class="chip" data-design="Wholesome bundt" data-custom="1" data-i18n="b.design5">Wholesome bundt</button>
             </div>
             <p class="fnote" id="designNote">Simple cream finishes are available in every size. Photo, theme, tiered and bundt designs need 1 kg or more.</p>
           </div>
           <div class="fgroup">
-            <div class="glabel">Message on the cake <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(optional)</span></div>
-            <input type="text" id="cakeMsg" maxlength="32" placeholder="e.g. Happy Birthday, Aarav!">
+            <div class="glabel" data-i18n-html="b.msgLabel">Message on the cake <span style="text-transform:none;letter-spacing:0;color:var(--muted)">(optional)</span></div>
+            <input type="text" id="cakeMsg" maxlength="32" data-i18n-ph="b.msgPh" placeholder="e.g. Happy Birthday, Aarav!">
             <div class="previewbox">
               <svg width="190" height="86" viewBox="0 0 190 86" aria-hidden="true"><ellipse cx="95" cy="78" rx="80" ry="6" fill="#E4C9B2"/><rect x="35" y="34" width="120" height="40" rx="8" fill="#FFFDF9"/><path d="M35 42 q12 11 24 0 q12 11 24 0 q12 11 24 0 q12 11 24 0 q10 9 24 2 v-8 H35 z" fill="#C97B63"/><rect x="90" y="12" width="4" height="18" rx="2" fill="#E9BBA6"/><ellipse cx="92" cy="8" rx="4.5" ry="7" fill="#F2A93B"/></svg>
               <div class="pmsg" id="msgPreview">Your message appears here</div>
-              <div class="psub">piped by hand, with love</div>
+              <div class="psub" data-i18n="b.piped">piped by hand, with love</div>
             </div>
           </div>
         </div>
 
         <div class="stepcard rv">
-          <h3><span class="stepnum">4</span> When do you need it?</h3>
-          <p class="hint">Regular cakes need 1–2 days; custom themes need 3–4 days to plan.</p>
+          <h3><span class="stepnum">4</span> <span data-i18n="b.s4t">When do you need it?</span></h3>
+          <p class="hint" data-i18n="b.s4hint">Regular cakes need 1–2 days; custom themes need 3–4 days to plan.</p>
           <input type="date" id="cakeDate">
           <div class="warn" id="dateWarn"></div>
           <div class="fgroup" style="margin-top:16px">
-            <div class="glabel">Pickup or delivery?</div>
+            <div class="glabel" data-i18n="b.fulfilQ">Pickup or delivery?</div>
             <div class="chips" id="fulfilChips">
-              <button type="button" class="chip" data-fulfil="Pickup — Peer Muchalla studio">Pickup · studio</button>
-              <button type="button" class="chip" data-fulfil="Delivery — Tricity">Delivery · Tricity</button>
+              <button type="button" class="chip" data-fulfil="Pickup — Peer Muchalla studio" data-i18n="b.pickup">Pickup · studio</button>
+              <button type="button" class="chip" data-fulfil="Delivery — Tricity" data-i18n="b.delivery">Delivery · Tricity</button>
             </div>
           </div>
         </div>
       </div>
 
       <aside class="summary rv" style="--d:.1s" id="summaryBox">
-        <h3>Your order</h3>
-        <p class="ssub">Updates live as you build your cake.</p>
-        <div class="srow"><span class="k">Occasion</span><span class="v" id="sumOccasion">—</span></div>
-        <div class="srow"><span class="k">Flavour</span><span class="v" id="sumFlavour">Pick a flavour</span></div>
-        <div class="srow"><span class="k">Size</span><span class="v" id="sumSize">—</span></div>
-        <div class="srow"><span class="k">Design</span><span class="v" id="sumDesign">—</span></div>
-        <div class="srow"><span class="k">Message</span><span class="v" id="sumMsg">—</span></div>
-        <div class="srow"><span class="k">Date</span><span class="v" id="sumDate">Pick a date</span></div>
-        <div class="srow"><span class="k">Fulfilment</span><span class="v" id="sumFulfil">—</span></div>
-        <div class="srow total"><span class="k">Total</span><span><span class="v">₹ ———</span><div class="price-note">exact price from Palak's price list<br>shows here before you pay · demo placeholder</div></span></div>
-        <button class="btn" id="toPayment" disabled>Proceed to Payment</button>
+        <h3 data-i18n="sum.title">Your order</h3>
+        <p class="ssub" data-i18n="sum.sub">Updates live as you build your cake.</p>
+        <div class="srow"><span class="k" data-i18n="sum.occasion">Occasion</span><span class="v" id="sumOccasion">—</span></div>
+        <div class="srow"><span class="k" data-i18n="sum.flavour">Flavour</span><span class="v" id="sumFlavour">Pick a flavour</span></div>
+        <div class="srow"><span class="k" data-i18n="sum.size">Size</span><span class="v" id="sumSize">—</span></div>
+        <div class="srow"><span class="k" data-i18n="sum.design">Design</span><span class="v" id="sumDesign">—</span></div>
+        <div class="srow"><span class="k" data-i18n="sum.message">Message</span><span class="v" id="sumMsg">—</span></div>
+        <div class="srow"><span class="k" data-i18n="sum.date">Date</span><span class="v" id="sumDate">Pick a date</span></div>
+        <div class="srow"><span class="k" data-i18n="sum.fulfil">Fulfilment</span><span class="v" id="sumFulfil">—</span></div>
+        <div class="srow total"><span class="k" data-i18n="sum.total">Total</span><span><span class="v">₹ ———</span><div class="price-note" data-i18n-html="sum.priceNote">exact price from Palak's price list<br>shows here before you pay · demo placeholder</div></span></div>
+        <button class="btn" id="toPayment" data-magnet data-i18n="sum.pay" disabled>Proceed to Payment</button>
         <p class="sum-note" id="gateNote">Choose a flavour, a size and a date to continue.</p>
         <div class="wa-order hidden" id="waOrderBox">
-          <div class="wa-order-title">In a hurry? Order this exact cake on WhatsApp</div>
-          <a class="btn wa-order-btn" id="waOrderBtn" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%27d%20like%20to%20order%20a%20cake." target="_blank" rel="noopener">Order this exact cake on WhatsApp</a>
+          <div class="wa-order-title" data-i18n="wa.title">In a hurry? Order this exact cake on WhatsApp</div>
+          <a class="btn wa-order-btn" id="waOrderBtn" data-i18n="wa.btn" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%27d%20like%20to%20order%20a%20cake." target="_blank" rel="noopener">Order this exact cake on WhatsApp</a>
           <div class="wa-preview" id="waOrderPreview"></div>
-          <button type="button" class="copy-btn" id="waOrderCopy">Copy message</button>
-          <p class="wa-order-note">Some in-app browsers drop the prefilled text — if WhatsApp opens empty, copy the message above and paste it in.</p>
+          <button type="button" class="copy-btn" id="waOrderCopy" data-i18n="wa.copy">Copy message</button>
+          <p class="wa-order-note" data-i18n="wa.note">Some in-app browsers drop the prefilled text — if WhatsApp opens empty, copy the message above and paste it in.</p>
         </div>
       </aside>
     </div>
@@ -576,9 +656,9 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 <section style="padding-top:0">
   <div class="wrap">
     <div class="strip rv">
-      <div><h3>Confirmed instantly</h3><p>Your order is booked the second payment succeeds — no "please confirm the price on WhatsApp" wait.</p></div>
-      <div><h3>Baked fresh, close to your date</h3><p>No preservatives and nothing sitting on a shelf — your cake goes in the oven for your day.</p></div>
-      <div><h3>Pickup or Tricity delivery</h3><p>Collect from our Peer Muchalla studio, or get it delivered across Zirakpur, Panchkula, Chandigarh &amp; Mohali.</p></div>
+      <div><h3 data-i18n="strip.h1">Confirmed instantly</h3><p data-i18n="strip.p1">Your order is booked the second payment succeeds — no "please confirm the price on WhatsApp" wait.</p></div>
+      <div><h3 data-i18n="strip.h2">Baked fresh, close to your date</h3><p data-i18n="strip.p2">No preservatives and nothing sitting on a shelf — your cake goes in the oven for your day.</p></div>
+      <div><h3 data-i18n="strip.h3">Pickup or Tricity delivery</h3><p data-i18n="strip.p3">Collect from our Peer Muchalla studio, or get it delivered across Zirakpur, Panchkula, Chandigarh &amp; Mohali.</p></div>
     </div>
   </div>
 </section>
@@ -586,9 +666,9 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 <section id="game" style="padding-top:10px">
   <div class="wrap">
     <div class="sec-head rv">
-      <div class="eyebrow">Just for fun</div>
-      <h2>The 60-Second <em>Cake Studio.</em></h2>
-      <p>Stack three layers, frost it, shower it with toppings, name your masterpiece — all in about a minute. Fall in love with what you make? You can order it for real.</p>
+      <div class="eyebrow" data-i18n="game.eyebrow">Just for fun</div>
+      <h2 data-i18n-html="game.h2">The 60-Second <em>Cake Studio.</em></h2>
+      <p data-i18n="game.p">Stack three layers, frost it, shower it with toppings, name your masterpiece — all in about a minute. Fall in love with what you make? You can order it for real.</p>
     </div>
     <div class="game-shell">
       <div class="game-stage rv">
@@ -613,51 +693,52 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
       </div>
       <div>
         <div class="gstep rv" id="gStep1">
-          <div class="glabel">Step 1 · Stack 3 layers</div>
+          <div class="glabel" data-i18n="game.step1">Step 1 · Stack 3 layers</div>
           <div class="chips" id="gameFlavours"></div>
-          <p class="fnote"><span id="layerStatus">0 of 3 layers stacked.</span> Premium flavours stack exactly like at the studio — they just need a 1 kg cake, which three layers happily are.</p>
+          <p class="fnote"><span id="layerStatus">0 of 3 layers stacked.</span> <span data-i18n="game.premNote">Premium flavours stack exactly like at the studio — they just need a 1 kg cake, which three layers happily are.</span></p>
           <div class="btnrow">
-            <button type="button" class="btn btn-primary" id="stackBtn" disabled>Stack this layer</button>
-            <button type="button" class="btn btn-ghost" id="undoBtn" disabled>Undo layer</button>
+            <button type="button" class="btn btn-primary" id="stackBtn" data-i18n="game.stack" disabled>Stack this layer</button>
+            <button type="button" class="btn btn-ghost" id="undoBtn" data-i18n="game.undo" disabled>Undo layer</button>
           </div>
         </div>
         <div class="gstep rv locked" id="gStep2">
-          <div class="glabel">Step 2 · Choose your frosting</div>
+          <div class="glabel" data-i18n="game.step2">Step 2 · Choose your frosting</div>
           <div class="chips" id="gameFrostings"></div>
-          <p class="fnote">One glossy coat over the whole cake — pick the mood.</p>
+          <p class="fnote" data-i18n="game.frostNote">One glossy coat over the whole cake — pick the mood.</p>
         </div>
         <div class="gstep rv locked" id="gStep3">
-          <div class="glabel">Step 3 · Toppings — tap to sprinkle</div>
+          <div class="glabel" data-i18n="game.step3">Step 3 · Toppings — tap to sprinkle</div>
           <div class="chips" id="gameToppings">
-            <button type="button" class="chip" data-top="cherry">Cherry +1</button>
-            <button type="button" class="chip" data-top="berries">Berries +1</button>
-            <button type="button" class="chip" data-top="shards">Choco shards +1</button>
-            <button type="button" class="chip" data-top="gold">Gold dust +1</button>
+            <button type="button" class="chip" data-top="cherry" data-i18n="game.topCherry">Cherry +1</button>
+            <button type="button" class="chip" data-top="berries" data-i18n="game.topBerries">Berries +1</button>
+            <button type="button" class="chip" data-top="shards" data-i18n="game.topShards">Choco shards +1</button>
+            <button type="button" class="chip" data-top="gold" data-i18n="game.topGold">Gold dust +1</button>
           </div>
-          <p class="fnote">Toppings so far: <b id="topStatus">0</b> · Feeling done? Head to Step 4 any time.</p>
+          <p class="fnote"><span data-i18n="game.topSoFar">Toppings so far:</span> <b id="topStatus">0</b> <span data-i18n="game.topDone">· Feeling done? Head to Step 4 any time.</span></p>
         </div>
         <div class="gstep rv locked" id="gStep4">
-          <div class="glabel">Step 4 · Name your creation</div>
-          <input type="text" id="gameName" maxlength="40" placeholder="e.g. The Midnight Choco-Berry Tower — or leave it to us">
+          <div class="glabel" data-i18n="game.step4">Step 4 · Name your creation</div>
+          <input type="text" id="gameName" maxlength="40" data-i18n-ph="game.namePh" placeholder="e.g. The Midnight Choco-Berry Tower — or leave it to us">
           <div class="btnrow">
-            <button type="button" class="btn btn-primary" id="finishBtn">Finish my cake</button>
-            <button type="button" class="btn btn-ghost" id="playAgainBtn">Play again</button>
+            <button type="button" class="btn btn-primary" id="finishBtn" data-i18n="game.finish">Finish my cake</button>
+            <button type="button" class="btn btn-ghost" id="playAgainBtn" data-i18n="game.again">Play again</button>
           </div>
         </div>
       </div>
     </div>
     <div class="game-result hidden" id="gameResult">
-      <div class="eyebrow">The judges have tasted it</div>
+      <div class="eyebrow" data-i18n="game.resEyebrow">The judges have tasted it</div>
       <h3 id="resultTitle">Your creation</h3>
       <p class="judge" id="resultJudge"></p>
       <p class="spec" id="resultSpec"></p>
       <div class="game-cta">
-        <button type="button" class="btn btn-primary" id="orderRealBtn">Order this cake for real</button>
-        <a class="btn btn-wa" id="gameWaBtn" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20built%20a%20cake%20in%20your%2060-Second%20Cake%20Studio." target="_blank" rel="noopener">Send my creation to Palak on WhatsApp</a>
+        <button type="button" class="btn btn-primary" id="orderRealBtn" data-i18n="game.orderReal">Order this cake for real</button>
+        <button type="button" class="btn btn-save" id="saveCreationBtn" data-i18n="game.save">Save my creation</button>
+        <a class="btn btn-wa" id="gameWaBtn" data-i18n="game.sendWa" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20built%20a%20cake%20in%20your%2060-Second%20Cake%20Studio." target="_blank" rel="noopener">Send my creation to Palak on WhatsApp</a>
       </div>
       <div class="wa-preview" id="gameWaPreview"></div>
-      <button type="button" class="copy-btn" id="gameWaCopy">Copy message</button>
-      <p class="wa-order-note">This exact message travels with the WhatsApp button — if WhatsApp opens empty, copy it and paste it in.</p>
+      <button type="button" class="copy-btn" id="gameWaCopy" data-i18n="wa.copy">Copy message</button>
+      <p class="wa-order-note" data-i18n="game.waNote">This exact message travels with the WhatsApp button — if WhatsApp opens empty, copy it and paste it in.</p>
     </div>
   </div>
 </section>
@@ -665,35 +746,35 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 <section id="payment" class="hidden" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head">
-      <div class="eyebrow">Almost done</div>
-      <h2>Pay &amp; confirm your order.</h2>
-      <p>This is a demo checkout — on the live page, this is where UPI and cards confirm the order instantly.</p>
+      <div class="eyebrow" data-i18n="pay.eyebrow">Almost done</div>
+      <h2 data-i18n="pay.h2">Pay &amp; confirm your order.</h2>
+      <p data-i18n="pay.p">This is a demo checkout — on the live page, this is where UPI and cards confirm the order instantly.</p>
     </div>
     <div class="paycard" id="payCard">
       <div id="payForm">
         <div class="paymethods chips">
           <button type="button" class="chip sel" data-pay="UPI">UPI</button>
-          <button type="button" class="chip" data-pay="Card">Card</button>
-          <button type="button" class="chip" data-pay="Net banking">Net banking</button>
+          <button type="button" class="chip" data-pay="Card" data-i18n="pay.card">Card</button>
+          <button type="button" class="chip" data-pay="Net banking" data-i18n="pay.netbank">Net banking</button>
         </div>
         <div class="paygrid">
-          <div class="fgroup"><div class="glabel">Your name</div><input type="text" id="custName" placeholder="e.g. Simran Kaur"></div>
-          <div class="fgroup"><div class="glabel">Mobile (for order updates)</div><input type="tel" id="custPhone" placeholder="e.g. 98765 43210" maxlength="13"></div>
+          <div class="fgroup"><div class="glabel" data-i18n="pay.name">Your name</div><input type="text" id="custName" placeholder="e.g. Simran Kaur"></div>
+          <div class="fgroup"><div class="glabel" data-i18n="pay.mobile">Mobile (for order updates)</div><input type="tel" id="custPhone" placeholder="e.g. 98765 43210" maxlength="13"></div>
         </div>
         <div class="fgroup" style="margin-top:14px"><div class="glabel" id="payFieldLabel">UPI ID</div><input type="text" id="payField" placeholder="yourname@upi"></div>
-        <button class="btn btn-primary" id="payNow" style="width:100%;margin-top:20px">Pay &amp; Confirm Order (demo)</button>
-        <div class="secureline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2.5" stroke="#8A6F63" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#8A6F63" stroke-width="2"/></svg><span>Demo payment — no real money moves. On the live page this is a secure checkout, and your order confirms the moment it succeeds.</span></div>
+        <button class="btn btn-primary" id="payNow" style="width:100%;margin-top:20px" data-i18n="pay.now">Pay &amp; Confirm Order (demo)</button>
+        <div class="secureline"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="10" rx="2.5" stroke="#8A6F63" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#8A6F63" stroke-width="2"/></svg><span data-i18n="pay.secure">Demo payment — no real money moves. On the live page this is a secure checkout, and your order confirms the moment it succeeds.</span></div>
       </div>
       <div id="successView">
         <div class="tick"><svg width="38" height="38" viewBox="0 0 24 24" fill="none"><path d="M4 12.5 L9.5 18 L20 6.5" stroke="#5B7A4E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
-        <h3>Order confirmed!</h3>
-        <p style="color:var(--muted);font-weight:300">Palak has your order — freshly queued for your date.</p>
-        <div class="refchip">Order reference&nbsp;<b id="orderRef">PCB-0000</b></div>
+        <h3 data-i18n="suc.h3">Order confirmed!</h3>
+        <p style="color:var(--muted);font-weight:300" data-i18n="suc.sub">Palak has your order — freshly queued for your date.</p>
+        <div class="refchip"><span data-i18n="suc.ref">Order reference</span>&nbsp;<b id="orderRef">PCB-0000</b></div>
         <p class="success-note" id="successRecap"></p>
-        <p class="success-note"><b style="color:var(--cocoa)">That's it — your order confirmed instantly.</b> No waiting for a WhatsApp price confirmation, no back-and-forth. A confirmation lands on your phone right away.</p>
+        <p class="success-note" data-i18n-html="suc.note"><b style="color:var(--cocoa)">That's it — your order confirmed instantly.</b> No waiting for a WhatsApp price confirmation, no back-and-forth. A confirmation lands on your phone right away.</p>
         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px">
-          <a class="btn btn-wa" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20just%20placed%20an%20order%20on%20your%20website%20and%20have%20a%20question." target="_blank" rel="noopener">Questions? WhatsApp Palak</a>
-          <button class="btn btn-ghost" id="orderAgain" type="button">Order another cake</button>
+          <a class="btn btn-wa" data-i18n="suc.wa" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20just%20placed%20an%20order%20on%20your%20website%20and%20have%20a%20question." target="_blank" rel="noopener">Questions? WhatsApp Palak</a>
+          <button class="btn btn-ghost" id="orderAgain" type="button" data-i18n="suc.again">Order another cake</button>
         </div>
       </div>
     </div>
@@ -705,17 +786,17 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
     <div class="foot">
       <div>
         <div class="fname">Palak's Cakes N Bakes</div>
-        <p>100% eggless, preservative-free custom cakes — hand-crafted fresh by Chef Palak Sukhija in our in-house studio.</p>
+        <p data-i18n="foot.tag">100% eggless, preservative-free custom cakes — hand-crafted fresh by Chef Palak Sukhija in our in-house studio.</p>
         <p style="margin-top:10px">Flat 17, Aastha City, Peer Muchalla,<br>Zirakpur, Punjab 140603</p>
       </div>
       <div>
-        <h4>Talk to us</h4>
-        <p>WhatsApp &amp; calls<br><a href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20have%20a%20question%20about%20a%20cake." target="_blank" rel="noopener">+91 91157 03157</a></p>
+        <h4 data-i18n="foot.talk">Talk to us</h4>
+        <p><span data-i18n="foot.waCalls">WhatsApp &amp; calls</span><br><a href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20have%20a%20question%20about%20a%20cake." target="_blank" rel="noopener">+91 91157 03157</a></p>
         <p style="margin-top:10px">Instagram<br><a href="https://www.instagram.com/palaks_cakes_n_bakes" target="_blank" rel="noopener">@palaks_cakes_n_bakes</a></p>
       </div>
       <div>
-        <h4>Good to know</h4>
-        <p>Open all days · 9 AM – 9 PM<br>Regular cakes: 1–2 days' notice<br>Custom themes: 3–4 days' notice<br>Serving Zirakpur · Panchkula · Chandigarh · Mohali</p>
+        <h4 data-i18n="foot.good">Good to know</h4>
+        <p data-i18n-html="foot.goodLines">Open all days · 9 AM – 9 PM<br>Regular cakes: 1–2 days' notice<br>Custom themes: 3–4 days' notice<br>Serving Zirakpur · Panchkula · Chandigarh · Mohali</p>
       </div>
     </div>
     <div class="fbottom">
@@ -727,11 +808,11 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 
 <!-- ---------- chatbot ---------- -->
 <div class="chatwrap">
-  <div class="chat-teaser" id="chatTeaser" role="button" tabindex="0">Questions about a cake? Chat with us</div>
+  <div class="chat-teaser" id="chatTeaser" role="button" tabindex="0" data-i18n="chat.teaser">Questions about a cake? Chat with us</div>
   <div class="chat-panel" id="chatPanel" aria-hidden="true">
     <div class="chat-head">
-      <span class="avatar">P</span>
-      <span class="who"><b>Palak's Cake Assistant</b><span>Eggless studio · Zirakpur · replies instantly</span></span>
+      <span class="avatar"><svg width="25" height="25" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 25.5 h18 l-2.4 13.2 a3.4 3.4 0 0 1 -3.3 2.8 h-6.6 a3.4 3.4 0 0 1 -3.3 -2.8z" fill="#6E4636"/><path d="M19.6 27 l1.3 11.2 M24 27.4 v11.6 M28.4 27 l-1.3 11.2" stroke="#4A2C22" stroke-width="1.6" stroke-linecap="round" opacity=".7"/><ellipse cx="13.6" cy="24.6" rx="4.8" ry="3.8" fill="#FFF6EA"/><ellipse cx="34.4" cy="24.6" rx="4.8" ry="3.8" fill="#FFF6EA"/><circle cx="17.6" cy="21.4" r="6.1" fill="#FFF6EA"/><circle cx="30.4" cy="21.4" r="6.1" fill="#FFF6EA"/><circle cx="24" cy="16.6" r="7.1" fill="#FFFDF9"/><path d="M25.6 9.8 q1.8 -3.9 5.6 -4.6" stroke="#5B7A4E" stroke-width="1.9" fill="none" stroke-linecap="round"/><circle cx="24" cy="10.6" r="3.7" fill="#C0392B"/><circle cx="22.7" cy="9.3" r="1.2" fill="#E88B7D"/><path d="M39 11.5 l.95 2.4 2.4.95 -2.4.95 -.95 2.4 -.95 -2.4 -2.4 -.95 2.4 -.95z" fill="#B9822E"/></svg></span>
+      <span class="who"><b>Palak's Cake Assistant</b><span data-i18n="chat.sub">Eggless studio · Zirakpur · replies instantly</span></span>
       <button class="chat-close" id="chatClose" type="button" aria-label="Close chat">×</button>
     </div>
     <div class="chat-body" id="chatBody">
@@ -739,12 +820,12 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
     </div>
     <div class="chat-chips" id="chatChips"></div>
     <form class="chat-input" id="chatForm">
-      <input type="text" id="chatText" placeholder="Ask about flavours, sizes, delivery…" autocomplete="off" aria-label="Type your message">
+      <input type="text" id="chatText" data-i18n-ph="chat.ph" placeholder="Ask about flavours, sizes, delivery…" autocomplete="off" aria-label="Type your message">
       <button type="submit" aria-label="Send message"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M4 12 L20 4 L14.5 20 L11 13.5 Z" fill="currentColor" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></button>
     </form>
   </div>
   <button class="chat-fab" id="chatFab" type="button" aria-label="Open chat with Palak's Cake Assistant">
-    <svg width="27" height="27" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.8-.3-4-.9L3 20l1-5.3A8.5 8.5 0 1 1 21 11.5z" fill="currentColor" opacity=".18"/><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5c-1.4 0-2.8-.3-4-.9L3 20l1-5.3A8.5 8.5 0 1 1 21 11.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="8.4" cy="11.5" r="1.25" fill="currentColor"/><circle cx="12.5" cy="11.5" r="1.25" fill="currentColor"/><circle cx="16.6" cy="11.5" r="1.25" fill="currentColor"/></svg>
+    <span class="fab-ico"><svg width="31" height="31" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 25.5 h18 l-2.4 13.2 a3.4 3.4 0 0 1 -3.3 2.8 h-6.6 a3.4 3.4 0 0 1 -3.3 -2.8z" fill="#C98A5F"/><path d="M19.6 27 l1.3 11.2 M24 27.4 v11.6 M28.4 27 l-1.3 11.2" stroke="#7A4A21" stroke-width="1.6" stroke-linecap="round" opacity=".6"/><ellipse cx="13.6" cy="24.6" rx="4.8" ry="3.8" fill="#F2D7C9"/><ellipse cx="34.4" cy="24.6" rx="4.8" ry="3.8" fill="#F2D7C9"/><circle cx="17.6" cy="21.4" r="6.1" fill="#F2D7C9"/><circle cx="30.4" cy="21.4" r="6.1" fill="#F2D7C9"/><circle cx="24" cy="16.6" r="7.1" fill="#F6E7D8"/><path d="M25.6 9.8 q1.8 -3.9 5.6 -4.6" stroke="#5B7A4E" stroke-width="1.9" fill="none" stroke-linecap="round"/><circle cx="24" cy="10.6" r="3.7" fill="#C0392B"/><circle cx="22.7" cy="9.3" r="1.2" fill="#E88B7D"/><path d="M39 11.5 l.95 2.4 2.4.95 -2.4.95 -.95 2.4 -.95 -2.4 -2.4 -.95 2.4 -.95z" fill="#F2C894"/><circle cx="9.4" cy="13.5" r="1.3" fill="#F2C894" opacity=".85"/></svg></span>
     <span class="cdot" id="chatDot"></span>
   </button>
 </div>
@@ -754,7 +835,7 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 window.copyMsgText = function(text, btn){
   if (!text) return;
   function done(){
-    if (btn) { var o = btn.textContent; btn.textContent = "Copied"; window.setTimeout(function(){ btn.textContent = o; }, 1600); }
+    if (btn) { var o = btn.textContent; btn.textContent = (window.t ? window.t("ui.copied") : "Copied"); window.setTimeout(function(){ btn.textContent = o; }, 1600); }
   }
   function legacy(){
     var ta = document.createElement("textarea");
@@ -770,6 +851,397 @@ window.copyMsgText = function(text, btn){
 };
 </script>
 <script>
+/* ================= v4: i18n — English / हिन्दी / ਪੰਜਾਬੀ ================= */
+(function(){
+  "use strict";
+  var I18N = {
+  en: {
+    "brand.sub":"Eggless Cake Studio · Zirakpur",
+    "nav.eggless":"● 100% Eggless","nav.cakes":"Cakes","nav.studio":"Cake Studio","nav.wa":"WhatsApp Us",
+    "hero.eyebrow":"Peer Muchalla · Zirakpur · Tricity Delivery",
+    "hero.h1":"100% eggless cakes that turn celebrations into <em>memories.</em>",
+    "hero.lede":"Premium, preservative-free and naturally flavoured — designed around your story, baked fresh in our Zirakpur studio, and now orderable online in about a minute.",
+    "hero.ctaBuild":"Build Your Cake →","hero.ctaBrowse":"Browse the Range",
+    "hero.trust1":"<b>★ 5.0</b> loved by Tricity families","hero.trust2":"<b>35+</b> flavours to choose from","hero.trust3":"<b>0</b> preservatives, ever",
+    "hero.note":"baked to order — never stocked","hero.drag":"Drag to spin",
+    "gal.eyebrow":"The Range","gal.h2":"Start with a style <em>you love.</em>",
+    "gal.p":"Every cake below comes from our real studio range — tap one to start building, or design your own from scratch. All 100% eggless, always.",
+    "gal.tag1":"Most loved","gal.tag2":"Personal","gal.tag3":"Weddings","gal.tag4":"Everyday","gal.tag5":"Wholesome","gal.tag6":"Tea-time",
+    "gal.from1kg":"from 1 kg","gal.from2kg":"from 2 kg","gal.fromHalf":"from ½ kg",
+    "gal.t1":"Custom Theme Cakes","gal.d1":"Birthdays, characters & stories — sculpted toppers, tiers and name prints, designed around your celebration.",
+    "gal.t2":"Photo Print Cakes","gal.d2":"Your favourite picture, printed edible and framed in cream — a favourite for birthdays and anniversaries.",
+    "gal.t3":"Wedding & Tiered Cakes","gal.d3":"Elegant multi-tier showpieces for weddings and big milestones — planned with you, layer by layer.",
+    "gal.t4":"Classic Cream Cakes","gal.d4":"Simple, beautiful cream finishes in our classic flavours — ready in 1–2 days, from ½ kg.",
+    "gal.t5":"Wholesome Bundt Cakes","gal.d5":"Whole wheat, no maida, no refined sugar or oil — sweetened with jaggery and loaded with premium nuts.",
+    "gal.t6":"Tea-Time Dry Cakes","gal.d6":"Homely, keeps beautifully for 4–5 days, and perfect with evening chai. Brownies & cupcake boxes too — just ask.",
+    "story.eyebrow":"From Palak's Kitchen","story.h2":"One studio, one pair of hands, <em>every cake made to order.</em>",
+    "story.p":"Every cake at Palak's is hand-crafted fresh by Chef Palak Sukhija in her in-house studio at Peer Muchalla — nothing sits on a shelf, and nothing is baked before your order comes in. Natural flavours, zero preservatives, and always, always eggless.",
+    "story.sign":"— that's the whole secret, really",
+    "stat.l1":"Flavours in the kitchen","stat.l2":"Preservatives, ever","stat.l3":"Loved across the Tricity","stat.l4":"Open all days, AM to PM",
+    "journey.eyebrow":"The Journey","journey.h2":"From our oven to <em>your celebration.</em>",
+    "journey.p":"No phone tag, no guesswork — here is exactly how your cake travels, from a happy idea to the first slice.",
+    "journey.step1":"Step 1","journey.step2":"Step 2","journey.step3":"Step 3",
+    "journey.s1t":"You design it","journey.s1p":"Pick a flavour, size and design in the builder below — or dream it up in the Cake Studio. <b>Your order confirms the moment you pay</b>, so there is no price ping-pong on WhatsApp.",
+    "journey.s2t":"Palak bakes it fresh","journey.s2p":"Chef Palak bakes every cake herself in her Peer Muchalla studio — <b>100% eggless, preservative-free, baked to order, never stocked</b>. Regular cakes need 1–2 days; custom themes, 3–4.",
+    "journey.s3t":"Delivered to your celebration","journey.s3p":"Collect it from the studio, or get it delivered across <b>Zirakpur · Panchkula · Chandigarh · Mohali</b> — boxed with care and ready for the first slice.",
+    "b.eyebrow":"Build a Cake","b.h2":"Your cake, in four <em>little steps.</em>",
+    "b.p":"Pick a flavour, a size and a date — your order confirms the moment you pay. No waiting on WhatsApp for a price reply.",
+    "b.s1t":"What's the occasion?","b.s1hint":"Optional — it helps Palak design in the right mood.",
+    "b.occ1":"Birthday","b.occ2":"Anniversary","b.occ3":"Wedding","b.occ4":"Baby shower","b.occ5":"Kids' theme party","b.occ6":"Just because",
+    "b.s2t":"Choose a flavour","b.s2hint":"From Palak's 35+ flavour kitchen — every single one eggless.",
+    "b.classic":"Classic flavours · from ½ kg","b.premium":"Premium flavours · from 1 kg",
+    "b.demoNote":"Demo flavour list — Palak's full 35+ flavour menu appears here on the live page.",
+    "b.s3t":"Size & design","b.s3hint":"Custom designs start from 1 kg, just like at the studio.",
+    "b.howbig":"How big?","b.design":"Design",
+    "b.design1":"Simple cream finish","b.design2":"Photo print","b.design3":"Theme + topper","b.design4":"Tiered","b.design5":"Wholesome bundt",
+    "b.designNote":"Simple cream finishes are available in every size. Photo, theme, tiered and bundt designs need 1 kg or more.",
+    "b.designNoteSmall":"Custom designs need 1 kg or more — pick a bigger size to unlock photo, theme, tiered and bundt designs.",
+    "b.msgLabel":"Message on the cake <span style=\"text-transform:none;letter-spacing:0;color:var(--muted)\">(optional)</span>",
+    "b.msgPh":"e.g. Happy Birthday, Aarav!","b.msgPreview":"Your message appears here","b.piped":"piped by hand, with love",
+    "b.s4t":"When do you need it?","b.s4hint":"Regular cakes need 1–2 days; custom themes need 3–4 days to plan.",
+    "b.fulfilQ":"Pickup or delivery?","b.pickup":"Pickup · studio","b.delivery":"Delivery · Tricity",
+    "b.serves":"serves","b.premTitle":"Premium flavours start from 1 kg","b.customTitle":"Custom designs start from 1 kg",
+    "sum.title":"Your order","sum.sub":"Updates live as you build your cake.",
+    "sum.occasion":"Occasion","sum.flavour":"Flavour","sum.size":"Size","sum.design":"Design","sum.message":"Message","sum.date":"Date","sum.fulfil":"Fulfilment","sum.total":"Total",
+    "sum.priceNote":"exact price from Palak's price list<br>shows here before you pay · demo placeholder",
+    "sum.pay":"Proceed to Payment","sum.pickFlavour":"Pick a flavour","sum.pickDate":"Pick a date",
+    "gate.initial":"Choose a flavour, a size and a date to continue.","gate.ok":"Looking good — one tap to payment.","gate.need":"Still needed:","gate.flavour":"a flavour","gate.size":"a size","gate.date":"a date",
+    "warn.custom":"Custom themes usually need 3–4 days. This date is sooner — Palak will confirm on WhatsApp if she can still make it happen.",
+    "warn.regular":"Regular cakes are best ordered 1–2 days ahead. This date is tight — Palak will confirm availability right away.",
+    "wa.title":"In a hurry? Order this exact cake on WhatsApp","wa.btn":"Order this exact cake on WhatsApp","wa.copy":"Copy message",
+    "wa.note":"Some in-app browsers drop the prefilled text — if WhatsApp opens empty, copy the message above and paste it in.",
+    "wa.greeting":"Hi Palak ji! I'd like to order a cake from Palak's Cakes N Bakes.",
+    "wa.occasion":"Occasion","wa.flavour":"Flavour","wa.size":"Size","wa.design":"Design","wa.msgOnCake":"Message on the cake","wa.neededOn":"Needed on","wa.fulfilment":"Fulfilment","wa.myName":"My name:",
+    "pay.eyebrow":"Almost done","pay.h2":"Pay & confirm your order.",
+    "pay.p":"This is a demo checkout — on the live page, this is where UPI and cards confirm the order instantly.",
+    "pay.name":"Your name","pay.mobile":"Mobile (for order updates)","pay.now":"Pay & Confirm Order (demo)",
+    "pay.secure":"Demo payment — no real money moves. On the live page this is a secure checkout, and your order confirms the moment it succeeds.",
+    "pay.card":"Card","pay.netbank":"Net banking","pay.fUpi":"UPI ID","pay.fCard":"Card number","pay.fBank":"Bank","pay.phUpi":"yourname@upi","pay.phCard":"1234 5678 9012 3456","pay.phBank":"Select your bank (demo)",
+    "suc.h3":"Order confirmed!","suc.sub":"Palak has your order — freshly queued for your date.","suc.ref":"Order reference",
+    "suc.note":"<b style=\"color:var(--cocoa)\">That's it — your order confirmed instantly.</b> No waiting for a WhatsApp price confirmation, no back-and-forth. A confirmation lands on your phone right away.",
+    "suc.wa":"Questions? WhatsApp Palak","suc.again":"Order another cake",
+    "strip.h1":"Confirmed instantly","strip.p1":"Your order is booked the second payment succeeds — no \"please confirm the price on WhatsApp\" wait.",
+    "strip.h2":"Baked fresh, close to your date","strip.p2":"No preservatives and nothing sitting on a shelf — your cake goes in the oven for your day.",
+    "strip.h3":"Pickup or Tricity delivery","strip.p3":"Collect from our Peer Muchalla studio, or get it delivered across Zirakpur, Panchkula, Chandigarh & Mohali.",
+    "game.eyebrow":"Just for fun","game.h2":"The 60-Second <em>Cake Studio.</em>",
+    "game.p":"Stack three layers, frost it, shower it with toppings, name your masterpiece — all in about a minute. Fall in love with what you make? You can order it for real.",
+    "game.timerIdle":"Studio timer — starts on your first layer","game.timerTime":"Time! Finishing touches still count",
+    "game.caption0":"Pick a flavour on the right, then tap “Stack this layer”. Three layers make a cake.",
+    "game.step1":"Step 1 · Stack 3 layers","game.layersStatus":"{n} of 3 layers stacked.",
+    "game.premNote":"Premium flavours stack exactly like at the studio — they just need a 1 kg cake, which three layers happily are.",
+    "game.stack":"Stack this layer","game.undo":"Undo layer",
+    "game.step2":"Step 2 · Choose your frosting","game.frostNote":"One glossy coat over the whole cake — pick the mood.",
+    "game.step3":"Step 3 · Toppings — tap to sprinkle","game.topCherry":"Cherry +1","game.topBerries":"Berries +1","game.topShards":"Choco shards +1","game.topGold":"Gold dust +1",
+    "game.topSoFar":"Toppings so far:","game.topDone":"· Feeling done? Head to Step 4 any time.",
+    "game.step4":"Step 4 · Name your creation","game.namePh":"e.g. The Midnight Choco-Berry Tower — or leave it to us","game.finish":"Finish my cake","game.again":"Play again",
+    "cap.pick":"{f} — lovely. Tap “Stack this layer” when ready.","cap.l1":"Layer one down — two to go.","cap.l2":"Two layers — one more for the full tower.","cap.l3":"Three layers! A proper tower. Now choose the frosting.",
+    "cap.frost":"{f} — glossy and gorgeous. Now the toppings, if you fancy.","cap.max":"That's a fully loaded cake — even Palak is impressed.",
+    "cap.top1":"Lovely — keep going, or call it perfect.","cap.top2":"The judges are leaning in…","cap.top3":"Sparkle level: celebration-ready.",
+    "game.resEyebrow":"The judges have tasted it",
+    "judge.0":"“Minimalist. Brave. Palak approves of the restraint.”","judge.1":"“Elegant and balanced — the judges are nodding along.”","judge.2":"“Generous, joyful, celebration-ready. A proper crowd-pleaser.”","judge.3":"“An absolute showstopper. The judges need a moment to recover.”",
+    "spec.layers":"Layers, bottom to top:","spec.frosting":"Frosting:","spec.onTop":"On top:","spec.note":"Three layers ≈ a 1 kg cake — and of course, 100% eggless, like everything at Palak's.","spec.cleanTop":"a clean, minimalist top",
+    "tally.cherry1":"1 cherry","tally.cherryN":"cherries","tally.berries1":"1 berry cluster","tally.berriesN":"berry clusters","tally.shards1":"1 choco shard","tally.shardsN":"choco shards","tally.gold1":"a dusting of gold dust","tally.goldN":"gold dust",
+    "game.orderReal":"Order this cake for real","game.sendWa":"Send my creation to Palak on WhatsApp","game.save":"Save my creation",
+    "game.waNote":"This exact message travels with the WhatsApp button — if WhatsApp opens empty, copy it and paste it in.",
+    "gwa.greeting":"Hi Palak ji! I built a cake in your 60-Second Cake Studio:","gwa.layers":"Layers (bottom to top):","gwa.frosting":"Frosting:","gwa.toppings":"Toppings:","gwa.none":"none — keeping it clean and classic","gwa.named":"I named it:","gwa.ask":"Can you make this cake for real? I'd love to order it.",
+    "save.studio":"The 60-Second Cake Studio","save.footer":"100% Eggless · Preservative-Free · Baked Fresh in Zirakpur",
+    "chat.teaser":"Questions about a cake? Chat with us","chat.sub":"Eggless studio · Zirakpur · replies instantly","chat.ph":"Ask about flavours, sizes, delivery…",
+    "chip.flavours":"Flavours","chip.sizes":"Sizes & servings","chip.delivery":"Delivery areas","chip.order":"How to order","chip.enquiry":"Start an enquiry","chip.whatsapp":"Talk on WhatsApp",
+    "foot.tag":"100% eggless, preservative-free custom cakes — hand-crafted fresh by Chef Palak Sukhija in our in-house studio.",
+    "foot.talk":"Talk to us","foot.waCalls":"WhatsApp & calls","foot.good":"Good to know",
+    "foot.goodLines":"Open all days · 9 AM – 9 PM<br>Regular cakes: 1–2 days' notice<br>Custom themes: 3–4 days' notice<br>Serving Zirakpur · Panchkula · Chandigarh · Mohali",
+    "ui.copied":"Copied"
+  },
+  hi: {
+    "brand.sub":"एगलेस केक स्टूडियो · ज़ीरकपुर",
+    "nav.eggless":"● 100% एगलेस","nav.cakes":"केक","nav.studio":"केक स्टूडियो","nav.wa":"WhatsApp करें",
+    "hero.eyebrow":"पीर मुच्छला · ज़ीरकपुर · ट्राइसिटी डिलीवरी",
+    "hero.h1":"100% एगलेस केक, जो हर जश्न को बना दें <em>यादगार।</em>",
+    "hero.lede":"प्रीमियम, बिना प्रिज़र्वेटिव और नैचुरल फ्लेवर के साथ — आपकी कहानी के हिसाब से डिज़ाइन किया गया, हमारे ज़ीरकपुर स्टूडियो में ताज़ा बेक किया गया, और अब सिर्फ़ एक मिनट में ऑनलाइन ऑर्डर करें।",
+    "hero.ctaBuild":"अपना केक बनाएँ →","hero.ctaBrowse":"रेंज देखें",
+    "hero.trust1":"<b>★ 5.0</b> ट्राइसिटी परिवारों का प्यार","hero.trust2":"<b>35+</b> फ्लेवर चुनने के लिए","hero.trust3":"<b>0</b> प्रिज़र्वेटिव, कभी नहीं",
+    "hero.note":"ऑर्डर पर ताज़ा बेक — कभी स्टॉक नहीं","hero.drag":"घुमाने के लिए खींचें",
+    "gal.eyebrow":"हमारी रेंज","gal.h2":"अपनी पसंद की स्टाइल से <em>शुरुआत करें।</em>",
+    "gal.p":"नीचे हर केक हमारी असली स्टूडियो रेंज से है — किसी एक को चुनकर बनाना शुरू करें, या बिल्कुल अपनी डिज़ाइन बनाएँ। सब 100% एगलेस, हमेशा।",
+    "gal.tag1":"सबसे पसंदीदा","gal.tag2":"पर्सनल","gal.tag3":"शादियाँ","gal.tag4":"रोज़मर्रा","gal.tag5":"सेहतमंद","gal.tag6":"चाय-टाइम",
+    "gal.from1kg":"1 kg से शुरू","gal.from2kg":"2 kg से शुरू","gal.fromHalf":"½ kg से शुरू",
+    "gal.t1":"कस्टम थीम केक","gal.d1":"जन्मदिन, कैरेक्टर और कहानियाँ — हाथ से बने टॉपर, टियर्स और नाम प्रिंट, आपके जश्न के हिसाब से डिज़ाइन।",
+    "gal.t2":"फोटो प्रिंट केक","gal.d2":"आपकी पसंदीदा तस्वीर, खाने योग्य प्रिंट और क्रीम की फ्रेम में — जन्मदिन और सालगिरह के लिए ख़ास पसंद।",
+    "gal.t3":"शादी व टियर्ड केक","gal.d3":"शादियों और बड़े मौकों के लिए शानदार मल्टी-टियर केक — आपके साथ, परत-दर-परत प्लान किए गए।",
+    "gal.t4":"क्लासिक क्रीम केक","gal.d4":"हमारे क्लासिक फ्लेवर में सादे, सुंदर क्रीम फिनिश — 1–2 दिन में तैयार, ½ kg से शुरू।",
+    "gal.t5":"सेहतमंद बंड्ट केक","gal.d5":"गेहूँ का आटा, बिना मैदा, बिना रिफ़ाइंड चीनी या तेल — गुड़ की मिठास और भरपूर प्रीमियम ड्राई फ्रूट्स।",
+    "gal.t6":"चाय-टाइम ड्राई केक","gal.d6":"घर जैसा स्वाद, 4–5 दिन तक बढ़िया रहता है, शाम की चाय के साथ परफेक्ट। ब्राउनीज़ और कपकेक बॉक्स भी — बस पूछिए।",
+    "story.eyebrow":"पलक की रसोई से","story.h2":"एक स्टूडियो, एक जोड़ी हाथ, <em>हर केक ऑर्डर पर बना।</em>",
+    "story.p":"Palak's का हर केक शेफ़ पलक सुखीजा अपने पीर मुच्छला स्थित इन-हाउस स्टूडियो में ख़ुद ताज़ा बनाती हैं — कुछ भी शेल्फ़ पर रखा नहीं मिलता, और आपका ऑर्डर आने से पहले कुछ भी बेक नहीं होता। नैचुरल फ्लेवर, ज़ीरो प्रिज़र्वेटिव, और हमेशा, हमेशा एगलेस।",
+    "story.sign":"— बस, यही पूरा राज़ है",
+    "stat.l1":"रसोई में फ्लेवर","stat.l2":"प्रिज़र्वेटिव, कभी नहीं","stat.l3":"पूरे ट्राइसिटी का प्यार","stat.l4":"हर दिन खुला, सुबह से शाम",
+    "journey.eyebrow":"आपके केक का सफ़र","journey.h2":"हमारे ओवन से <em>आपके जश्न तक।</em>",
+    "journey.p":"कोई फोन-टैग नहीं, कोई अंदाज़ा नहीं — देखिए, आपका केक एक खुशनुमा ख़याल से पहले स्लाइस तक कैसे पहुँचता है।",
+    "journey.step1":"स्टेप 1","journey.step2":"स्टेप 2","journey.step3":"स्टेप 3",
+    "journey.s1t":"आप डिज़ाइन करते हैं","journey.s1p":"नीचे बिल्डर में फ्लेवर, साइज़ और डिज़ाइन चुनें — या केक स्टूडियो में अपना सपनों का केक बनाएँ। <b>पेमेंट करते ही आपका ऑर्डर कन्फर्म हो जाता है</b>, इसलिए WhatsApp पर दाम के लिए कोई आगे-पीछे नहीं।",
+    "journey.s2t":"पलक इसे ताज़ा बेक करती हैं","journey.s2p":"शेफ़ पलक हर केक अपने पीर मुच्छला स्टूडियो में ख़ुद बेक करती हैं — <b>100% एगलेस, बिना प्रिज़र्वेटिव, ऑर्डर पर बना, कभी स्टॉक नहीं</b>। आम केक के लिए 1–2 दिन; कस्टम थीम के लिए 3–4 दिन।",
+    "journey.s3t":"आपके जश्न तक डिलीवर","journey.s3p":"स्टूडियो से ख़ुद ले जाएँ, या <b>ज़ीरकपुर · पंचकुला · चंडीगढ़ · मोहाली</b> में डिलीवरी पाएँ — संभालकर पैक किया हुआ, पहले स्लाइस के लिए तैयार।",
+    "b.eyebrow":"केक बनाएँ","b.h2":"आपका केक, चार <em>छोटे स्टेप्स में।</em>",
+    "b.p":"फ्लेवर, साइज़ और तारीख़ चुनें — पेमेंट करते ही ऑर्डर कन्फर्म। WhatsApp पर दाम के जवाब का कोई इंतज़ार नहीं।",
+    "b.s1t":"मौका क्या है?","b.s1hint":"ऑप्शनल — इससे पलक को सही मूड में डिज़ाइन करने में मदद मिलती है।",
+    "b.occ1":"जन्मदिन","b.occ2":"सालगिरह","b.occ3":"शादी","b.occ4":"गोद भराई","b.occ5":"बच्चों की थीम पार्टी","b.occ6":"बस ऐसे ही",
+    "b.s2t":"फ्लेवर चुनें","b.s2hint":"पलक की 35+ फ्लेवर वाली रसोई से — हर एक एगलेस।",
+    "b.classic":"क्लासिक फ्लेवर · ½ kg से शुरू","b.premium":"प्रीमियम फ्लेवर · 1 kg से शुरू",
+    "b.demoNote":"डेमो फ्लेवर लिस्ट — लाइव पेज पर पलक का पूरा 35+ फ्लेवर मेनू यहाँ दिखेगा।",
+    "b.s3t":"साइज़ और डिज़ाइन","b.s3hint":"कस्टम डिज़ाइन 1 kg से शुरू होते हैं, बिल्कुल स्टूडियो की तरह।",
+    "b.howbig":"कितना बड़ा?","b.design":"डिज़ाइन",
+    "b.design1":"सिंपल क्रीम फिनिश","b.design2":"फोटो प्रिंट","b.design3":"थीम + टॉपर","b.design4":"टियर्ड","b.design5":"सेहतमंद बंड्ट",
+    "b.designNote":"सिंपल क्रीम फिनिश हर साइज़ में उपलब्ध है। फोटो, थीम, टियर्ड और बंड्ट डिज़ाइन के लिए 1 kg या ज़्यादा चाहिए।",
+    "b.designNoteSmall":"कस्टम डिज़ाइन के लिए 1 kg या ज़्यादा चाहिए — फोटो, थीम, टियर्ड और बंड्ट डिज़ाइन के लिए बड़ा साइज़ चुनें।",
+    "b.msgLabel":"केक पर संदेश <span style=\"text-transform:none;letter-spacing:0;color:var(--muted)\">(ऑप्शनल)</span>",
+    "b.msgPh":"जैसे: जन्मदिन मुबारक, आरव!","b.msgPreview":"आपका संदेश यहाँ दिखेगा","b.piped":"हाथ से, प्यार के साथ लिखा गया",
+    "b.s4t":"कब चाहिए?","b.s4hint":"आम केक के लिए 1–2 दिन; कस्टम थीम की प्लानिंग के लिए 3–4 दिन चाहिए।",
+    "b.fulfilQ":"पिकअप या डिलीवरी?","b.pickup":"पिकअप · स्टूडियो","b.delivery":"डिलीवरी · ट्राइसिटी",
+    "b.serves":"सर्विंग","b.premTitle":"प्रीमियम फ्लेवर 1 kg से शुरू होते हैं","b.customTitle":"कस्टम डिज़ाइन 1 kg से शुरू होते हैं",
+    "sum.title":"आपका ऑर्डर","sum.sub":"जैसे-जैसे आप केक बनाते हैं, यह लाइव अपडेट होता है।",
+    "sum.occasion":"मौका","sum.flavour":"फ्लेवर","sum.size":"साइज़","sum.design":"डिज़ाइन","sum.message":"संदेश","sum.date":"तारीख़","sum.fulfil":"पिकअप/डिलीवरी","sum.total":"कुल",
+    "sum.priceNote":"पलक की प्राइस लिस्ट से सही दाम<br>पेमेंट से पहले यहाँ दिखेगा · डेमो प्लेसहोल्डर",
+    "sum.pay":"पेमेंट करें","sum.pickFlavour":"फ्लेवर चुनें","sum.pickDate":"तारीख़ चुनें",
+    "gate.initial":"आगे बढ़ने के लिए फ्लेवर, साइज़ और तारीख़ चुनें।","gate.ok":"बढ़िया — बस एक टैप और पेमेंट।","gate.need":"अभी चाहिए:","gate.flavour":"फ्लेवर","gate.size":"साइज़","gate.date":"तारीख़",
+    "warn.custom":"कस्टम थीम के लिए आमतौर पर 3–4 दिन चाहिए। यह तारीख़ उससे पहले है — पलक WhatsApp पर कन्फर्म कर देंगी कि क्या यह फिर भी संभव है।",
+    "warn.regular":"आम केक 1–2 दिन पहले ऑर्डर करना सबसे अच्छा रहता है। यह तारीख़ थोड़ी नज़दीक है — पलक तुरंत उपलब्धता कन्फर्म कर देंगी।",
+    "wa.title":"जल्दी है? यही केक WhatsApp पर ऑर्डर करें","wa.btn":"यही केक WhatsApp पर ऑर्डर करें","wa.copy":"मैसेज कॉपी करें",
+    "wa.note":"कुछ इन-ऐप ब्राउज़र पहले से भरा टेक्स्ट हटा देते हैं — अगर WhatsApp खाली खुले, तो ऊपर वाला मैसेज कॉपी करके वहाँ पेस्ट कर दें।",
+    "wa.greeting":"नमस्ते पलक जी! मुझे Palak's Cakes N Bakes से एक केक ऑर्डर करना है।",
+    "wa.occasion":"मौका","wa.flavour":"फ्लेवर","wa.size":"साइज़","wa.design":"डिज़ाइन","wa.msgOnCake":"केक पर संदेश","wa.neededOn":"चाहिए","wa.fulfilment":"पिकअप/डिलीवरी","wa.myName":"मेरा नाम:",
+    "pay.eyebrow":"बस हो गया","pay.h2":"पेमेंट करें और ऑर्डर कन्फर्म करें।",
+    "pay.p":"यह एक डेमो चेकआउट है — लाइव पेज पर यहीं UPI और कार्ड से आपका ऑर्डर तुरंत कन्फर्म होता है।",
+    "pay.name":"आपका नाम","pay.mobile":"मोबाइल (ऑर्डर अपडेट के लिए)","pay.now":"पेमेंट करके ऑर्डर कन्फर्म करें (डेमो)",
+    "pay.secure":"डेमो पेमेंट — असली पैसे नहीं कटते। लाइव पेज पर यह एक सुरक्षित चेकआउट है, और सफल होते ही आपका ऑर्डर कन्फर्म हो जाता है।",
+    "pay.card":"कार्ड","pay.netbank":"नेट बैंकिंग","pay.fUpi":"UPI ID","pay.fCard":"कार्ड नंबर","pay.fBank":"बैंक","pay.phUpi":"yourname@upi","pay.phCard":"1234 5678 9012 3456","pay.phBank":"अपना बैंक चुनें (डेमो)",
+    "suc.h3":"ऑर्डर कन्फर्म हो गया!","suc.sub":"पलक को आपका ऑर्डर मिल गया है — आपकी तारीख़ के लिए ताज़ा कतार में।","suc.ref":"ऑर्डर रेफ़रेंस",
+    "suc.note":"<b style=\"color:var(--cocoa)\">बस हो गया — आपका ऑर्डर तुरंत कन्फर्म।</b> WhatsApp पर दाम की कन्फर्मेशन का कोई इंतज़ार नहीं, कोई आगे-पीछे नहीं। कन्फर्मेशन सीधे आपके फोन पर आती है।",
+    "suc.wa":"कोई सवाल? पलक को WhatsApp करें","suc.again":"एक और केक ऑर्डर करें",
+    "strip.h1":"तुरंत कन्फर्म","strip.p1":"पेमेंट सफल होते ही आपका ऑर्डर बुक हो जाता है — WhatsApp पर \"कृपया दाम कन्फर्म करें\" वाला इंतज़ार नहीं।",
+    "strip.h2":"ताज़ा बेक, आपकी तारीख़ के पास","strip.p2":"कोई प्रिज़र्वेटिव नहीं और कुछ भी शेल्फ़ पर नहीं रखा — आपका केक आपके दिन के लिए ओवन में जाता है।",
+    "strip.h3":"पिकअप या ट्राइसिटी डिलीवरी","strip.p3":"हमारे पीर मुच्छला स्टूडियो से ले जाएँ, या ज़ीरकपुर, पंचकुला, चंडीगढ़ व मोहाली में डिलीवरी पाएँ।",
+    "game.eyebrow":"बस मज़े के लिए","game.h2":"60-सेकंड <em>केक स्टूडियो।</em>",
+    "game.p":"तीन लेयर लगाएँ, फ्रॉस्टिंग करें, टॉपिंग्स की बरसात करें और अपनी मास्टरपीस को नाम दें — सब कुछ लगभग एक मिनट में। जो बनाया, वह पसंद आया? इसे असली में भी ऑर्डर कर सकते हैं।",
+    "game.timerIdle":"स्टूडियो टाइमर — आपकी पहली लेयर से शुरू","game.timerTime":"समय ख़त्म! आख़िरी छुअन फिर भी गिनी जाएगी",
+    "game.caption0":"दाईं ओर से फ्लेवर चुनें, फिर “लेयर लगाएँ” दबाएँ। तीन लेयर से केक बनता है।",
+    "game.step1":"स्टेप 1 · 3 लेयर लगाएँ","game.layersStatus":"3 में से {n} लेयर लग गईं।",
+    "game.premNote":"प्रीमियम फ्लेवर बिल्कुल स्टूडियो जैसे लगते हैं — बस उन्हें 1 kg का केक चाहिए, और तीन लेयर का केक उतना होता ही है।",
+    "game.stack":"लेयर लगाएँ","game.undo":"लेयर हटाएँ",
+    "game.step2":"स्टेप 2 · फ्रॉस्टिंग चुनें","game.frostNote":"पूरे केक पर एक चमकदार परत — अपना मूड चुनें।",
+    "game.step3":"स्टेप 3 · टॉपिंग्स — टैप करके छिड़कें","game.topCherry":"चेरी +1","game.topBerries":"बेरीज़ +1","game.topShards":"चॉकलेट शार्ड्स +1","game.topGold":"गोल्ड डस्ट +1",
+    "game.topSoFar":"अब तक टॉपिंग्स:","game.topDone":"· हो गया लगे तो कभी भी स्टेप 4 पर जाएँ।",
+    "game.step4":"स्टेप 4 · अपनी रचना को नाम दें","game.namePh":"जैसे: द मिडनाइट चॉको-बेरी टावर — या हम पर छोड़ दें","game.finish":"मेरा केक तैयार करें","game.again":"फिर से खेलें",
+    "cap.pick":"{f} — बढ़िया। तैयार हों तो “लेयर लगाएँ” दबाएँ।","cap.l1":"एक लेयर हो गई — दो और बाकी।","cap.l2":"दो लेयर — पूरे टावर के लिए एक और।","cap.l3":"तीन लेयर! एकदम सही टावर। अब फ्रॉस्टिंग चुनें।",
+    "cap.frost":"{f} — चमकदार और ख़ूबसूरत। अब चाहें तो टॉपिंग्स।","cap.max":"यह तो फुल्ली लोडेड केक है — पलक भी हैरान हैं।",
+    "cap.top1":"बढ़िया — जारी रखें, या इसे परफेक्ट कहें।","cap.top2":"जज झुककर देखने लगे हैं…","cap.top3":"चमक का स्तर: जश्न के लिए तैयार।",
+    "game.resEyebrow":"जजों ने चख लिया है",
+    "judge.0":"“मिनिमलिस्ट। हिम्मत वाला। पलक को यह संयम पसंद आया।”","judge.1":"“शानदार और संतुलित — जज सहमति में सिर हिला रहे हैं।”","judge.2":"“उदार, खुशनुमा, जश्न के लिए तैयार। सबको खुश करने वाला।”","judge.3":"“एकदम शोस्टॉपर। जजों को संभलने के लिए एक पल चाहिए।”",
+    "spec.layers":"लेयर, नीचे से ऊपर:","spec.frosting":"फ्रॉस्टिंग:","spec.onTop":"ऊपर:","spec.note":"तीन लेयर ≈ 1 kg का केक — और हाँ, 100% एगलेस, बिल्कुल Palak's की हर चीज़ की तरह।","spec.cleanTop":"सादा, मिनिमल टॉप",
+    "tally.cherry1":"1 चेरी","tally.cherryN":"चेरी","tally.berries1":"1 बेरी क्लस्टर","tally.berriesN":"बेरी क्लस्टर","tally.shards1":"1 चॉकलेट शार्ड","tally.shardsN":"चॉकलेट शार्ड्स","tally.gold1":"गोल्ड डस्ट की हल्की छिड़क","tally.goldN":"गोल्ड डस्ट",
+    "game.orderReal":"यह केक असली में ऑर्डर करें","game.sendWa":"मेरी रचना पलक को WhatsApp पर भेजें","game.save":"मेरी रचना सेव करें",
+    "game.waNote":"यही मैसेज WhatsApp बटन के साथ जाता है — अगर WhatsApp खाली खुले, तो इसे कॉपी करके वहाँ पेस्ट कर दें।",
+    "gwa.greeting":"नमस्ते पलक जी! मैंने आपके 60-सेकंड केक स्टूडियो में एक केक बनाया है:","gwa.layers":"लेयर (नीचे से ऊपर):","gwa.frosting":"फ्रॉस्टिंग:","gwa.toppings":"टॉपिंग्स:","gwa.none":"कोई नहीं — सादा और क्लासिक रखा है","gwa.named":"मैंने इसका नाम रखा है:","gwa.ask":"क्या आप यह केक असली में बना सकती हैं? मुझे यह ऑर्डर करना बहुत पसंद आएगा।",
+    "save.studio":"60-सेकंड केक स्टूडियो","save.footer":"100% एगलेस · बिना प्रिज़र्वेटिव · ज़ीरकपुर में ताज़ा बेक",
+    "chat.teaser":"केक के बारे में सवाल? हमसे चैट करें","chat.sub":"एगलेस स्टूडियो · ज़ीरकपुर · तुरंत जवाब","chat.ph":"फ्लेवर, साइज़, डिलीवरी के बारे में पूछें…",
+    "chip.flavours":"फ्लेवर","chip.sizes":"साइज़ और सर्विंग","chip.delivery":"डिलीवरी क्षेत्र","chip.order":"ऑर्डर कैसे करें","chip.enquiry":"पूछताछ शुरू करें","chip.whatsapp":"WhatsApp पर बात करें",
+    "foot.tag":"100% एगलेस, बिना प्रिज़र्वेटिव कस्टम केक — शेफ़ पलक सुखीजा द्वारा हमारे इन-हाउस स्टूडियो में ख़ुद ताज़ा बनाए गए।",
+    "foot.talk":"हमसे बात करें","foot.waCalls":"WhatsApp और कॉल","foot.good":"जानकारी के लिए",
+    "foot.goodLines":"हर दिन खुला · सुबह 9 – रात 9<br>आम केक: 1–2 दिन पहले बताएँ<br>कस्टम थीम: 3–4 दिन पहले बताएँ<br>सेवा क्षेत्र: ज़ीरकपुर · पंचकुला · चंडीगढ़ · मोहाली",
+    "ui.copied":"कॉपी हो गया"
+  },
+  pa: {
+    "brand.sub":"ਐੱਗਲੈੱਸ ਕੇਕ ਸਟੂਡੀਓ · ਜ਼ੀਰਕਪੁਰ",
+    "nav.eggless":"● 100% ਐੱਗਲੈੱਸ","nav.cakes":"ਕੇਕ","nav.studio":"ਕੇਕ ਸਟੂਡੀਓ","nav.wa":"WhatsApp ਕਰੋ",
+    "hero.eyebrow":"ਪੀਰ ਮੁੱਛਲਾ · ਜ਼ੀਰਕਪੁਰ · ਟ੍ਰਾਈਸਿਟੀ ਡਿਲਿਵਰੀ",
+    "hero.h1":"100% ਐੱਗਲੈੱਸ ਕੇਕ, ਜੋ ਹਰ ਜਸ਼ਨ ਨੂੰ ਬਣਾ ਦੇਣ <em>ਯਾਦਗਾਰ।</em>",
+    "hero.lede":"ਪ੍ਰੀਮੀਅਮ, ਬਿਨਾਂ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ ਅਤੇ ਕੁਦਰਤੀ ਸਵਾਦ ਨਾਲ — ਤੁਹਾਡੀ ਕਹਾਣੀ ਮੁਤਾਬਕ ਡਿਜ਼ਾਈਨ ਕੀਤਾ, ਸਾਡੇ ਜ਼ੀਰਕਪੁਰ ਸਟੂਡੀਓ ਵਿੱਚ ਤਾਜ਼ਾ ਬੇਕ ਕੀਤਾ, ਅਤੇ ਹੁਣ ਸਿਰਫ਼ ਇੱਕ ਮਿੰਟ ਵਿੱਚ ਆਨਲਾਈਨ ਆਰਡਰ ਕਰੋ।",
+    "hero.ctaBuild":"ਆਪਣਾ ਕੇਕ ਬਣਾਓ →","hero.ctaBrowse":"ਰੇਂਜ ਵੇਖੋ",
+    "hero.trust1":"<b>★ 5.0</b> ਟ੍ਰਾਈਸਿਟੀ ਪਰਿਵਾਰਾਂ ਦਾ ਪਿਆਰ","hero.trust2":"<b>35+</b> ਸਵਾਦ ਚੁਣਨ ਲਈ","hero.trust3":"<b>0</b> ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ, ਕਦੇ ਨਹੀਂ",
+    "hero.note":"ਆਰਡਰ ’ਤੇ ਤਾਜ਼ਾ ਬੇਕ — ਕਦੇ ਸਟਾਕ ਨਹੀਂ","hero.drag":"ਘੁਮਾਉਣ ਲਈ ਖਿੱਚੋ",
+    "gal.eyebrow":"ਸਾਡੀ ਰੇਂਜ","gal.h2":"ਆਪਣੀ ਪਸੰਦ ਦੀ ਸਟਾਈਲ ਤੋਂ <em>ਸ਼ੁਰੂਆਤ ਕਰੋ।</em>",
+    "gal.p":"ਥੱਲੇ ਹਰ ਕੇਕ ਸਾਡੀ ਅਸਲੀ ਸਟੂਡੀਓ ਰੇਂਜ ਤੋਂ ਹੈ — ਕਿਸੇ ਇੱਕ ਨੂੰ ਚੁਣ ਕੇ ਬਣਾਉਣਾ ਸ਼ੁਰੂ ਕਰੋ, ਜਾਂ ਬਿਲਕੁਲ ਆਪਣੀ ਡਿਜ਼ਾਈਨ ਬਣਾਓ। ਸਭ 100% ਐੱਗਲੈੱਸ, ਹਮੇਸ਼ਾ।",
+    "gal.tag1":"ਸਭ ਤੋਂ ਪਸੰਦੀਦਾ","gal.tag2":"ਪਰਸਨਲ","gal.tag3":"ਵਿਆਹ","gal.tag4":"ਰੋਜ਼ਾਨਾ","gal.tag5":"ਸਿਹਤਮੰਦ","gal.tag6":"ਚਾਹ-ਟਾਈਮ",
+    "gal.from1kg":"1 kg ਤੋਂ ਸ਼ੁਰੂ","gal.from2kg":"2 kg ਤੋਂ ਸ਼ੁਰੂ","gal.fromHalf":"½ kg ਤੋਂ ਸ਼ੁਰੂ",
+    "gal.t1":"ਕਸਟਮ ਥੀਮ ਕੇਕ","gal.d1":"ਜਨਮਦਿਨ, ਕੈਰੈਕਟਰ ਅਤੇ ਕਹਾਣੀਆਂ — ਹੱਥ ਨਾਲ ਬਣੇ ਟਾਪਰ, ਟੀਅਰ ਅਤੇ ਨਾਮ ਪ੍ਰਿੰਟ, ਤੁਹਾਡੇ ਜਸ਼ਨ ਮੁਤਾਬਕ ਡਿਜ਼ਾਈਨ।",
+    "gal.t2":"ਫੋਟੋ ਪ੍ਰਿੰਟ ਕੇਕ","gal.d2":"ਤੁਹਾਡੀ ਪਸੰਦੀਦਾ ਤਸਵੀਰ, ਖਾਣ ਯੋਗ ਪ੍ਰਿੰਟ ਅਤੇ ਕਰੀਮ ਦੀ ਫਰੇਮ ਵਿੱਚ — ਜਨਮਦਿਨ ਅਤੇ ਵਿਆਹ ਦੀ ਵਰ੍ਹੇਗੰਢ ਲਈ ਖ਼ਾਸ ਪਸੰਦ।",
+    "gal.t3":"ਵਿਆਹ ਅਤੇ ਟੀਅਰਡ ਕੇਕ","gal.d3":"ਵਿਆਹਾਂ ਅਤੇ ਵੱਡੇ ਮੌਕਿਆਂ ਲਈ ਸ਼ਾਨਦਾਰ ਮਲਟੀ-ਟੀਅਰ ਕੇਕ — ਤੁਹਾਡੇ ਨਾਲ, ਪਰਤ-ਦਰ-ਪਰਤ ਪਲਾਨ ਕੀਤੇ।",
+    "gal.t4":"ਕਲਾਸਿਕ ਕਰੀਮ ਕੇਕ","gal.d4":"ਸਾਡੇ ਕਲਾਸਿਕ ਸਵਾਦਾਂ ਵਿੱਚ ਸਾਦੇ, ਸੋਹਣੇ ਕਰੀਮ ਫਿਨਿਸ਼ — 1–2 ਦਿਨ ਵਿੱਚ ਤਿਆਰ, ½ kg ਤੋਂ ਸ਼ੁਰੂ।",
+    "gal.t5":"ਸਿਹਤਮੰਦ ਬੰਡਟ ਕੇਕ","gal.d5":"ਕਣਕ ਦਾ ਆਟਾ, ਬਿਨਾਂ ਮੈਦਾ, ਬਿਨਾਂ ਰਿਫਾਇੰਡ ਚੀਨੀ ਜਾਂ ਤੇਲ — ਗੁੜ ਦੀ ਮਿਠਾਸ ਅਤੇ ਭਰਪੂਰ ਪ੍ਰੀਮੀਅਮ ਡਰਾਈ ਫਰੂਟਸ।",
+    "gal.t6":"ਚਾਹ-ਟਾਈਮ ਡਰਾਈ ਕੇਕ","gal.d6":"ਘਰ ਵਰਗਾ ਸਵਾਦ, 4–5 ਦਿਨ ਤੱਕ ਵਧੀਆ ਰਹਿੰਦਾ ਹੈ, ਸ਼ਾਮ ਦੀ ਚਾਹ ਨਾਲ ਪਰਫੈਕਟ। ਬ੍ਰਾਊਨੀਜ਼ ਅਤੇ ਕਪਕੇਕ ਬਾਕਸ ਵੀ — ਬੱਸ ਪੁੱਛੋ।",
+    "story.eyebrow":"ਪਲਕ ਦੀ ਰਸੋਈ ਤੋਂ","story.h2":"ਇੱਕ ਸਟੂਡੀਓ, ਇੱਕ ਜੋੜੀ ਹੱਥ, <em>ਹਰ ਕੇਕ ਆਰਡਰ ’ਤੇ ਬਣਿਆ।</em>",
+    "story.p":"Palak's ਦਾ ਹਰ ਕੇਕ ਸ਼ੈੱਫ ਪਲਕ ਸੁਖੀਜਾ ਆਪਣੇ ਪੀਰ ਮੁੱਛਲਾ ਸਥਿਤ ਇਨ-ਹਾਊਸ ਸਟੂਡੀਓ ਵਿੱਚ ਖ਼ੁਦ ਤਾਜ਼ਾ ਬਣਾਉਂਦੀ ਹੈ — ਕੁਝ ਵੀ ਸ਼ੈਲਫ਼ ’ਤੇ ਰੱਖਿਆ ਨਹੀਂ ਮਿਲਦਾ, ਅਤੇ ਤੁਹਾਡਾ ਆਰਡਰ ਆਉਣ ਤੋਂ ਪਹਿਲਾਂ ਕੁਝ ਵੀ ਬੇਕ ਨਹੀਂ ਹੁੰਦਾ। ਕੁਦਰਤੀ ਸਵਾਦ, ਜ਼ੀਰੋ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ, ਅਤੇ ਹਮੇਸ਼ਾ, ਹਮੇਸ਼ਾ ਐੱਗਲੈੱਸ।",
+    "story.sign":"— ਬੱਸ, ਇਹੀ ਸਾਰਾ ਰਾਜ਼ ਹੈ",
+    "stat.l1":"ਰਸੋਈ ਵਿੱਚ ਸਵਾਦ","stat.l2":"ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ, ਕਦੇ ਨਹੀਂ","stat.l3":"ਸਾਰੇ ਟ੍ਰਾਈਸਿਟੀ ਦਾ ਪਿਆਰ","stat.l4":"ਹਰ ਰੋਜ਼ ਖੁੱਲ੍ਹਾ, ਸਵੇਰ ਤੋਂ ਸ਼ਾਮ",
+    "journey.eyebrow":"ਤੁਹਾਡੇ ਕੇਕ ਦਾ ਸਫ਼ਰ","journey.h2":"ਸਾਡੇ ਓਵਨ ਤੋਂ <em>ਤੁਹਾਡੇ ਜਸ਼ਨ ਤੱਕ।</em>",
+    "journey.p":"ਕੋਈ ਫੋਨ-ਟੈਗ ਨਹੀਂ, ਕੋਈ ਅੰਦਾਜ਼ਾ ਨਹੀਂ — ਵੇਖੋ, ਤੁਹਾਡਾ ਕੇਕ ਇੱਕ ਖੁਸ਼ਨੁਮਾ ਖ਼ਿਆਲ ਤੋਂ ਪਹਿਲੇ ਸਲਾਈਸ ਤੱਕ ਕਿਵੇਂ ਪਹੁੰਚਦਾ ਹੈ।",
+    "journey.step1":"ਸਟੈਪ 1","journey.step2":"ਸਟੈਪ 2","journey.step3":"ਸਟੈਪ 3",
+    "journey.s1t":"ਤੁਸੀਂ ਡਿਜ਼ਾਈਨ ਕਰਦੇ ਹੋ","journey.s1p":"ਥੱਲੇ ਬਿਲਡਰ ਵਿੱਚ ਸਵਾਦ, ਸਾਈਜ਼ ਅਤੇ ਡਿਜ਼ਾਈਨ ਚੁਣੋ — ਜਾਂ ਕੇਕ ਸਟੂਡੀਓ ਵਿੱਚ ਆਪਣੇ ਸੁਪਨਿਆਂ ਦਾ ਕੇਕ ਬਣਾਓ। <b>ਪੇਮੈਂਟ ਕਰਦੇ ਹੀ ਤੁਹਾਡਾ ਆਰਡਰ ਕਨਫਰਮ ਹੋ ਜਾਂਦਾ ਹੈ</b>, ਇਸ ਲਈ WhatsApp ’ਤੇ ਦਾਮ ਲਈ ਕੋਈ ਅੱਗੇ-ਪਿੱਛੇ ਨਹੀਂ।",
+    "journey.s2t":"ਪਲਕ ਇਸਨੂੰ ਤਾਜ਼ਾ ਬੇਕ ਕਰਦੀ ਹੈ","journey.s2p":"ਸ਼ੈੱਫ ਪਲਕ ਹਰ ਕੇਕ ਆਪਣੇ ਪੀਰ ਮੁੱਛਲਾ ਸਟੂਡੀਓ ਵਿੱਚ ਖ਼ੁਦ ਬੇਕ ਕਰਦੀ ਹੈ — <b>100% ਐੱਗਲੈੱਸ, ਬਿਨਾਂ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ, ਆਰਡਰ ’ਤੇ ਬਣਿਆ, ਕਦੇ ਸਟਾਕ ਨਹੀਂ</b>। ਆਮ ਕੇਕ ਲਈ 1–2 ਦਿਨ; ਕਸਟਮ ਥੀਮ ਲਈ 3–4 ਦਿਨ।",
+    "journey.s3t":"ਤੁਹਾਡੇ ਜਸ਼ਨ ਤੱਕ ਡਿਲਿਵਰ","journey.s3p":"ਸਟੂਡੀਓ ਤੋਂ ਖ਼ੁਦ ਲੈ ਜਾਓ, ਜਾਂ <b>ਜ਼ੀਰਕਪੁਰ · ਪੰਚਕੂਲਾ · ਚੰਡੀਗੜ੍ਹ · ਮੋਹਾਲੀ</b> ਵਿੱਚ ਡਿਲਿਵਰੀ ਪਾਓ — ਸੰਭਾਲ ਕੇ ਪੈਕ ਕੀਤਾ, ਪਹਿਲੇ ਸਲਾਈਸ ਲਈ ਤਿਆਰ।",
+    "b.eyebrow":"ਕੇਕ ਬਣਾਓ","b.h2":"ਤੁਹਾਡਾ ਕੇਕ, ਚਾਰ <em>ਛੋਟੇ ਸਟੈਪਾਂ ਵਿੱਚ।</em>",
+    "b.p":"ਸਵਾਦ, ਸਾਈਜ਼ ਅਤੇ ਤਾਰੀਖ ਚੁਣੋ — ਪੇਮੈਂਟ ਕਰਦੇ ਹੀ ਆਰਡਰ ਕਨਫਰਮ। WhatsApp ’ਤੇ ਦਾਮ ਦੇ ਜਵਾਬ ਦੀ ਕੋਈ ਉਡੀਕ ਨਹੀਂ।",
+    "b.s1t":"ਮੌਕਾ ਕੀ ਹੈ?","b.s1hint":"ਆਪਸ਼ਨਲ — ਇਸ ਨਾਲ ਪਲਕ ਨੂੰ ਸਹੀ ਮੂਡ ਵਿੱਚ ਡਿਜ਼ਾਈਨ ਕਰਨ ਵਿੱਚ ਮਦਦ ਮਿਲਦੀ ਹੈ।",
+    "b.occ1":"ਜਨਮਦਿਨ","b.occ2":"ਵਰ੍ਹੇਗੰਢ","b.occ3":"ਵਿਆਹ","b.occ4":"ਗੋਦ ਭਰਾਈ","b.occ5":"ਬੱਚਿਆਂ ਦੀ ਥੀਮ ਪਾਰਟੀ","b.occ6":"ਬੱਸ ਐਵੇਂ ਹੀ",
+    "b.s2t":"ਸਵਾਦ ਚੁਣੋ","b.s2hint":"ਪਲਕ ਦੀ 35+ ਸਵਾਦਾਂ ਵਾਲੀ ਰਸੋਈ ਤੋਂ — ਹਰ ਇੱਕ ਐੱਗਲੈੱਸ।",
+    "b.classic":"ਕਲਾਸਿਕ ਸਵਾਦ · ½ kg ਤੋਂ ਸ਼ੁਰੂ","b.premium":"ਪ੍ਰੀਮੀਅਮ ਸਵਾਦ · 1 kg ਤੋਂ ਸ਼ੁਰੂ",
+    "b.demoNote":"ਡੈਮੋ ਸਵਾਦ ਲਿਸਟ — ਲਾਈਵ ਪੇਜ ’ਤੇ ਪਲਕ ਦਾ ਪੂਰਾ 35+ ਸਵਾਦ ਮੈਨੂ ਇੱਥੇ ਦਿਖੇਗਾ।",
+    "b.s3t":"ਸਾਈਜ਼ ਅਤੇ ਡਿਜ਼ਾਈਨ","b.s3hint":"ਕਸਟਮ ਡਿਜ਼ਾਈਨ 1 kg ਤੋਂ ਸ਼ੁਰੂ ਹੁੰਦੇ ਹਨ, ਬਿਲਕੁਲ ਸਟੂਡੀਓ ਵਾਂਗ।",
+    "b.howbig":"ਕਿੰਨਾ ਵੱਡਾ?","b.design":"ਡਿਜ਼ਾਈਨ",
+    "b.design1":"ਸਿੰਪਲ ਕਰੀਮ ਫਿਨਿਸ਼","b.design2":"ਫੋਟੋ ਪ੍ਰਿੰਟ","b.design3":"ਥੀਮ + ਟਾਪਰ","b.design4":"ਟੀਅਰਡ","b.design5":"ਸਿਹਤਮੰਦ ਬੰਡਟ",
+    "b.designNote":"ਸਿੰਪਲ ਕਰੀਮ ਫਿਨਿਸ਼ ਹਰ ਸਾਈਜ਼ ਵਿੱਚ ਉਪਲਬਧ ਹੈ। ਫੋਟੋ, ਥੀਮ, ਟੀਅਰਡ ਅਤੇ ਬੰਡਟ ਡਿਜ਼ਾਈਨ ਲਈ 1 kg ਜਾਂ ਵੱਧ ਚਾਹੀਦਾ ਹੈ।",
+    "b.designNoteSmall":"ਕਸਟਮ ਡਿਜ਼ਾਈਨ ਲਈ 1 kg ਜਾਂ ਵੱਧ ਚਾਹੀਦਾ ਹੈ — ਫੋਟੋ, ਥੀਮ, ਟੀਅਰਡ ਅਤੇ ਬੰਡਟ ਡਿਜ਼ਾਈਨ ਲਈ ਵੱਡਾ ਸਾਈਜ਼ ਚੁਣੋ।",
+    "b.msgLabel":"ਕੇਕ ’ਤੇ ਸੁਨੇਹਾ <span style=\"text-transform:none;letter-spacing:0;color:var(--muted)\">(ਆਪਸ਼ਨਲ)</span>",
+    "b.msgPh":"ਜਿਵੇਂ: ਜਨਮਦਿਨ ਮੁਬਾਰਕ, ਆਰਵ!","b.msgPreview":"ਤੁਹਾਡਾ ਸੁਨੇਹਾ ਇੱਥੇ ਦਿਖੇਗਾ","b.piped":"ਹੱਥ ਨਾਲ, ਪਿਆਰ ਨਾਲ ਲਿਖਿਆ",
+    "b.s4t":"ਕਦੋਂ ਚਾਹੀਦਾ ਹੈ?","b.s4hint":"ਆਮ ਕੇਕ ਲਈ 1–2 ਦਿਨ; ਕਸਟਮ ਥੀਮ ਦੀ ਪਲਾਨਿੰਗ ਲਈ 3–4 ਦਿਨ ਚਾਹੀਦੇ ਹਨ।",
+    "b.fulfilQ":"ਪਿਕਅਪ ਜਾਂ ਡਿਲਿਵਰੀ?","b.pickup":"ਪਿਕਅਪ · ਸਟੂਡੀਓ","b.delivery":"ਡਿਲਿਵਰੀ · ਟ੍ਰਾਈਸਿਟੀ",
+    "b.serves":"ਸਰਵਿੰਗ","b.premTitle":"ਪ੍ਰੀਮੀਅਮ ਸਵਾਦ 1 kg ਤੋਂ ਸ਼ੁਰੂ ਹੁੰਦੇ ਹਨ","b.customTitle":"ਕਸਟਮ ਡਿਜ਼ਾਈਨ 1 kg ਤੋਂ ਸ਼ੁਰੂ ਹੁੰਦੇ ਹਨ",
+    "sum.title":"ਤੁਹਾਡਾ ਆਰਡਰ","sum.sub":"ਜਿਵੇਂ-ਜਿਵੇਂ ਤੁਸੀਂ ਕੇਕ ਬਣਾਉਂਦੇ ਹੋ, ਇਹ ਲਾਈਵ ਅਪਡੇਟ ਹੁੰਦਾ ਹੈ।",
+    "sum.occasion":"ਮੌਕਾ","sum.flavour":"ਸਵਾਦ","sum.size":"ਸਾਈਜ਼","sum.design":"ਡਿਜ਼ਾਈਨ","sum.message":"ਸੁਨੇਹਾ","sum.date":"ਤਾਰੀਖ","sum.fulfil":"ਪਿਕਅਪ/ਡਿਲਿਵਰੀ","sum.total":"ਕੁੱਲ",
+    "sum.priceNote":"ਪਲਕ ਦੀ ਪ੍ਰਾਈਸ ਲਿਸਟ ਤੋਂ ਸਹੀ ਦਾਮ<br>ਪੇਮੈਂਟ ਤੋਂ ਪਹਿਲਾਂ ਇੱਥੇ ਦਿਖੇਗਾ · ਡੈਮੋ ਪਲੇਸਹੋਲਡਰ",
+    "sum.pay":"ਪੇਮੈਂਟ ਕਰੋ","sum.pickFlavour":"ਸਵਾਦ ਚੁਣੋ","sum.pickDate":"ਤਾਰੀਖ ਚੁਣੋ",
+    "gate.initial":"ਅੱਗੇ ਵਧਣ ਲਈ ਸਵਾਦ, ਸਾਈਜ਼ ਅਤੇ ਤਾਰੀਖ ਚੁਣੋ।","gate.ok":"ਵਧੀਆ — ਬੱਸ ਇੱਕ ਟੈਪ ਅਤੇ ਪੇਮੈਂਟ।","gate.need":"ਅਜੇ ਚਾਹੀਦਾ ਹੈ:","gate.flavour":"ਸਵਾਦ","gate.size":"ਸਾਈਜ਼","gate.date":"ਤਾਰੀਖ",
+    "warn.custom":"ਕਸਟਮ ਥੀਮ ਲਈ ਆਮ ਤੌਰ ’ਤੇ 3–4 ਦਿਨ ਚਾਹੀਦੇ ਹਨ। ਇਹ ਤਾਰੀਖ ਉਸ ਤੋਂ ਪਹਿਲਾਂ ਹੈ — ਪਲਕ WhatsApp ’ਤੇ ਕਨਫਰਮ ਕਰ ਦੇਵੇਗੀ ਕਿ ਕੀ ਇਹ ਫਿਰ ਵੀ ਸੰਭਵ ਹੈ।",
+    "warn.regular":"ਆਮ ਕੇਕ 1–2 ਦਿਨ ਪਹਿਲਾਂ ਆਰਡਰ ਕਰਨਾ ਸਭ ਤੋਂ ਵਧੀਆ ਰਹਿੰਦਾ ਹੈ। ਇਹ ਤਾਰੀਖ ਥੋੜ੍ਹੀ ਨੇੜੇ ਹੈ — ਪਲਕ ਤੁਰੰਤ ਉਪਲਬਧਤਾ ਕਨਫਰਮ ਕਰ ਦੇਵੇਗੀ।",
+    "wa.title":"ਜਲਦੀ ਹੈ? ਇਹੀ ਕੇਕ WhatsApp ’ਤੇ ਆਰਡਰ ਕਰੋ","wa.btn":"ਇਹੀ ਕੇਕ WhatsApp ’ਤੇ ਆਰਡਰ ਕਰੋ","wa.copy":"ਸੁਨੇਹਾ ਕਾਪੀ ਕਰੋ",
+    "wa.note":"ਕੁਝ ਇਨ-ਐਪ ਬ੍ਰਾਊਜ਼ਰ ਪਹਿਲਾਂ ਤੋਂ ਭਰਿਆ ਟੈਕਸਟ ਹਟਾ ਦਿੰਦੇ ਹਨ — ਜੇ WhatsApp ਖਾਲੀ ਖੁੱਲ੍ਹੇ, ਤਾਂ ਉੱਪਰ ਵਾਲਾ ਸੁਨੇਹਾ ਕਾਪੀ ਕਰਕੇ ਉੱਥੇ ਪੇਸਟ ਕਰ ਦਿਓ।",
+    "wa.greeting":"ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਪਲਕ ਜੀ! ਮੈਨੂੰ Palak's Cakes N Bakes ਤੋਂ ਇੱਕ ਕੇਕ ਆਰਡਰ ਕਰਨਾ ਹੈ।",
+    "wa.occasion":"ਮੌਕਾ","wa.flavour":"ਸਵਾਦ","wa.size":"ਸਾਈਜ਼","wa.design":"ਡਿਜ਼ਾਈਨ","wa.msgOnCake":"ਕੇਕ ’ਤੇ ਸੁਨੇਹਾ","wa.neededOn":"ਚਾਹੀਦਾ ਹੈ","wa.fulfilment":"ਪਿਕਅਪ/ਡਿਲਿਵਰੀ","wa.myName":"ਮੇਰਾ ਨਾਮ:",
+    "pay.eyebrow":"ਬੱਸ ਹੋ ਗਿਆ","pay.h2":"ਪੇਮੈਂਟ ਕਰੋ ਅਤੇ ਆਰਡਰ ਕਨਫਰਮ ਕਰੋ।",
+    "pay.p":"ਇਹ ਇੱਕ ਡੈਮੋ ਚੈਕਆਊਟ ਹੈ — ਲਾਈਵ ਪੇਜ ’ਤੇ ਇੱਥੇ ਹੀ UPI ਅਤੇ ਕਾਰਡ ਨਾਲ ਤੁਹਾਡਾ ਆਰਡਰ ਤੁਰੰਤ ਕਨਫਰਮ ਹੁੰਦਾ ਹੈ।",
+    "pay.name":"ਤੁਹਾਡਾ ਨਾਮ","pay.mobile":"ਮੋਬਾਈਲ (ਆਰਡਰ ਅਪਡੇਟ ਲਈ)","pay.now":"ਪੇਮੈਂਟ ਕਰਕੇ ਆਰਡਰ ਕਨਫਰਮ ਕਰੋ (ਡੈਮੋ)",
+    "pay.secure":"ਡੈਮੋ ਪੇਮੈਂਟ — ਅਸਲੀ ਪੈਸੇ ਨਹੀਂ ਕੱਟਦੇ। ਲਾਈਵ ਪੇਜ ’ਤੇ ਇਹ ਇੱਕ ਸੁਰੱਖਿਅਤ ਚੈਕਆਊਟ ਹੈ, ਅਤੇ ਸਫਲ ਹੁੰਦੇ ਹੀ ਤੁਹਾਡਾ ਆਰਡਰ ਕਨਫਰਮ ਹੋ ਜਾਂਦਾ ਹੈ।",
+    "pay.card":"ਕਾਰਡ","pay.netbank":"ਨੈੱਟ ਬੈਂਕਿੰਗ","pay.fUpi":"UPI ID","pay.fCard":"ਕਾਰਡ ਨੰਬਰ","pay.fBank":"ਬੈਂਕ","pay.phUpi":"yourname@upi","pay.phCard":"1234 5678 9012 3456","pay.phBank":"ਆਪਣਾ ਬੈਂਕ ਚੁਣੋ (ਡੈਮੋ)",
+    "suc.h3":"ਆਰਡਰ ਕਨਫਰਮ ਹੋ ਗਿਆ!","suc.sub":"ਪਲਕ ਨੂੰ ਤੁਹਾਡਾ ਆਰਡਰ ਮਿਲ ਗਿਆ ਹੈ — ਤੁਹਾਡੀ ਤਾਰੀਖ ਲਈ ਤਾਜ਼ਾ ਕਤਾਰ ਵਿੱਚ।","suc.ref":"ਆਰਡਰ ਰੈਫਰੈਂਸ",
+    "suc.note":"<b style=\"color:var(--cocoa)\">ਬੱਸ ਹੋ ਗਿਆ — ਤੁਹਾਡਾ ਆਰਡਰ ਤੁਰੰਤ ਕਨਫਰਮ।</b> WhatsApp ’ਤੇ ਦਾਮ ਦੀ ਕਨਫਰਮੇਸ਼ਨ ਦੀ ਕੋਈ ਉਡੀਕ ਨਹੀਂ, ਕੋਈ ਅੱਗੇ-ਪਿੱਛੇ ਨਹੀਂ। ਕਨਫਰਮੇਸ਼ਨ ਸਿੱਧੀ ਤੁਹਾਡੇ ਫੋਨ ’ਤੇ ਆਉਂਦੀ ਹੈ।",
+    "suc.wa":"ਕੋਈ ਸਵਾਲ? ਪਲਕ ਨੂੰ WhatsApp ਕਰੋ","suc.again":"ਇੱਕ ਹੋਰ ਕੇਕ ਆਰਡਰ ਕਰੋ",
+    "strip.h1":"ਤੁਰੰਤ ਕਨਫਰਮ","strip.p1":"ਪੇਮੈਂਟ ਸਫਲ ਹੁੰਦੇ ਹੀ ਤੁਹਾਡਾ ਆਰਡਰ ਬੁੱਕ ਹੋ ਜਾਂਦਾ ਹੈ — WhatsApp ’ਤੇ \"ਕਿਰਪਾ ਕਰਕੇ ਦਾਮ ਕਨਫਰਮ ਕਰੋ\" ਵਾਲੀ ਉਡੀਕ ਨਹੀਂ।",
+    "strip.h2":"ਤਾਜ਼ਾ ਬੇਕ, ਤੁਹਾਡੀ ਤਾਰੀਖ ਦੇ ਨੇੜੇ","strip.p2":"ਕੋਈ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ ਨਹੀਂ ਅਤੇ ਕੁਝ ਵੀ ਸ਼ੈਲਫ਼ ’ਤੇ ਨਹੀਂ ਰੱਖਿਆ — ਤੁਹਾਡਾ ਕੇਕ ਤੁਹਾਡੇ ਦਿਨ ਲਈ ਓਵਨ ਵਿੱਚ ਜਾਂਦਾ ਹੈ।",
+    "strip.h3":"ਪਿਕਅਪ ਜਾਂ ਟ੍ਰਾਈਸਿਟੀ ਡਿਲਿਵਰੀ","strip.p3":"ਸਾਡੇ ਪੀਰ ਮੁੱਛਲਾ ਸਟੂਡੀਓ ਤੋਂ ਲੈ ਜਾਓ, ਜਾਂ ਜ਼ੀਰਕਪੁਰ, ਪੰਚਕੂਲਾ, ਚੰਡੀਗੜ੍ਹ ਅਤੇ ਮੋਹਾਲੀ ਵਿੱਚ ਡਿਲਿਵਰੀ ਪਾਓ।",
+    "game.eyebrow":"ਬੱਸ ਮਜ਼ੇ ਲਈ","game.h2":"60-ਸਕਿੰਟ <em>ਕੇਕ ਸਟੂਡੀਓ।</em>",
+    "game.p":"ਤਿੰਨ ਲੇਅਰ ਲਗਾਓ, ਫਰਾਸਟਿੰਗ ਕਰੋ, ਟਾਪਿੰਗਜ਼ ਦੀ ਬਰਸਾਤ ਕਰੋ ਅਤੇ ਆਪਣੀ ਮਾਸਟਰਪੀਸ ਨੂੰ ਨਾਮ ਦਿਓ — ਸਭ ਕੁਝ ਲਗਭਗ ਇੱਕ ਮਿੰਟ ਵਿੱਚ। ਜੋ ਬਣਾਇਆ, ਉਹ ਪਸੰਦ ਆਇਆ? ਇਸਨੂੰ ਅਸਲੀ ਵਿੱਚ ਵੀ ਆਰਡਰ ਕਰ ਸਕਦੇ ਹੋ।",
+    "game.timerIdle":"ਸਟੂਡੀਓ ਟਾਈਮਰ — ਤੁਹਾਡੀ ਪਹਿਲੀ ਲੇਅਰ ਤੋਂ ਸ਼ੁਰੂ","game.timerTime":"ਸਮਾਂ ਖ਼ਤਮ! ਆਖ਼ਰੀ ਛੂਹ ਫਿਰ ਵੀ ਗਿਣੀ ਜਾਵੇਗੀ",
+    "game.caption0":"ਸੱਜੇ ਪਾਸੇ ਤੋਂ ਸਵਾਦ ਚੁਣੋ, ਫਿਰ “ਲੇਅਰ ਲਗਾਓ” ਦਬਾਓ। ਤਿੰਨ ਲੇਅਰ ਨਾਲ ਕੇਕ ਬਣਦਾ ਹੈ।",
+    "game.step1":"ਸਟੈਪ 1 · 3 ਲੇਅਰ ਲਗਾਓ","game.layersStatus":"3 ਵਿੱਚੋਂ {n} ਲੇਅਰ ਲੱਗ ਗਈਆਂ।",
+    "game.premNote":"ਪ੍ਰੀਮੀਅਮ ਸਵਾਦ ਬਿਲਕੁਲ ਸਟੂਡੀਓ ਵਾਂਗ ਲੱਗਦੇ ਹਨ — ਬੱਸ ਉਨ੍ਹਾਂ ਨੂੰ 1 kg ਦਾ ਕੇਕ ਚਾਹੀਦਾ ਹੈ, ਅਤੇ ਤਿੰਨ ਲੇਅਰ ਦਾ ਕੇਕ ਉੱਨਾ ਹੁੰਦਾ ਹੀ ਹੈ।",
+    "game.stack":"ਲੇਅਰ ਲਗਾਓ","game.undo":"ਲੇਅਰ ਹਟਾਓ",
+    "game.step2":"ਸਟੈਪ 2 · ਫਰਾਸਟਿੰਗ ਚੁਣੋ","game.frostNote":"ਸਾਰੇ ਕੇਕ ’ਤੇ ਇੱਕ ਚਮਕਦਾਰ ਪਰਤ — ਆਪਣਾ ਮੂਡ ਚੁਣੋ।",
+    "game.step3":"ਸਟੈਪ 3 · ਟਾਪਿੰਗਜ਼ — ਟੈਪ ਕਰਕੇ ਛਿੜਕੋ","game.topCherry":"ਚੈਰੀ +1","game.topBerries":"ਬੈਰੀਜ਼ +1","game.topShards":"ਚਾਕਲੇਟ ਸ਼ਾਰਡਜ਼ +1","game.topGold":"ਗੋਲਡ ਡਸਟ +1",
+    "game.topSoFar":"ਹੁਣ ਤੱਕ ਟਾਪਿੰਗਜ਼:","game.topDone":"· ਹੋ ਗਿਆ ਲੱਗੇ ਤਾਂ ਕਦੇ ਵੀ ਸਟੈਪ 4 ’ਤੇ ਜਾਓ।",
+    "game.step4":"ਸਟੈਪ 4 · ਆਪਣੀ ਰਚਨਾ ਨੂੰ ਨਾਮ ਦਿਓ","game.namePh":"ਜਿਵੇਂ: ਦ ਮਿਡਨਾਈਟ ਚਾਕੋ-ਬੈਰੀ ਟਾਵਰ — ਜਾਂ ਸਾਡੇ ’ਤੇ ਛੱਡ ਦਿਓ","game.finish":"ਮੇਰਾ ਕੇਕ ਤਿਆਰ ਕਰੋ","game.again":"ਫਿਰ ਖੇਡੋ",
+    "cap.pick":"{f} — ਵਧੀਆ। ਤਿਆਰ ਹੋਵੋ ਤਾਂ “ਲੇਅਰ ਲਗਾਓ” ਦਬਾਓ।","cap.l1":"ਇੱਕ ਲੇਅਰ ਹੋ ਗਈ — ਦੋ ਹੋਰ ਬਾਕੀ।","cap.l2":"ਦੋ ਲੇਅਰ — ਪੂਰੇ ਟਾਵਰ ਲਈ ਇੱਕ ਹੋਰ।","cap.l3":"ਤਿੰਨ ਲੇਅਰ! ਬਿਲਕੁਲ ਸਹੀ ਟਾਵਰ। ਹੁਣ ਫਰਾਸਟਿੰਗ ਚੁਣੋ।",
+    "cap.frost":"{f} — ਚਮਕਦਾਰ ਅਤੇ ਖ਼ੂਬਸੂਰਤ। ਹੁਣ ਚਾਹੋ ਤਾਂ ਟਾਪਿੰਗਜ਼।","cap.max":"ਇਹ ਤਾਂ ਫੁੱਲੀ ਲੋਡਿਡ ਕੇਕ ਹੈ — ਪਲਕ ਵੀ ਹੈਰਾਨ ਹੈ।",
+    "cap.top1":"ਵਧੀਆ — ਜਾਰੀ ਰੱਖੋ, ਜਾਂ ਇਸਨੂੰ ਪਰਫੈਕਟ ਕਹੋ।","cap.top2":"ਜੱਜ ਝੁਕ ਕੇ ਵੇਖਣ ਲੱਗੇ ਹਨ…","cap.top3":"ਚਮਕ ਦਾ ਪੱਧਰ: ਜਸ਼ਨ ਲਈ ਤਿਆਰ।",
+    "game.resEyebrow":"ਜੱਜਾਂ ਨੇ ਚੱਖ ਲਿਆ ਹੈ",
+    "judge.0":"“ਮਿਨਿਮਲਿਸਟ। ਹਿੰਮਤ ਵਾਲਾ। ਪਲਕ ਨੂੰ ਇਹ ਸੰਜਮ ਪਸੰਦ ਆਇਆ।”","judge.1":"“ਸ਼ਾਨਦਾਰ ਅਤੇ ਸੰਤੁਲਿਤ — ਜੱਜ ਸਹਿਮਤੀ ਵਿੱਚ ਸਿਰ ਹਿਲਾ ਰਹੇ ਹਨ।”","judge.2":"“ਉਦਾਰ, ਖੁਸ਼ਨੁਮਾ, ਜਸ਼ਨ ਲਈ ਤਿਆਰ। ਸਭ ਨੂੰ ਖੁਸ਼ ਕਰਨ ਵਾਲਾ।”","judge.3":"“ਬਿਲਕੁਲ ਸ਼ੋਸਟਾਪਰ। ਜੱਜਾਂ ਨੂੰ ਸੰਭਲਣ ਲਈ ਇੱਕ ਪਲ ਚਾਹੀਦਾ ਹੈ।”",
+    "spec.layers":"ਲੇਅਰ, ਥੱਲੇ ਤੋਂ ਉੱਪਰ:","spec.frosting":"ਫਰਾਸਟਿੰਗ:","spec.onTop":"ਉੱਪਰ:","spec.note":"ਤਿੰਨ ਲੇਅਰ ≈ 1 kg ਦਾ ਕੇਕ — ਅਤੇ ਹਾਂ, 100% ਐੱਗਲੈੱਸ, ਬਿਲਕੁਲ Palak's ਦੀ ਹਰ ਚੀਜ਼ ਵਾਂਗ।","spec.cleanTop":"ਸਾਦਾ, ਮਿਨਿਮਲ ਟਾਪ",
+    "tally.cherry1":"1 ਚੈਰੀ","tally.cherryN":"ਚੈਰੀਆਂ","tally.berries1":"1 ਬੈਰੀ ਕਲਸਟਰ","tally.berriesN":"ਬੈਰੀ ਕਲਸਟਰ","tally.shards1":"1 ਚਾਕਲੇਟ ਸ਼ਾਰਡ","tally.shardsN":"ਚਾਕਲੇਟ ਸ਼ਾਰਡਜ਼","tally.gold1":"ਗੋਲਡ ਡਸਟ ਦੀ ਹਲਕੀ ਛਿੜਕ","tally.goldN":"ਗੋਲਡ ਡਸਟ",
+    "game.orderReal":"ਇਹ ਕੇਕ ਅਸਲੀ ਵਿੱਚ ਆਰਡਰ ਕਰੋ","game.sendWa":"ਮੇਰੀ ਰਚਨਾ ਪਲਕ ਨੂੰ WhatsApp ’ਤੇ ਭੇਜੋ","game.save":"ਮੇਰੀ ਰਚਨਾ ਸੇਵ ਕਰੋ",
+    "game.waNote":"ਇਹੀ ਸੁਨੇਹਾ WhatsApp ਬਟਨ ਨਾਲ ਜਾਂਦਾ ਹੈ — ਜੇ WhatsApp ਖਾਲੀ ਖੁੱਲ੍ਹੇ, ਤਾਂ ਇਸਨੂੰ ਕਾਪੀ ਕਰਕੇ ਉੱਥੇ ਪੇਸਟ ਕਰ ਦਿਓ।",
+    "gwa.greeting":"ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਪਲਕ ਜੀ! ਮੈਂ ਤੁਹਾਡੇ 60-ਸਕਿੰਟ ਕੇਕ ਸਟੂਡੀਓ ਵਿੱਚ ਇੱਕ ਕੇਕ ਬਣਾਇਆ ਹੈ:","gwa.layers":"ਲੇਅਰ (ਥੱਲੇ ਤੋਂ ਉੱਪਰ):","gwa.frosting":"ਫਰਾਸਟਿੰਗ:","gwa.toppings":"ਟਾਪਿੰਗਜ਼:","gwa.none":"ਕੋਈ ਨਹੀਂ — ਸਾਦਾ ਅਤੇ ਕਲਾਸਿਕ ਰੱਖਿਆ ਹੈ","gwa.named":"ਮੈਂ ਇਸਦਾ ਨਾਮ ਰੱਖਿਆ ਹੈ:","gwa.ask":"ਕੀ ਤੁਸੀਂ ਇਹ ਕੇਕ ਅਸਲੀ ਵਿੱਚ ਬਣਾ ਸਕਦੇ ਹੋ? ਮੈਨੂੰ ਇਹ ਆਰਡਰ ਕਰਨਾ ਬਹੁਤ ਪਸੰਦ ਆਵੇਗਾ।",
+    "save.studio":"60-ਸਕਿੰਟ ਕੇਕ ਸਟੂਡੀਓ","save.footer":"100% ਐੱਗਲੈੱਸ · ਬਿਨਾਂ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ · ਜ਼ੀਰਕਪੁਰ ਵਿੱਚ ਤਾਜ਼ਾ ਬੇਕ",
+    "chat.teaser":"ਕੇਕ ਬਾਰੇ ਸਵਾਲ? ਸਾਡੇ ਨਾਲ ਚੈਟ ਕਰੋ","chat.sub":"ਐੱਗਲੈੱਸ ਸਟੂਡੀਓ · ਜ਼ੀਰਕਪੁਰ · ਤੁਰੰਤ ਜਵਾਬ","chat.ph":"ਸਵਾਦ, ਸਾਈਜ਼, ਡਿਲਿਵਰੀ ਬਾਰੇ ਪੁੱਛੋ…",
+    "chip.flavours":"ਸਵਾਦ","chip.sizes":"ਸਾਈਜ਼ ਅਤੇ ਸਰਵਿੰਗ","chip.delivery":"ਡਿਲਿਵਰੀ ਖੇਤਰ","chip.order":"ਆਰਡਰ ਕਿਵੇਂ ਕਰੀਏ","chip.enquiry":"ਪੁੱਛਗਿੱਛ ਸ਼ੁਰੂ ਕਰੋ","chip.whatsapp":"WhatsApp ’ਤੇ ਗੱਲ ਕਰੋ",
+    "foot.tag":"100% ਐੱਗਲੈੱਸ, ਬਿਨਾਂ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ ਕਸਟਮ ਕੇਕ — ਸ਼ੈੱਫ ਪਲਕ ਸੁਖੀਜਾ ਦੁਆਰਾ ਸਾਡੇ ਇਨ-ਹਾਊਸ ਸਟੂਡੀਓ ਵਿੱਚ ਖ਼ੁਦ ਤਾਜ਼ਾ ਬਣਾਏ।",
+    "foot.talk":"ਸਾਡੇ ਨਾਲ ਗੱਲ ਕਰੋ","foot.waCalls":"WhatsApp ਅਤੇ ਕਾਲ","foot.good":"ਜਾਣਕਾਰੀ ਲਈ",
+    "foot.goodLines":"ਹਰ ਰੋਜ਼ ਖੁੱਲ੍ਹਾ · ਸਵੇਰੇ 9 – ਰਾਤ 9<br>ਆਮ ਕੇਕ: 1–2 ਦਿਨ ਪਹਿਲਾਂ ਦੱਸੋ<br>ਕਸਟਮ ਥੀਮ: 3–4 ਦਿਨ ਪਹਿਲਾਂ ਦੱਸੋ<br>ਸੇਵਾ ਖੇਤਰ: ਜ਼ੀਰਕਪੁਰ · ਪੰਚਕੂਲਾ · ਚੰਡੀਗੜ੍ਹ · ਮੋਹਾਲੀ",
+    "ui.copied":"ਕਾਪੀ ਹੋ ਗਿਆ"
+  }
+  };
+  var CHAT = {
+  en: {
+    "greeting":"Hello! Welcome to <b>Palak's Cakes N Bakes</b> — 100% eggless, preservative-free, and baked fresh to order in Zirakpur. Ask me about flavours, sizes or delivery… or shall I take a quick cake enquiry for you?",
+    "thanks":"You're most welcome! If a cake is on your mind, I'm right here — flavours, sizes, or a quick enquiry whenever you're ready.",
+    "hours":"The studio is open <b>all days, 9 AM – 9 PM</b>. Regular cakes need 1–2 days' notice and custom themes 3–4 days, so ordering a little ahead always helps.",
+    "delivery":"We deliver across <b>Zirakpur, Panchkula, Chandigarh and Mohali</b>. You can also pick up from the studio — Flat 17, Aastha City, Peer Muchalla, Zirakpur — any day between 9 AM and 9 PM.",
+    "price":"I don't quote exact prices here — <b>Palak confirms the exact price for your flavour and weight before baking</b>, and on the live ordering page you'll see the price per weight right before you pay. If you'd like a quick quote, I can take a two-minute enquiry and hand it straight to her WhatsApp.",
+    "order":"Two easy ways:<br><b>1.</b> Build your cake on this page — flavour, size, date — and it confirms the moment you pay.<br><b>2.</b> Let me take a quick enquiry here and hand it to Palak on WhatsApp.<br>Which suits you?",
+    "eggless":"Yes — proudly. <b>Every cake here is 100% eggless</b>, and we never use preservatives. The flavours are natural too, which is exactly why our regulars say they can taste the difference.",
+    "enq.occQ":"Lovely — let's put a quick enquiry together for Palak. <b>What's the occasion?</b>",
+    "enq.sizeQ":"A {occ} cake — lovely. <b>What size were you thinking?</b> Quick guide: ½ kg serves 4–6, 1 kg serves 8–10.",
+    "enq.dateQ":"Got it — <b>{size}</b>. Last thing: <b>when do you need the cake?</b> Type the day or date, like “this Saturday” or “28 Oct”. (Regular cakes need 1–2 days; custom themes 3–4.)",
+    "enq.dateQNS":"No worries — Palak will help you land on exactly the right size. <b>When do you need the cake?</b> Type the day or date, like “this Saturday” or “28 Oct”.",
+    "enq.done":"All done! This exact message is ready to land in Palak's WhatsApp — she'll confirm the design and the exact price with you there.",
+    "enq.cancelled":"No problem at all — enquiry cancelled. Ask me anything else, or tap below whenever you're ready.",
+    "enq.summary":"Hi Palak ji! I'd like to enquire about a cake.\nOccasion: {occ}\nSize: {size}\nNeeded by: {date}\n— sent from the website chat",
+    "enq.sendBtn":"Send enquiry on WhatsApp","enq.copyBtn":"Copy message","enq.hint":"If WhatsApp opens without the text, tap Copy and paste it in."
+  },
+  hi: {
+    "greeting":"नमस्ते! <b>Palak's Cakes N Bakes</b> में आपका स्वागत है — 100% एगलेस, बिना प्रिज़र्वेटिव, और ज़ीरकपुर में ऑर्डर पर ताज़ा बेक किया गया। मुझसे फ्लेवर, साइज़ या डिलीवरी के बारे में पूछें… या मैं आपके लिए एक छोटी-सी केक पूछताछ ले लूँ?",
+    "thanks":"आपका बहुत स्वागत है! अगर मन में कोई केक है, तो मैं यहीं हूँ — फ्लेवर, साइज़, या एक छोटी पूछताछ, जब चाहें।",
+    "hours":"स्टूडियो <b>हर दिन, सुबह 9 – रात 9</b> खुला रहता है। आम केक के लिए 1–2 दिन और कस्टम थीम के लिए 3–4 दिन पहले बताना अच्छा रहता है, इसलिए थोड़ा पहले ऑर्डर करना हमेशा मदद करता है।",
+    "delivery":"हम <b>ज़ीरकपुर, पंचकुला, चंडीगढ़ और मोहाली</b> में डिलीवरी करते हैं। आप स्टूडियो से भी ले सकते हैं — फ्लैट 17, आस्था सिटी, पीर मुच्छला, ज़ीरकपुर — किसी भी दिन सुबह 9 से रात 9 बजे के बीच।",
+    "price":"मैं यहाँ सही दाम नहीं बताता — <b>पलक बेक करने से पहले आपके फ्लेवर और वज़न के हिसाब से सही दाम कन्फर्म करती हैं</b>, और लाइव ऑर्डरिंग पेज पर पेमेंट से ठीक पहले आपको प्रति वज़न दाम दिखेगा। अगर आप तुरंत कोट चाहते हैं, तो मैं दो मिनट की पूछताछ लेकर सीधे उनकी WhatsApp पर भेज सकता हूँ।",
+    "order":"दो आसान तरीके:<br><b>1.</b> इस पेज पर अपना केक बनाएँ — फ्लेवर, साइज़, तारीख़ — और पेमेंट करते ही कन्फर्म।<br><b>2.</b> मुझे यहाँ एक छोटी पूछताछ लेने दें और मैं इसे पलक की WhatsApp पर भेज दूँ।<br>आपको कौन-सा तरीका ठीक लगेगा?",
+    "eggless":"हाँ — गर्व से। <b>यहाँ का हर केक 100% एगलेस है</b>, और हम कभी प्रिज़र्वेटिव इस्तेमाल नहीं करते। फ्लेवर भी नैचुरल हैं — यही वजह है कि हमारे नियमित ग्राहक कहते हैं कि उन्हें फ़र्क़ सच में महसूस होता है।",
+    "enq.occQ":"बढ़िया — चलिए पलक के लिए एक छोटी पूछताछ तैयार करते हैं। <b>मौका क्या है?</b>",
+    "enq.sizeQ":"{occ} का केक — बढ़िया। <b>कौन-सा साइज़ सोच रहे हैं?</b> छोटी गाइड: ½ kg में 4–6 लोग, 1 kg में 8–10 लोग।",
+    "enq.dateQ":"समझ गया — <b>{size}</b>। आख़िरी बात: <b>केक कब चाहिए?</b> दिन या तारीख़ लिखें, जैसे “इस शनिवार” या “28 अक्टूबर”। (आम केक के लिए 1–2 दिन; कस्टम थीम के लिए 3–4 दिन।)",
+    "enq.dateQNS":"कोई बात नहीं — पलक आपको बिल्कुल सही साइज़ चुनने में मदद कर देंगी। <b>केक कब चाहिए?</b> दिन या तारीख़ लिखें, जैसे “इस शनिवार” या “28 अक्टूबर”।",
+    "enq.done":"हो गया! यही मैसेज पलक की WhatsApp पर जाने के लिए तैयार है — वह वहाँ आपके साथ डिज़ाइन और सही दाम कन्फर्म कर देंगी।",
+    "enq.cancelled":"कोई बात नहीं — पूछताछ रद्द कर दी गई। कुछ और पूछें, या जब तैयार हों तो नीचे टैप करें।",
+    "enq.summary":"नमस्ते पलक जी! मुझे एक केक के बारे में पूछताछ करनी है।\nमौका: {occ}\nसाइज़: {size}\nचाहिए: {date}\n— वेबसाइट चैट से भेजा गया",
+    "enq.sendBtn":"पूछताछ WhatsApp पर भेजें","enq.copyBtn":"मैसेज कॉपी करें","enq.hint":"अगर WhatsApp बिना टेक्स्ट के खुले, तो कॉपी करके वहाँ पेस्ट कर दें।"
+  },
+  pa: {
+    "greeting":"ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ! <b>Palak's Cakes N Bakes</b> ਵਿੱਚ ਤੁਹਾਡਾ ਸਵਾਗਤ ਹੈ — 100% ਐੱਗਲੈੱਸ, ਬਿਨਾਂ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ, ਅਤੇ ਜ਼ੀਰਕਪੁਰ ਵਿੱਚ ਆਰਡਰ ’ਤੇ ਤਾਜ਼ਾ ਬੇਕ ਕੀਤਾ। ਮੈਨੂੰ ਸਵਾਦ, ਸਾਈਜ਼ ਜਾਂ ਡਿਲਿਵਰੀ ਬਾਰੇ ਪੁੱਛੋ… ਜਾਂ ਮੈਂ ਤੁਹਾਡੇ ਲਈ ਇੱਕ ਛੋਟੀ ਜਿਹੀ ਕੇਕ ਪੁੱਛਗਿੱਛ ਲੈ ਲਵਾਂ?",
+    "thanks":"ਤੁਹਾਡਾ ਬਹੁਤ ਸਵਾਗਤ ਹੈ! ਜੇ ਮਨ ਵਿੱਚ ਕੋਈ ਕੇਕ ਹੈ, ਤਾਂ ਮੈਂ ਇੱਥੇ ਹੀ ਹਾਂ — ਸਵਾਦ, ਸਾਈਜ਼, ਜਾਂ ਇੱਕ ਛੋਟੀ ਪੁੱਛਗਿੱਛ, ਜਦੋਂ ਚਾਹੋ।",
+    "hours":"ਸਟੂਡੀਓ <b>ਹਰ ਰੋਜ਼, ਸਵੇਰੇ 9 – ਰਾਤ 9</b> ਖੁੱਲ੍ਹਾ ਰਹਿੰਦਾ ਹੈ। ਆਮ ਕੇਕ ਲਈ 1–2 ਦਿਨ ਅਤੇ ਕਸਟਮ ਥੀਮ ਲਈ 3–4 ਦਿਨ ਪਹਿਲਾਂ ਦੱਸਣਾ ਚੰਗਾ ਰਹਿੰਦਾ ਹੈ, ਇਸ ਲਈ ਥੋੜ੍ਹਾ ਪਹਿਲਾਂ ਆਰਡਰ ਕਰਨਾ ਹਮੇਸ਼ਾ ਮਦਦ ਕਰਦਾ ਹੈ।",
+    "delivery":"ਅਸੀਂ <b>ਜ਼ੀਰਕਪੁਰ, ਪੰਚਕੂਲਾ, ਚੰਡੀਗੜ੍ਹ ਅਤੇ ਮੋਹਾਲੀ</b> ਵਿੱਚ ਡਿਲਿਵਰੀ ਕਰਦੇ ਹਾਂ। ਤੁਸੀਂ ਸਟੂਡੀਓ ਤੋਂ ਵੀ ਲੈ ਸਕਦੇ ਹੋ — ਫਲੈਟ 17, ਆਸਥਾ ਸਿਟੀ, ਪੀਰ ਮੁੱਛਲਾ, ਜ਼ੀਰਕਪੁਰ — ਕਿਸੇ ਵੀ ਦਿਨ ਸਵੇਰੇ 9 ਤੋਂ ਰਾਤ 9 ਵਜੇ ਦੇ ਵਿਚਕਾਰ।",
+    "price":"ਮੈਂ ਇੱਥੇ ਸਹੀ ਦਾਮ ਨਹੀਂ ਦੱਸਦਾ — <b>ਪਲਕ ਬੇਕ ਕਰਨ ਤੋਂ ਪਹਿਲਾਂ ਤੁਹਾਡੇ ਸਵਾਦ ਅਤੇ ਵਜ਼ਨ ਮੁਤਾਬਕ ਸਹੀ ਦਾਮ ਕਨਫਰਮ ਕਰਦੀ ਹੈ</b>, ਅਤੇ ਲਾਈਵ ਆਰਡਰਿੰਗ ਪੇਜ ’ਤੇ ਪੇਮੈਂਟ ਤੋਂ ਠੀਕ ਪਹਿਲਾਂ ਤੁਹਾਨੂੰ ਪ੍ਰਤੀ ਵਜ਼ਨ ਦਾਮ ਦਿਖੇਗਾ। ਜੇ ਤੁਸੀਂ ਤੁਰੰਤ ਕੋਟ ਚਾਹੁੰਦੇ ਹੋ, ਤਾਂ ਮੈਂ ਦੋ ਮਿੰਟ ਦੀ ਪੁੱਛਗਿੱਛ ਲੈ ਕੇ ਸਿੱਧੀ ਉਨ੍ਹਾਂ ਦੀ WhatsApp ’ਤੇ ਭੇਜ ਸਕਦਾ ਹਾਂ।",
+    "order":"ਦੋ ਆਸਾਨ ਤਰੀਕੇ:<br><b>1.</b> ਇਸ ਪੇਜ ’ਤੇ ਆਪਣਾ ਕੇਕ ਬਣਾਓ — ਸਵਾਦ, ਸਾਈਜ਼, ਤਾਰੀਖ — ਅਤੇ ਪੇਮੈਂਟ ਕਰਦੇ ਹੀ ਕਨਫਰਮ।<br><b>2.</b> ਮੈਨੂੰ ਇੱਥੇ ਇੱਕ ਛੋਟੀ ਪੁੱਛਗਿੱਛ ਲੈਣ ਦਿਓ ਅਤੇ ਮੈਂ ਇਸਨੂੰ ਪਲਕ ਦੀ WhatsApp ’ਤੇ ਭੇਜ ਦਿਆਂ।<br>ਤੁਹਾਨੂੰ ਕਿਹੜਾ ਤਰੀਕਾ ਠੀਕ ਲੱਗੇਗਾ?",
+    "eggless":"ਹਾਂ — ਮਾਣ ਨਾਲ। <b>ਇੱਥੇ ਦਾ ਹਰ ਕੇਕ 100% ਐੱਗਲੈੱਸ ਹੈ</b>, ਅਤੇ ਅਸੀਂ ਕਦੇ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ ਨਹੀਂ ਵਰਤਦੇ। ਸਵਾਦ ਵੀ ਕੁਦਰਤੀ ਹਨ — ਇਹੀ ਵਜ੍ਹਾ ਹੈ ਕਿ ਸਾਡੇ ਨਿਯਮਿਤ ਗਾਹਕ ਕਹਿੰਦੇ ਹਨ ਕਿ ਉਨ੍ਹਾਂ ਨੂੰ ਫ਼ਰਕ ਸੱਚ ਵਿੱਚ ਮਹਿਸੂਸ ਹੁੰਦਾ ਹੈ।",
+    "enq.occQ":"ਵਧੀਆ — ਚਲੋ ਪਲਕ ਲਈ ਇੱਕ ਛੋਟੀ ਪੁੱਛਗਿੱਛ ਤਿਆਰ ਕਰਦੇ ਹਾਂ। <b>ਮੌਕਾ ਕੀ ਹੈ?</b>",
+    "enq.sizeQ":"{occ} ਦਾ ਕੇਕ — ਵਧੀਆ। <b>ਕਿਹੜਾ ਸਾਈਜ਼ ਸੋਚ ਰਹੇ ਹੋ?</b> ਛੋਟੀ ਗਾਈਡ: ½ kg ਵਿੱਚ 4–6 ਲੋਕ, 1 kg ਵਿੱਚ 8–10 ਲੋਕ।",
+    "enq.dateQ":"ਸਮਝ ਗਿਆ — <b>{size}</b>। ਆਖ਼ਰੀ ਗੱਲ: <b>ਕੇਕ ਕਦੋਂ ਚਾਹੀਦਾ ਹੈ?</b> ਦਿਨ ਜਾਂ ਤਾਰੀਖ ਲਿਖੋ, ਜਿਵੇਂ “ਇਸ ਸ਼ਨੀਵਾਰ” ਜਾਂ “28 ਅਕਤੂਬਰ”। (ਆਮ ਕੇਕ ਲਈ 1–2 ਦਿਨ; ਕਸਟਮ ਥੀਮ ਲਈ 3–4 ਦਿਨ।)",
+    "enq.dateQNS":"ਕੋਈ ਗੱਲ ਨਹੀਂ — ਪਲਕ ਤੁਹਾਨੂੰ ਬਿਲਕੁਲ ਸਹੀ ਸਾਈਜ਼ ਚੁਣਨ ਵਿੱਚ ਮਦਦ ਕਰ ਦੇਵੇਗੀ। <b>ਕੇਕ ਕਦੋਂ ਚਾਹੀਦਾ ਹੈ?</b> ਦਿਨ ਜਾਂ ਤਾਰੀਖ ਲਿਖੋ, ਜਿਵੇਂ “ਇਸ ਸ਼ਨੀਵਾਰ” ਜਾਂ “28 ਅਕਤੂਬਰ”।",
+    "enq.done":"ਹੋ ਗਿਆ! ਇਹੀ ਸੁਨੇਹਾ ਪਲਕ ਦੀ WhatsApp ’ਤੇ ਜਾਣ ਲਈ ਤਿਆਰ ਹੈ — ਉਹ ਉੱਥੇ ਤੁਹਾਡੇ ਨਾਲ ਡਿਜ਼ਾਈਨ ਅਤੇ ਸਹੀ ਦਾਮ ਕਨਫਰਮ ਕਰ ਦੇਵੇਗੀ।",
+    "enq.cancelled":"ਕੋਈ ਗੱਲ ਨਹੀਂ — ਪੁੱਛਗਿੱਛ ਰੱਦ ਕਰ ਦਿੱਤੀ ਗਈ। ਕੁਝ ਹੋਰ ਪੁੱਛੋ, ਜਾਂ ਜਦੋਂ ਤਿਆਰ ਹੋਵੋ ਤਾਂ ਥੱਲੇ ਟੈਪ ਕਰੋ।",
+    "enq.summary":"ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਪਲਕ ਜੀ! ਮੈਨੂੰ ਇੱਕ ਕੇਕ ਬਾਰੇ ਪੁੱਛਗਿੱਛ ਕਰਨੀ ਹੈ।\nਮੌਕਾ: {occ}\nਸਾਈਜ਼: {size}\nਚਾਹੀਦਾ ਹੈ: {date}\n— ਵੈੱਬਸਾਈਟ ਚੈਟ ਤੋਂ ਭੇਜਿਆ ਗਿਆ",
+    "enq.sendBtn":"ਪੁੱਛਗਿੱਛ WhatsApp ’ਤੇ ਭੇਜੋ","enq.copyBtn":"ਸੁਨੇਹਾ ਕਾਪੀ ਕਰੋ","enq.hint":"ਜੇ WhatsApp ਬਿਨਾਂ ਟੈਕਸਟ ਦੇ ਖੁੱਲ੍ਹੇ, ਤਾਂ ਕਾਪੀ ਕਰਕੇ ਉੱਥੇ ਪੇਸਟ ਕਰ ਦਿਓ।"
+  }
+  };
+  var lang = "en";
+  try { var saved = window.localStorage.getItem("pcb-lang"); if (saved && I18N[saved]) lang = saved; } catch (e) {}
+  window.I18N_HOOKS = [];
+  window.__lang = lang;
+  window.__dateLocale = {en:"en-IN", hi:"hi-IN", pa:"pa-IN"}[lang] || "en-IN";
+  window.t = function(k){
+    var d = I18N[lang] || {};
+    if (Object.prototype.hasOwnProperty.call(d, k)) return d[k];
+    if (Object.prototype.hasOwnProperty.call(I18N.en, k)) return I18N.en[k];
+    return k;
+  };
+  window.chatT = function(k){
+    var d = CHAT[lang] || {};
+    if (Object.prototype.hasOwnProperty.call(d, k)) return d[k];
+    if (Object.prototype.hasOwnProperty.call(CHAT.en, k)) return CHAT.en[k];
+    return k;
+  };
+  window.setLang = function(l){
+    if (!I18N[l]) l = "en";
+    lang = l; window.__lang = l;
+    window.__dateLocale = {en:"en-IN", hi:"hi-IN", pa:"pa-IN"}[l] || "en-IN";
+    document.documentElement.lang = l;
+    var i, els;
+    els = document.querySelectorAll("[data-i18n]");
+    for (i = 0; i < els.length; i++) els[i].textContent = window.t(els[i].getAttribute("data-i18n"));
+    els = document.querySelectorAll("[data-i18n-html]");
+    for (i = 0; i < els.length; i++) els[i].innerHTML = window.t(els[i].getAttribute("data-i18n-html"));
+    els = document.querySelectorAll("[data-i18n-ph]");
+    for (i = 0; i < els.length; i++) els[i].setAttribute("placeholder", window.t(els[i].getAttribute("data-i18n-ph")));
+    els = document.querySelectorAll(".langsw button");
+    for (i = 0; i < els.length; i++) els[i].classList.toggle("on", els[i].getAttribute("data-lang") === l);
+    try { window.localStorage.setItem("pcb-lang", l); } catch (e) {}
+    window.I18N_HOOKS.forEach(function(fn){ try { fn(l); } catch (e) {} });
+  };
+  var swb = document.querySelectorAll(".langsw button");
+  for (var bi = 0; bi < swb.length; bi++) swb[bi].addEventListener("click", function(){ window.setLang(this.getAttribute("data-lang")); });
+  window.setLang(lang);
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", function(){ window.setLang(lang); });
+})();
+</script>
+
+<script>
 /* ================= cake builder (flow + Palak's rules) ================= */
 (function(){
   "use strict";
@@ -778,15 +1250,16 @@ window.copyMsgText = function(text, btn){
   var CLASSIC = ["Black Forest","Chocolate Truffle","Butterscotch Crunch","Pineapple","Fresh Strawberry","Vanilla Bean","Mango (seasonal)","Coffee Mocha"];
   var PREMIUM = ["Rasmalai","Red Velvet","Belgian Chocolate","Nutella Hazelnut","Blueberry Cheesecake","Kesar Pista","Lotus Biscoff","Choco Chip Overload"];
   var SIZES = [
-    {id:"0.5", label:"½ kg", serves:"serves 4–6", kg:0.5},
-    {id:"1",   label:"1 kg", serves:"serves 8–10", kg:1},
-    {id:"1.5", label:"1.5 kg", serves:"serves 12–15", kg:1.5},
-    {id:"2",   label:"2 kg", serves:"serves 18–20", kg:2},
-    {id:"3",   label:"3 kg", serves:"serves 28–30", kg:3}
+    {id:"0.5", label:"½ kg", serves:"4–6", kg:0.5},
+    {id:"1",   label:"1 kg", serves:"8–10", kg:1},
+    {id:"1.5", label:"1.5 kg", serves:"12–15", kg:1.5},
+    {id:"2",   label:"2 kg", serves:"18–20", kg:2},
+    {id:"3",   label:"3 kg", serves:"28–30", kg:3}
   ];
   var state = {occasion:null, flavour:null, tier:null, size:null, design:null, custom:false, msg:"", date:null, fulfil:null, pay:"UPI"};
 
   function $(id){return document.getElementById(id);}
+  var t = window.t || function(k){ return k; };
   function mkChip(text, attrs){
     var b = document.createElement("button");
     b.type = "button"; b.className = "chip"; b.textContent = text;
@@ -803,10 +1276,13 @@ window.copyMsgText = function(text, btn){
     c.addEventListener("click", function(){ pickFlavour(f, "Premium", c); });
     $("premiumFlavours").appendChild(c);
   });
+  var sizeChipEls = [];
+  function sizeLabel(s){ return s.label + " · " + t("b.serves") + " " + s.serves; }
   SIZES.forEach(function(s){
-    var c = mkChip(s.label + " · " + s.serves, {"data-size":s.id});
+    var c = mkChip(sizeLabel(s), {"data-size":s.id});
     c.addEventListener("click", function(){ pickSize(s, c); });
     $("sizeChips").appendChild(c);
+    sizeChipEls.push(c);
   });
   function markSel(container, btn){
     var kids = container.querySelectorAll(".chip");
@@ -830,7 +1306,7 @@ window.copyMsgText = function(text, btn){
     SIZES.forEach(function(s, i){
       var dis = (state.tier === "Premium" && s.kg < 1);
       sc[i].disabled = dis;
-      sc[i].title = dis ? "Premium flavours start from 1 kg" : "";
+      sc[i].title = dis ? t("b.premTitle") : "";
     });
   }
   $("occasionChips").addEventListener("click", function(e){
@@ -843,14 +1319,14 @@ window.copyMsgText = function(text, btn){
     var dc = $("designChips").querySelectorAll("[data-custom]");
     dc.forEach(function(c){
       c.disabled = !!small;
-      c.title = small ? "Custom designs start from 1 kg" : "";
+      c.title = small ? t("b.customTitle") : "";
     });
     if (small && state.custom) {
       state.design = null; state.custom = false;
       markSel($("designChips"), null);
-      $("designNote").textContent = "Custom designs need 1 kg or more — pick a bigger size to unlock photo, theme, tiered and bundt designs.";
+      $("designNote").textContent = t("b.designNoteSmall");
     } else {
-      $("designNote").textContent = "Simple cream finishes are available in every size. Photo, theme, tiered and bundt designs need 1 kg or more.";
+      $("designNote").textContent = t("b.designNote");
     }
   }
   $("designChips").addEventListener("click", function(e){
@@ -872,7 +1348,7 @@ window.copyMsgText = function(text, btn){
   });
   $("cakeMsg").addEventListener("input", function(e){
     state.msg = e.target.value.trim();
-    $("msgPreview").textContent = state.msg || "Your message appears here";
+    $("msgPreview").textContent = state.msg || t("b.msgPreview");
     render();
   });
   var dateInput = $("cakeDate");
@@ -887,14 +1363,14 @@ window.copyMsgText = function(text, btn){
     state.fulfil = b.dataset.fulfil; markSel($("fulfilChips"), b); render();
   });
   function fmtDate(v){
-    if (!v) return "Pick a date";
+    if (!v) return t("sum.pickDate");
     var d = new Date(v + "T00:00:00");
-    return d.toLocaleDateString("en-IN", {weekday:"short", day:"numeric", month:"short"});
+    return d.toLocaleDateString(window.__dateLocale || "en-IN", {weekday:"short", day:"numeric", month:"short"});
   }
   function render(){
     $("sumOccasion").textContent = state.occasion || "—";
-    $("sumFlavour").textContent = state.flavour ? state.flavour + " (" + state.tier + ")" : "Pick a flavour";
-    $("sumSize").textContent = state.size ? state.size.label + " · " + state.size.serves : "—";
+    $("sumFlavour").textContent = state.flavour ? state.flavour + " (" + state.tier + ")" : t("sum.pickFlavour");
+    $("sumSize").textContent = state.size ? state.size.label + " · " + t("b.serves") + " " + state.size.serves : "—";
     $("sumDesign").textContent = state.design || "—";
     $("sumMsg").textContent = state.msg ? "“" + state.msg + "”" : "—";
     $("sumDate").textContent = fmtDate(state.date);
@@ -905,30 +1381,30 @@ window.copyMsgText = function(text, btn){
       var days = Math.round((new Date(state.date + "T00:00:00") - new Date(iso(today) + "T00:00:00")) / 86400000);
       if (days < need) {
         warn.textContent = state.custom
-          ? "Custom themes usually need 3–4 days. This date is sooner — Palak will confirm on WhatsApp if she can still make it happen."
-          : "Regular cakes are best ordered 1–2 days ahead. This date is tight — Palak will confirm availability right away.";
+          ? t("warn.custom")
+          : t("warn.regular");
         warn.classList.add("show");
       } else { warn.classList.remove("show"); }
     } else { warn.classList.remove("show"); }
     var ok = !!(state.flavour && state.size && state.date);
     $("toPayment").disabled = !ok;
     $("gateNote").textContent = ok
-      ? "Looking good — one tap to payment."
-      : "Still needed: " + [!state.flavour && "a flavour", !state.size && "a size", !state.date && "a date"].filter(Boolean).join(", ") + ".";
+      ? t("gate.ok")
+      : t("gate.need") + " " + [!state.flavour && t("gate.flavour"), !state.size && t("gate.size"), !state.date && t("gate.date")].filter(Boolean).join(", ") + ".";
     updateWaOrder(ok);
   }
   /* ---- prefilled WhatsApp order (visible preview + copy fallback) ---- */
   var waMsgText = "";
   function composeWaMsg(){
-    var lines = ["Hi Palak ji! I'd like to order a cake from Palak's Cakes N Bakes."];
-    if (state.occasion) lines.push("Occasion: " + state.occasion);
-    lines.push("Flavour: " + state.flavour + " (" + state.tier + ")");
-    lines.push("Size: " + state.size.label + " (" + state.size.serves + ")");
-    if (state.design) lines.push("Design: " + state.design);
-    if (state.msg) lines.push("Message on the cake: \u201C" + state.msg + "\u201D");
-    lines.push("Needed on: " + fmtDate(state.date));
-    if (state.fulfil) lines.push("Fulfilment: " + state.fulfil);
-    lines.push("My name: ");
+    var lines = [t("wa.greeting")];
+    if (state.occasion) lines.push(t("wa.occasion") + ": " + state.occasion);
+    lines.push(t("wa.flavour") + ": " + state.flavour + " (" + state.tier + ")");
+    lines.push(t("wa.size") + ": " + state.size.label + " (" + t("b.serves") + " " + state.size.serves + ")");
+    if (state.design) lines.push(t("wa.design") + ": " + state.design);
+    if (state.msg) lines.push(t("wa.msgOnCake") + ": \u201C" + state.msg + "\u201D");
+    lines.push(t("wa.neededOn") + ": " + fmtDate(state.date));
+    if (state.fulfil) lines.push(t("wa.fulfilment") + ": " + state.fulfil);
+    lines.push(t("wa.myName") + " ");
     return lines.join("\n");
   }
   function updateWaOrder(ok){
@@ -949,9 +1425,9 @@ window.copyMsgText = function(text, btn){
       document.querySelectorAll("[data-pay]").forEach(function(x){ x.classList.remove("sel"); });
       b.classList.add("sel"); state.pay = b.dataset.pay;
       var lbl = $("payFieldLabel"), fld = $("payField");
-      if (state.pay === "UPI") { lbl.textContent = "UPI ID"; fld.placeholder = "yourname@upi"; }
-      if (state.pay === "Card") { lbl.textContent = "Card number"; fld.placeholder = "1234 5678 9012 3456"; }
-      if (state.pay === "Net banking") { lbl.textContent = "Bank"; fld.placeholder = "Select your bank (demo)"; }
+      if (state.pay === "UPI") { lbl.textContent = t("pay.fUpi"); fld.placeholder = t("pay.phUpi"); }
+      if (state.pay === "Card") { lbl.textContent = t("pay.fCard"); fld.placeholder = t("pay.phCard"); }
+      if (state.pay === "Net banking") { lbl.textContent = t("pay.fBank"); fld.placeholder = t("pay.phBank"); }
     });
   });
   $("payNow").addEventListener("click", function(){
@@ -973,6 +1449,16 @@ window.copyMsgText = function(text, btn){
     $("payForm").classList.remove("hidden");
     $("successView").style.display = "none";
     document.getElementById("builder").scrollIntoView({behavior:"smooth"});
+  });
+  if (window.I18N_HOOKS) window.I18N_HOOKS.push(function(){
+    sizeChipEls.forEach(function(c, i){ c.textContent = sizeLabel(SIZES[i]); });
+    refreshSizes(); refreshDesigns();
+    if (!state.msg) $("msgPreview").textContent = t("b.msgPreview");
+    var pl = $("payFieldLabel"), pf = $("payField");
+    if (state.pay === "UPI") { pl.textContent = t("pay.fUpi"); pf.placeholder = t("pay.phUpi"); }
+    if (state.pay === "Card") { pl.textContent = t("pay.fCard"); pf.placeholder = t("pay.phCard"); }
+    if (state.pay === "Net banking") { pl.textContent = t("pay.fBank"); pf.placeholder = t("pay.phBank"); }
+    render();
   });
   render();
 })();
@@ -1037,6 +1523,9 @@ window.copyMsgText = function(text, btn){
   var WA_NUM = "919115703157";
   function waLink(text){ return "https://wa.me/" + WA_NUM + "?text=" + encodeURIComponent(text); }
   function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); }
+  function t2(k){ return window.t ? window.t(k) : k; }
+  function chatT(k){ return window.chatT ? window.chatT(k) : k; }
+  function tpl(s, o){ var r = String(s); for (var k in o) r = r.split("{" + k + "}").join(o[k]); return r; }
 
   var panel = document.getElementById("chatPanel"), body = document.getElementById("chatBody"),
       typing = document.getElementById("chatTyping"), chipsBox = document.getElementById("chatChips"),
@@ -1046,14 +1535,16 @@ window.copyMsgText = function(text, btn){
   var greeted = false, enquiry = null;
   var copyStore = {};
 
-  var MAIN_CHIPS = [
-    {t:"Flavours", v:"flavours"},
-    {t:"Sizes & servings", v:"sizes"},
-    {t:"Delivery areas", v:"delivery"},
-    {t:"How to order", v:"order"},
-    {t:"Start an enquiry", v:"enquiry"},
-    {t:"Talk on WhatsApp", v:"whatsapp", wa:1}
-  ];
+  function mainChips(){
+    return [
+      {t:t2("chip.flavours"), v:"flavours"},
+      {t:t2("chip.sizes"), v:"sizes"},
+      {t:t2("chip.delivery"), v:"delivery"},
+      {t:t2("chip.order"), v:"order"},
+      {t:t2("chip.enquiry"), v:"enquiry"},
+      {t:t2("chip.whatsapp"), v:"whatsapp", wa:1}
+    ];
+  }
   var OCC_CHIPS = ["Birthday","Anniversary","Wedding","Baby shower","Kids' theme party","Just a treat"].map(function(o){
     return {t:o, v:"occ:" + o};
   }).concat([{t:"Cancel", v:"cancel"}]);
@@ -1123,7 +1614,7 @@ window.copyMsgText = function(text, btn){
     window.setTimeout(function(){
       typing.classList.remove("show");
       addMsg(html, "bot");
-      setChips(chips || MAIN_CHIPS);
+      setChips(chips || mainChips());
     }, wait);
   }
   function setChips(list){
@@ -1140,37 +1631,37 @@ window.copyMsgText = function(text, btn){
 
   function startEnquiry(){
     enquiry = {step:"occasion", data:{}};
-    botSay("Lovely — let's put a quick enquiry together for Palak. <b>What's the occasion?</b>", OCC_CHIPS);
+    botSay(chatT("enq.occQ"), OCC_CHIPS);
   }
   function enquiryAnswer(val){
     if (val === "cancel") {
       enquiry = null;
-      botSay("No problem at all — enquiry cancelled. Ask me anything else, or tap below whenever you're ready.", MAIN_CHIPS);
+      botSay(chatT("enq.cancelled"), mainChips());
       return;
     }
     var clean = val.indexOf(":") > -1 ? val.split(":").slice(1).join(":") : val;
     if (enquiry.step === "occasion") {
       enquiry.data.occasion = clean;
       enquiry.step = "size";
-      botSay("A " + esc(clean.toLowerCase()) + " cake — lovely. <b>What size were you thinking?</b> Quick guide: ½ kg serves 4–6, 1 kg serves 8–10.", SIZE_CHIPS);
+      botSay(tpl(chatT("enq.sizeQ"), {occ: esc(clean.toLowerCase())}), SIZE_CHIPS);
     } else if (enquiry.step === "size") {
       enquiry.data.size = clean;
       enquiry.step = "date";
       if (clean === "Not sure yet") {
-        botSay("No worries — Palak will help you land on exactly the right size. <b>When do you need the cake?</b> Type the day or date, like “this Saturday” or “28 Oct”.", [{t:"Cancel enquiry", v:"cancel"}]);
+        botSay(chatT("enq.dateQNS"), [{t:"Cancel enquiry", v:"cancel"}]);
       } else {
-        botSay("Got it — <b>" + esc(clean) + "</b>. Last thing: <b>when do you need the cake?</b> Type the day or date, like “this Saturday” or “28 Oct”. (Regular cakes need 1–2 days; custom themes 3–4.)", [{t:"Cancel enquiry", v:"cancel"}]);
+        botSay(tpl(chatT("enq.dateQ"), {size: esc(clean)}), [{t:"Cancel enquiry", v:"cancel"}]);
       }
     } else if (enquiry.step === "date") {
       enquiry.data.date = clean;
       var d = enquiry.data; enquiry = null;
-      var summary = "Hi Palak ji! I'd like to enquire about a cake.\nOccasion: " + d.occasion + "\nSize: " + d.size + "\nNeeded by: " + d.date + "\n— sent from the website chat";
+      var summary = tpl(chatT("enq.summary"), {occ: d.occasion, size: d.size, date: d.date});
       copyStore.enquiry = summary;
-      botSay("All done! This exact message is ready to land in Palak's WhatsApp — she'll confirm the design and the exact price with you there." +
+      botSay(chatT("enq.done") +
         '<div class="chat-preview">' + esc(summary) + '</div>' +
-        '<a class="chat-wa" href="' + waLink(summary) + '" target="_blank" rel="noopener">Send enquiry on WhatsApp</a>' +
-        '<button type="button" class="chat-copy" data-copykey="enquiry">Copy message</button>' +
-        '<div class="chat-hint">If WhatsApp opens without the text, tap Copy and paste it in.</div>', MAIN_CHIPS);
+        '<a class="chat-wa" href="' + waLink(summary) + '" target="_blank" rel="noopener">' + chatT("enq.sendBtn") + '</a>' +
+        '<button type="button" class="chat-copy" data-copykey="enquiry">' + chatT("enq.copyBtn") + '</button>' +
+        '<div class="chat-hint">' + chatT("enq.hint") + '</div>', mainChips());
     }
   }
 
@@ -1178,7 +1669,7 @@ window.copyMsgText = function(text, btn){
     var key = intentOf(text);
     if (key === "enquiry") { startEnquiry(); return; }
     var R = REPLIES[key] || REPLIES.fallback;
-    botSay(R.html, R.chips || MAIN_CHIPS);
+    var loc = chatT(key); botSay(loc !== key ? loc : R.html, R.chips || mainChips());
   }
 
   function onChip(c){
@@ -1216,9 +1707,9 @@ window.copyMsgText = function(text, btn){
     hideTeaser();
     if (!greeted) {
       greeted = true;
-      setChips(MAIN_CHIPS); /* prefilled question bubbles visible the moment the chat opens */
+      setChips(mainChips()); /* prefilled question bubbles visible the moment the chat opens */
       window.setTimeout(function(){
-        botSay("Hello! Welcome to <b>Palak's Cakes N Bakes</b> — 100% eggless, preservative-free, and baked fresh to order in Zirakpur. Ask me about flavours, sizes or delivery… or shall I take a quick cake enquiry for you?", MAIN_CHIPS, 550);
+        botSay(chatT("greeting"), mainChips(), 550);
       }, 220);
     }
     window.setTimeout(function(){ input.focus(); }, 340);
@@ -1233,6 +1724,7 @@ window.copyMsgText = function(text, btn){
   closeBtn.addEventListener("click", closeChat);
   teaser.addEventListener("click", openChat);
   document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeChat(); });
+  if (window.I18N_HOOKS) window.I18N_HOOKS.push(function(){ if (!enquiry) setChips(mainChips()); });
   window.setTimeout(function(){ if (!greeted) teaser.classList.add("show"); }, 1500);
   window.setTimeout(hideTeaser, 12000);
 })();
@@ -1461,6 +1953,9 @@ window.copyMsgText = function(text, btn){
   var SVGNS = "http://www.w3.org/2000/svg";
   var WA = "https://wa.me/919115703157?text=";
   function $(id){ return document.getElementById(id); }
+  var t = window.t || function(k){ return k; };
+  function tt(k, o){ var s = t(k); if (o) for (var x in o) s = s.split("{" + x + "}").join(o[x]); return s; }
+  var gameReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   function svgEl(tag, attrs){
     var n = document.createElementNS(SVGNS, tag);
     for (var k in attrs) n.setAttribute(k, attrs[k]);
@@ -1510,7 +2005,7 @@ window.copyMsgText = function(text, btn){
       $("gameFlavours").querySelectorAll(".chip").forEach(function(c){ c.classList.remove("sel"); });
       b.classList.add("sel");
       syncStep1();
-      if (layers.length < 3) $("gameCaption").textContent = f.name + " — lovely. Tap “Stack this layer” when ready.";
+      if (layers.length < 3) $("gameCaption").textContent = tt("cap.pick", {f: f.name});
     });
     $("gameFlavours").appendChild(b);
   });
@@ -1526,7 +2021,7 @@ window.copyMsgText = function(text, btn){
       $("gStep1").classList.add("locked");
       $("gStep3").classList.remove("locked");
       $("gStep4").classList.remove("locked");
-      $("gameCaption").textContent = fr.name + " — glossy and gorgeous. Now the toppings, if you fancy.";
+      $("gameCaption").textContent = tt("cap.frost", {f: fr.name});
     });
     $("gameFrostings").appendChild(b);
   });
@@ -1575,13 +2070,13 @@ window.copyMsgText = function(text, btn){
     if (timerId) { window.clearInterval(timerId); timerId = null; }
     if (finished) {
       timerDone = true;
-      $("gameTimerLabel").textContent = "Time! Finishing touches still count";
+      $("gameTimerLabel").textContent = t("game.timerTime");
     }
   }
 
   /* ---- step 1: stacking ---- */
   function syncStep1(){
-    $("layerStatus").textContent = layers.length + " of 3 layers stacked.";
+    $("layerStatus").textContent = tt("game.layersStatus", {n: layers.length});
     $("stackBtn").disabled = !(selFlavour && layers.length < 3 && !frosting);
     $("undoBtn").disabled = !(layers.length > 0 && !frosting);
   }
@@ -1591,10 +2086,10 @@ window.copyMsgText = function(text, btn){
     drawLayer(layers.length - 1);
     $("gameEmpty").style.display = "none";
     startTimer();
-    if (layers.length === 1) $("gameCaption").textContent = "Layer one down — two to go.";
-    if (layers.length === 2) $("gameCaption").textContent = "Two layers — one more for the full tower.";
+    if (layers.length === 1) $("gameCaption").textContent = t("cap.l1");
+    if (layers.length === 2) $("gameCaption").textContent = t("cap.l2");
     if (layers.length === 3) {
-      $("gameCaption").textContent = "Three layers! A proper tower. Now choose the frosting.";
+      $("gameCaption").textContent = t("cap.l3");
       $("gStep2").classList.remove("locked");
     }
     syncStep1();
@@ -1630,13 +2125,21 @@ window.copyMsgText = function(text, btn){
       g.appendChild(svgEl("circle", {cx:8, cy:5, r:1.4, fill:"#B9822E", opacity:.85}));
       g.appendChild(svgEl("circle", {cx:-8, cy:6, r:1.2, fill:"#B9822E", opacity:.85}));
     }
+    if (!gameReduced) {
+      var sp = svgEl("g", {"class":"spark"});
+      [[-11,-9],[11,-11],[0,-15]].forEach(function(off){
+        sp.appendChild(svgEl("path", {d:"M0 -4.4 L1.1 -1.1 L4.4 0 L1.1 1.1 L0 4.4 L-1.1 1.1 L-4.4 0 L-1.1 -1.1 Z", fill:"#B9822E", transform:"translate(" + off[0] + " " + off[1] + ")"}));
+      });
+      g.appendChild(sp);
+      window.setTimeout(function(){ if (sp.parentNode) sp.remove(); }, 650);
+    }
     return g;
   }
   $("gameToppings").addEventListener("click", function(e){
     var b = e.target.closest("[data-top]");
     if (!b) return;
     if (toppings.length >= ANCHORS.length) {
-      $("gameCaption").textContent = "That's a fully loaded cake — even Palak is impressed.";
+      $("gameCaption").textContent = t("cap.max");
       return;
     }
     var free = [];
@@ -1648,19 +2151,163 @@ window.copyMsgText = function(text, btn){
     $("gameTops").appendChild(drawTopping(b.dataset.top, jx, jy));
     toppings.push(b.dataset.top);
     $("topStatus").textContent = toppings.length;
-    $("gameCaption").textContent = toppings.length < 4 ? "Lovely — keep going, or call it perfect."
-      : toppings.length < 9 ? "The judges are leaning in…"
-      : "Sparkle level: celebration-ready.";
+    $("gameCaption").textContent = toppings.length < 4 ? t("cap.top1")
+      : toppings.length < 9 ? t("cap.top2")
+      : t("cap.top3");
+  });
+
+  /* ---- v4: result rendering (re-runnable for language switches) ---- */
+  var lastTitle = "", lastJudgeIdx = 0;
+  function renderResult(){
+    var n = toppings.length;
+    var layerNames = layers.map(function(f){ return f.name; }).join(" · ");
+    var topTxt = n ? tallyText() : t("spec.cleanTop");
+    $("resultTitle").textContent = lastTitle;
+    $("resultJudge").textContent = t("judge." + lastJudgeIdx);
+    $("resultSpec").innerHTML = "<b>" + t("spec.layers") + "</b> " + layerNames +
+      "<br><b>" + t("spec.frosting") + "</b> " + frosting.name +
+      "<br><b>" + t("spec.onTop") + "</b> " + topTxt +
+      "<br>" + t("spec.note");
+    resultMsg = t("gwa.greeting") + "\n" +
+      t("gwa.layers") + " " + layerNames + "\n" +
+      t("gwa.frosting") + " " + frosting.name + "\n" +
+      t("gwa.toppings") + " " + (n ? tallyText() : t("gwa.none")) + "\n" +
+      t("gwa.named") + " \u201C" + lastTitle + "\u201D\n" +
+      t("gwa.ask");
+    $("gameWaBtn").href = WA + encodeURIComponent(resultMsg);
+    $("gameWaPreview").textContent = resultMsg;
+  }
+
+  /* ---- v4: confetti burst in bakery colours ---- */
+  function confettiBurst(){
+    if (gameReduced) return;
+    var old = document.getElementById("confettiCv");
+    if (old) old.remove();
+    var cv = document.createElement("canvas");
+    cv.id = "confettiCv";
+    document.body.appendChild(cv);
+    var ctx = cv.getContext("2d");
+    cv.width = window.innerWidth; cv.height = window.innerHeight;
+    var COLORS = ["#C97B63","#E9BBA6","#B9822E","#F2C894","#5B7A4E","#A8542F","#F6E3D3"];
+    var res = $("gameResult").getBoundingClientRect();
+    var ox = res.left + res.width / 2, oy = Math.max(70, res.top + 26);
+    var parts = [];
+    for (var i = 0; i < 130; i++) {
+      var a = Math.random() * Math.PI * 2, sp = 3 + Math.random() * 8;
+      parts.push({x: ox, y: oy, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp - 5.5,
+        w: 5 + Math.random() * 6, h: 3 + Math.random() * 5, rot: Math.random() * Math.PI,
+        vr: (Math.random() - .5) * .3, color: COLORS[i % COLORS.length], circle: Math.random() < .3, life: 1});
+    }
+    var start = null;
+    function frame(ts){
+      if (!start) start = ts;
+      var el = ts - start;
+      ctx.clearRect(0, 0, cv.width, cv.height);
+      var alive = false;
+      parts.forEach(function(p){
+        if (p.life <= 0) return;
+        alive = true;
+        p.vy += 0.16; p.vx *= 0.99; p.vy *= 0.995;
+        p.x += p.vx; p.y += p.vy; p.rot += p.vr;
+        if (el > 900) p.life -= 0.03;
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, Math.min(1, p.life));
+        ctx.translate(p.x, p.y); ctx.rotate(p.rot);
+        ctx.fillStyle = p.color;
+        if (p.circle) { ctx.beginPath(); ctx.arc(0, 0, p.w / 2, 0, Math.PI * 2); ctx.fill(); }
+        else ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h * (0.4 + Math.abs(Math.sin(el / 90 + p.rot)) * 0.6));
+        ctx.restore();
+      });
+      if (alive && el < 2600) requestAnimationFrame(frame);
+      else { ctx.clearRect(0, 0, cv.width, cv.height); cv.remove(); }
+    }
+    requestAnimationFrame(frame);
+  }
+
+  /* ---- v4: save my creation — PNG keepsake card ---- */
+  function wrapText(ctx, text, maxW){
+    var words = String(text).split(/\s+/), lines = [], line = "";
+    words.forEach(function(w){
+      var test = line ? line + " " + w : w;
+      if (ctx.measureText(test).width > maxW && line) { lines.push(line); line = w; }
+      else line = test;
+    });
+    if (line) lines.push(line);
+    return lines;
+  }
+  $("saveCreationBtn").addEventListener("click", function(){
+    var title = lastTitle || $("resultTitle").textContent || "My Cake";
+    var judge = $("resultJudge").textContent || "";
+    var W = 1080, H = 1350;
+    var cv = document.createElement("canvas"); cv.width = W; cv.height = H;
+    var ctx = cv.getContext("2d");
+    var SERIF = "Fraunces, 'Noto Sans Devanagari', 'Noto Sans Gurmukhi', serif";
+    var SANS = "Jost, 'Noto Sans Devanagari', 'Noto Sans Gurmukhi', sans-serif";
+    var grad = ctx.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, "#FDF8F1"); grad.addColorStop(.55, "#FBF5EC"); grad.addColorStop(1, "#F3DCCB");
+    ctx.fillStyle = grad; ctx.fillRect(0, 0, W, H);
+    ctx.strokeStyle = "#C97B63"; ctx.lineWidth = 3; ctx.strokeRect(36, 36, W - 72, H - 72);
+    ctx.strokeStyle = "rgba(185,130,46,.55)"; ctx.lineWidth = 1.5; ctx.strokeRect(52, 52, W - 104, H - 104);
+    ctx.textAlign = "center";
+    ctx.fillStyle = "#A8542F";
+    ctx.font = "600 29px " + SANS;
+    ctx.fillText("P A L A K ' S   C A K E S   N   B A K E S", W / 2, 130);
+    ctx.fillStyle = "#4A2C22";
+    ctx.font = "italic 600 45px " + SERIF;
+    ctx.fillText(t("save.studio"), W / 2, 194);
+    ctx.strokeStyle = "#E9BBA6"; ctx.lineWidth = 2;
+    ctx.beginPath(); ctx.moveTo(W / 2 - 150, 230); ctx.lineTo(W / 2 + 150, 230); ctx.stroke();
+    function drawTexts(){
+      var y = 1080;
+      ctx.fillStyle = "#4A2C22";
+      ctx.font = "600 60px " + SERIF;
+      wrapText(ctx, title, W - 220).slice(0, 2).forEach(function(ln){ ctx.fillText(ln, W / 2, y); y += 70; });
+      y += 8;
+      ctx.fillStyle = "#6E4636";
+      ctx.font = "italic 500 33px " + SERIF;
+      wrapText(ctx, judge, W - 240).slice(0, 3).forEach(function(ln){ ctx.fillText(ln, W / 2, y); y += 46; });
+      ctx.fillStyle = "#8A6F63";
+      ctx.font = "500 27px " + SANS;
+      ctx.fillText(t("save.footer"), W / 2, 1276);
+    }
+    function finishCard(){
+      if (!cv.toBlob) return;
+      cv.toBlob(function(blob){
+        if (!blob) return;
+        var a = document.createElement("a");
+        a.href = URL.createObjectURL(blob);
+        a.download = (title.toLowerCase().replace(/[^a-z0-9\u0900-\u097F\u0A00-\u0A7F]+/gi, "-").replace(/^-+|-+$/g, "") || "my-cake") + "-palaks-cakes.png";
+        document.body.appendChild(a); a.click(); a.remove();
+        window.setTimeout(function(){ URL.revokeObjectURL(a.href); }, 4000);
+      }, "image/png");
+    }
+    var proceeded = false;
+    function proceed(img){
+      if (proceeded) return; proceeded = true;
+      if (img) { try { ctx.drawImage(img, 150, 272, 780, 731); } catch (e) {} }
+      drawTexts(); finishCard();
+    }
+    try {
+      var clone = $("gameSvg").cloneNode(true);
+      clone.setAttribute("xmlns", "http://www.w3.org/2000/svg");
+      clone.setAttribute("width", "780"); clone.setAttribute("height", "731");
+      var str = new XMLSerializer().serializeToString(clone);
+      var url = URL.createObjectURL(new Blob([str], {type: "image/svg+xml;charset=utf-8"}));
+      var img = new Image();
+      img.onload = function(){ proceed(img); URL.revokeObjectURL(url); };
+      img.onerror = function(){ URL.revokeObjectURL(url); proceed(null); };
+      img.src = url;
+    } catch (e) { proceed(null); }
   });
 
   /* ---- step 4: finish ---- */
   function tallyText(){
     var counts = {};
-    toppings.forEach(function(t){ counts[t] = (counts[t] || 0) + 1; });
+    toppings.forEach(function(tp){ counts[tp] = (counts[tp] || 0) + 1; });
     var parts = [];
-    ["cherry","berries","shards","gold"].forEach(function(t){
-      if (!counts[t]) return;
-      parts.push(counts[t] === 1 ? TOP_ONE[t] : counts[t] + " " + TOP_MANY[t]);
+    ["cherry","berries","shards","gold"].forEach(function(tp){
+      if (!counts[tp]) return;
+      parts.push(counts[tp] === 1 ? t("tally." + tp + "1") : counts[tp] + " " + t("tally." + tp + "N"));
     });
     return parts.join(", ");
   }
@@ -1671,29 +2318,13 @@ window.copyMsgText = function(text, btn){
     var topF = layers[2];
     var title = typed || ("The " + frosting.adj + " " + topF.word + " Tower");
     var n = toppings.length;
-    var judge = n === 0 ? "“Minimalist. Brave. Palak approves of the restraint.”"
-      : n <= 5 ? "“Elegant and balanced — the judges are nodding along.”"
-      : n <= 11 ? "“Generous, joyful, celebration-ready. A proper crowd-pleaser.”"
-      : "“An absolute showstopper. The judges need a moment to recover.”";
-    var layerNames = layers.map(function(f){ return f.name; }).join(" · ");
-    var topTxt = n ? tallyText() : "a clean, minimalist top";
-    $("resultTitle").textContent = title;
-    $("resultJudge").textContent = judge;
-    $("resultSpec").innerHTML = "<b>Layers, bottom to top:</b> " + layerNames +
-      "<br><b>Frosting:</b> " + frosting.name +
-      "<br><b>On top:</b> " + topTxt +
-      "<br>Three layers ≈ a 1 kg cake — and of course, 100% eggless, like everything at Palak's.";
-    resultMsg = "Hi Palak ji! I built a cake in your 60-Second Cake Studio:\n" +
-      "Layers (bottom to top): " + layerNames + "\n" +
-      "Frosting: " + frosting.name + "\n" +
-      "Toppings: " + (n ? tallyText() : "none — keeping it clean and classic") + "\n" +
-      "I named it: \u201C" + title + "\u201D\n" +
-      "Can you make this cake for real? I'd love to order it.";
-    $("gameWaBtn").href = WA + encodeURIComponent(resultMsg);
-    $("gameWaPreview").textContent = resultMsg;
+    lastTitle = title;
+    lastJudgeIdx = n === 0 ? 0 : n <= 5 ? 1 : n <= 11 ? 2 : 3;
+    renderResult();
     var res = $("gameResult");
     res.classList.remove("hidden");
     res.scrollIntoView({behavior:"smooth", block:"center"});
+    confettiBurst();
   });
   $("gameWaCopy").addEventListener("click", function(){ window.copyMsgText(resultMsg, this); });
 
@@ -1723,16 +2354,89 @@ window.copyMsgText = function(text, btn){
     $("gameName").value = "";
     $("gameResult").classList.add("hidden");
     $("topStatus").textContent = "0";
-    $("gameCaption").textContent = "Pick a flavour on the right, then tap “Stack this layer”. Three layers make a cake.";
+    $("gameCaption").textContent = t("game.caption0");
     stopTimer(false);
     timerDone = false; timeLeft = 60;
     $("gameClock").textContent = "60";
-    $("gameTimerLabel").textContent = "Studio timer — starts on your first layer";
+    $("gameTimerLabel").textContent = t("game.timerIdle");
     syncStep1();
   }
   $("playAgainBtn").addEventListener("click", resetGame);
+  if (window.I18N_HOOKS) window.I18N_HOOKS.push(function(){
+    syncStep1();
+    if (timerDone) $("gameTimerLabel").textContent = t("game.timerTime");
+    else if (!timerId) $("gameTimerLabel").textContent = t("game.timerIdle");
+    if (!layers.length && !frosting) $("gameCaption").textContent = t("game.caption0");
+    if (lastTitle && frosting && !$("gameResult").classList.contains("hidden")) renderResult();
+  });
   syncStep1();
 })();
 </script>
+<script>
+/* ================= v4: polish — intro reveal, count-up stats, magnetic CTAs ================= */
+(function(){
+  "use strict";
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+
+  /* branded intro reveal — hero cascades in, under a second */
+  function loaded(){ document.body.classList.add("loaded"); }
+  if (document.readyState !== "loading") requestAnimationFrame(function(){ requestAnimationFrame(loaded); });
+  else document.addEventListener("DOMContentLoaded", function(){ requestAnimationFrame(function(){ requestAnimationFrame(loaded); }); });
+  window.setTimeout(loaded, 1200); /* safety: never leave the hero hidden */
+
+  /* animated count-up for the story-band stats */
+  function finalText(el){
+    var target = parseFloat(el.getAttribute("data-cu"));
+    var dec = parseInt(el.getAttribute("data-cu-dec") || "0", 10);
+    var ital = el.querySelector("i");
+    var suf = ital ? ital.textContent : "";
+    if (el.getAttribute("data-cu-range")) return Math.round(target) + "–" + el.getAttribute("data-cu-range");
+    return target.toFixed(dec) + (suf ? "<i>" + suf + "</i>" : "");
+  }
+  function renderVal(el, v){
+    var dec = parseInt(el.getAttribute("data-cu-dec") || "0", 10);
+    var ital = el.querySelector("i");
+    var suf = ital ? ital.textContent : "";
+    if (el.getAttribute("data-cu-range")) { el.textContent = Math.round(v) + "–" + el.getAttribute("data-cu-range"); return; }
+    el.innerHTML = v.toFixed(dec) + (suf ? "<i>" + suf + "</i>" : "");
+  }
+  var stats = document.querySelectorAll(".stat .n[data-cu]");
+  function runCount(el){
+    var target = parseFloat(el.getAttribute("data-cu"));
+    if (reduced || !target) { el.innerHTML = finalText(el); return; }
+    var t0 = null, DUR = 1150;
+    function frame(ts){
+      if (!t0) t0 = ts;
+      var p = Math.min(1, (ts - t0) / DUR);
+      var e = 1 - Math.pow(1 - p, 3);
+      renderVal(el, target * e);
+      if (p < 1) requestAnimationFrame(frame); else el.innerHTML = finalText(el);
+    }
+    requestAnimationFrame(frame);
+  }
+  if ("IntersectionObserver" in window && stats.length) {
+    var sio = new IntersectionObserver(function(es){
+      es.forEach(function(en){ if (en.isIntersecting) { runCount(en.target); sio.unobserve(en.target); } });
+    }, {threshold:.4});
+    stats.forEach(function(el){ sio.observe(el); });
+  } else { stats.forEach(function(el){ el.innerHTML = finalText(el); }); }
+
+  /* magnetic hover on the two primary CTAs (desktop pointers only) */
+  if (fine && !reduced) {
+    document.querySelectorAll("[data-magnet]").forEach(function(el){
+      el.style.transition = "transform .25s cubic-bezier(.22,.9,.28,1)";
+      el.addEventListener("pointermove", function(e){
+        var r = el.getBoundingClientRect();
+        var dx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2);
+        var dy = (e.clientY - (r.top + r.height / 2)) / (r.height / 2);
+        el.style.transform = "translate(" + (dx * 7).toFixed(1) + "px," + (dy * 5).toFixed(1) + "px)";
+      });
+      el.addEventListener("pointerleave", function(){ el.style.transform = ""; });
+    });
+  }
+})();
+</script>
+
 </body>
 </html>
