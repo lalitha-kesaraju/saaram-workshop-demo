@@ -249,6 +249,68 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
 .chat-input button{width:42px;height:42px;flex:none;border:none;border-radius:50%;background:var(--rose);color:#FFF7EE;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s ease}
 .chat-input button:hover{background:var(--rose-d)}
 @media(max-width:560px){.chatwrap{right:14px;bottom:14px}.chat-teaser{display:none}}
+
+/* ---------- v3: WebGL hero ---------- */
+.hero3d{display:none;position:relative;width:100%;aspect-ratio:1/1}
+.hero3d.on{display:block}
+.hero3d canvas{width:100%;height:100%;display:block;cursor:grab;touch-action:pan-y}
+.hero3d canvas:active{cursor:grabbing}
+.drag-hint{position:absolute;left:50%;bottom:8px;transform:translateX(-50%);background:rgba(255,253,249,.92);border:1px solid var(--line);color:var(--cocoa2);font-size:11.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:6px 13px;border-radius:999px;pointer-events:none;box-shadow:0 10px 20px -10px rgba(74,44,34,.35);transition:opacity .5s ease;white-space:nowrap}
+.drag-hint.gone{opacity:0}
+
+/* ---------- v3: WhatsApp order box (builder) ---------- */
+.wa-order{background:#FFFDF9;color:var(--ink);border-radius:14px;padding:17px;margin-top:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.wa-order-title{font-family:'Fraunces',serif;font-size:16.5px;font-weight:600;color:var(--cocoa);margin-bottom:11px;line-height:1.3}
+.wa-order-btn{display:flex;width:100%;background:#4E7A45;color:#F6FBF1;padding:13px 16px;font-size:15px;box-shadow:0 10px 20px -8px rgba(78,122,69,.65)}
+.wa-order-btn:hover{background:#42693B}
+.wa-preview{white-space:pre-line;background:var(--cream);border:1px dashed var(--blush2);border-radius:10px;padding:11px 12px;font-size:13.5px;line-height:1.55;margin-top:12px;color:var(--cocoa2)}
+.copy-btn{margin-top:10px;background:#fff;border:1.5px solid var(--cocoa);color:var(--cocoa);font-family:'Jost',sans-serif;font-weight:600;font-size:13px;padding:8px 15px;border-radius:999px;cursor:pointer;transition:all .15s ease}
+.copy-btn:hover{background:var(--cocoa);color:#FBF1E4}
+.wa-order-note{font-size:12px;color:var(--muted);margin-top:9px;font-weight:300;line-height:1.45}
+
+/* ---------- v3: chat preview + copy ---------- */
+.msg .chat-preview{white-space:pre-line;background:var(--cream);border:1px dashed var(--blush2);border-radius:10px;padding:10px 11px;font-size:13px;line-height:1.55;margin-top:9px;color:var(--cocoa2)}
+.msg .chat-copy{display:inline-flex;margin:9px 0 0 8px;background:#fff;border:1.5px solid var(--cocoa);color:var(--cocoa);font-weight:600;font-size:13px;padding:8px 14px;border-radius:999px;cursor:pointer;font-family:'Jost',sans-serif;vertical-align:top}
+.msg .chat-copy:hover{background:var(--cocoa);color:#FBF1E4}
+.msg .chat-hint{font-size:11.5px;color:var(--muted);margin-top:8px;font-weight:300}
+
+/* ---------- v3: the 60-second cake studio (game) ---------- */
+.game-shell{display:grid;grid-template-columns:1.02fr .98fr;gap:26px;align-items:start}
+@media(max-width:920px){.game-shell{grid-template-columns:1fr}}
+.game-stage{background:linear-gradient(170deg,#FDF3E7,#F3DCCB);border:1px solid var(--line);border-radius:var(--r);padding:20px 18px 16px;text-align:center;box-shadow:0 10px 24px -18px rgba(74,44,34,.25)}
+.game-timer{display:flex;align-items:center;justify-content:space-between;background:rgba(255,253,249,.75);border:1px solid var(--line);border-radius:999px;padding:7px 8px 7px 16px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--cocoa2);font-weight:600}
+.game-timer b{font-family:'Fraunces',serif;font-size:21px;background:var(--cocoa);color:#F2C894;border-radius:999px;min-width:52px;padding:3px 10px;letter-spacing:0}
+#gameSvg{width:100%;max-width:370px;margin:6px auto 0}
+.game-caption{font-family:'Fraunces',serif;font-style:italic;font-size:16px;color:var(--cocoa2);margin-top:8px;min-height:25px}
+.gstep{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;margin-bottom:16px;box-shadow:0 10px 24px -18px rgba(74,44,34,.25);transition:opacity .3s ease}
+.gstep.locked{opacity:.42;pointer-events:none}
+.gstep .glabel{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose);font-weight:600;margin-bottom:10px}
+.gstep .btnrow{display:flex;gap:9px;flex-wrap:wrap;margin-top:13px}
+.gstep .btnrow .btn-primary{padding:12px 22px;font-size:15px}
+.gstep .btnrow .btn-ghost{padding:11px 20px;font-size:14.5px}
+.fchip{display:inline-flex;align-items:center;gap:8px}
+.fchip .sw{width:15px;height:15px;border-radius:50%;flex:none;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55),0 1px 3px rgba(74,44,34,.3)}
+.layer-drop{animation:gdrop .5s var(--ease)}
+@keyframes gdrop{from{transform:translateY(-58px);opacity:0}to{transform:translateY(0);opacity:1}}
+.top-pop{animation:tpop .3s var(--ease)}
+@keyframes tpop{from{transform:scale(.3);opacity:0}to{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion: reduce){.layer-drop,.top-pop{animation:none}}
+.game-result{margin-top:26px;background:var(--cocoa);color:#F3E6D8;border-radius:22px;padding:30px 32px;box-shadow:var(--shadow-lg)}
+@media(max-width:560px){.game-result{padding:24px 20px}}
+.game-result .eyebrow{color:#C98A5F}
+.game-result h3{color:#FBF1E4;font-size:clamp(24px,3.4vw,32px);line-height:1.15}
+.game-result .judge{font-family:'Fraunces',serif;font-style:italic;font-size:17.5px;color:#E4CDB4;margin-top:8px}
+.game-result .spec{font-size:14.5px;font-weight:300;color:#E4CDB4;margin-top:12px;line-height:1.6}
+.game-result .spec b{color:#F2C894;font-weight:500}
+.game-cta{display:flex;gap:11px;flex-wrap:wrap;margin-top:20px}
+.game-cta .btn-primary{background:#F2C894;color:var(--cocoa);padding:13px 24px;font-size:15.5px}
+.game-cta .btn-primary:hover{background:#EBC07C}
+.game-cta .btn-wa{padding:12px 22px;font-size:15px}
+.game-result .wa-preview{background:rgba(251,245,236,.08);border-color:rgba(242,200,148,.4);color:#F3E6D8}
+.game-result .copy-btn{background:transparent;border-color:#F2C894;color:#F2C894}
+.game-result .copy-btn:hover{background:#F2C894;color:var(--cocoa)}
+.game-result .wa-order-note{color:#CFA887}
+@media(max-width:640px){.hnav .pill.gamenav{display:none}}
 </style>
 </head>
 <body>
@@ -262,7 +324,8 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
     <nav class="hnav">
       <span class="pill eggless">● 100% Eggless</span>
       <a class="pill" href="#gallery">Cakes</a>
-      <a class="btn btn-wa" href="https://wa.me/919115703157" target="_blank" rel="noopener">WhatsApp Us</a>
+      <a class="pill gamenav" href="#game">Cake Studio</a>
+      <a class="btn btn-wa" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20have%20a%20question%20about%20a%20cake." target="_blank" rel="noopener">WhatsApp Us</a>
     </nav>
   </div>
 </header>
@@ -287,6 +350,10 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
     <div class="hero-art">
       <div class="cake-scene" id="cakeScene">
         <svg class="cake-halo" viewBox="0 0 400 400" aria-hidden="true"><circle cx="200" cy="200" r="188" fill="none" stroke="#C97B63" stroke-opacity=".35" stroke-width="1.4" stroke-dasharray="3 11"/><circle cx="200" cy="200" r="160" fill="none" stroke="#B9822E" stroke-opacity=".22" stroke-width="1" stroke-dasharray="2 9"/></svg>
+        <div class="hero3d" id="cake3dWrap">
+          <canvas id="cakeCanvas" aria-label="Interactive 3D cake — drag to spin"></canvas>
+          <div class="drag-hint" id="dragHint">Drag to spin</div>
+        </div>
         <div class="cake3d" id="cake3d">
           <svg class="cake-stage" viewBox="0 0 300 300" role="img" aria-label="Illustrated three-tier celebration cake">
             <ellipse cx="150" cy="272" rx="118" ry="14" fill="#E4C9B2"/>
@@ -494,6 +561,13 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
         <div class="srow total"><span class="k">Total</span><span><span class="v">₹ ———</span><div class="price-note">exact price from Palak's price list<br>shows here before you pay · demo placeholder</div></span></div>
         <button class="btn" id="toPayment" disabled>Proceed to Payment</button>
         <p class="sum-note" id="gateNote">Choose a flavour, a size and a date to continue.</p>
+        <div class="wa-order hidden" id="waOrderBox">
+          <div class="wa-order-title">In a hurry? Order this exact cake on WhatsApp</div>
+          <a class="btn wa-order-btn" id="waOrderBtn" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%27d%20like%20to%20order%20a%20cake." target="_blank" rel="noopener">Order this exact cake on WhatsApp</a>
+          <div class="wa-preview" id="waOrderPreview"></div>
+          <button type="button" class="copy-btn" id="waOrderCopy">Copy message</button>
+          <p class="wa-order-note">Some in-app browsers drop the prefilled text — if WhatsApp opens empty, copy the message above and paste it in.</p>
+        </div>
       </aside>
     </div>
   </div>
@@ -505,6 +579,85 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
       <div><h3>Confirmed instantly</h3><p>Your order is booked the second payment succeeds — no "please confirm the price on WhatsApp" wait.</p></div>
       <div><h3>Baked fresh, close to your date</h3><p>No preservatives and nothing sitting on a shelf — your cake goes in the oven for your day.</p></div>
       <div><h3>Pickup or Tricity delivery</h3><p>Collect from our Peer Muchalla studio, or get it delivered across Zirakpur, Panchkula, Chandigarh &amp; Mohali.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="game" style="padding-top:10px">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div class="eyebrow">Just for fun</div>
+      <h2>The 60-Second <em>Cake Studio.</em></h2>
+      <p>Stack three layers, frost it, shower it with toppings, name your masterpiece — all in about a minute. Fall in love with what you make? You can order it for real.</p>
+    </div>
+    <div class="game-shell">
+      <div class="game-stage rv">
+        <div class="game-timer"><span id="gameTimerLabel">Studio timer — starts on your first layer</span><b id="gameClock">60</b></div>
+        <svg id="gameSvg" viewBox="0 0 320 300" role="img" aria-label="Your cake creation in the 60-Second Cake Studio">
+          <defs>
+            <linearGradient id="glossGrad" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#FFFFFF" stop-opacity=".5"/>
+              <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <ellipse cx="160" cy="276" rx="118" ry="11" fill="#E4C9B2"/>
+          <rect x="148" y="256" width="24" height="14" rx="4" fill="#B98A5F"/>
+          <path d="M66 246 h188 l-10 12 H76 z" fill="#C99B77"/>
+          <rect x="66" y="242" width="188" height="5" rx="2.5" fill="#D9B894"/>
+          <text id="gameEmpty" x="160" y="178" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="16" fill="#A98A74">your cake appears here…</text>
+          <g id="gameLayers"></g>
+          <g id="gameFrost"></g>
+          <g id="gameTops"></g>
+        </svg>
+        <div class="game-caption" id="gameCaption">Pick a flavour on the right, then tap “Stack this layer”. Three layers make a cake.</div>
+      </div>
+      <div>
+        <div class="gstep rv" id="gStep1">
+          <div class="glabel">Step 1 · Stack 3 layers</div>
+          <div class="chips" id="gameFlavours"></div>
+          <p class="fnote"><span id="layerStatus">0 of 3 layers stacked.</span> Premium flavours stack exactly like at the studio — they just need a 1 kg cake, which three layers happily are.</p>
+          <div class="btnrow">
+            <button type="button" class="btn btn-primary" id="stackBtn" disabled>Stack this layer</button>
+            <button type="button" class="btn btn-ghost" id="undoBtn" disabled>Undo layer</button>
+          </div>
+        </div>
+        <div class="gstep rv locked" id="gStep2">
+          <div class="glabel">Step 2 · Choose your frosting</div>
+          <div class="chips" id="gameFrostings"></div>
+          <p class="fnote">One glossy coat over the whole cake — pick the mood.</p>
+        </div>
+        <div class="gstep rv locked" id="gStep3">
+          <div class="glabel">Step 3 · Toppings — tap to sprinkle</div>
+          <div class="chips" id="gameToppings">
+            <button type="button" class="chip" data-top="cherry">Cherry +1</button>
+            <button type="button" class="chip" data-top="berries">Berries +1</button>
+            <button type="button" class="chip" data-top="shards">Choco shards +1</button>
+            <button type="button" class="chip" data-top="gold">Gold dust +1</button>
+          </div>
+          <p class="fnote">Toppings so far: <b id="topStatus">0</b> · Feeling done? Head to Step 4 any time.</p>
+        </div>
+        <div class="gstep rv locked" id="gStep4">
+          <div class="glabel">Step 4 · Name your creation</div>
+          <input type="text" id="gameName" maxlength="40" placeholder="e.g. The Midnight Choco-Berry Tower — or leave it to us">
+          <div class="btnrow">
+            <button type="button" class="btn btn-primary" id="finishBtn">Finish my cake</button>
+            <button type="button" class="btn btn-ghost" id="playAgainBtn">Play again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="game-result hidden" id="gameResult">
+      <div class="eyebrow">The judges have tasted it</div>
+      <h3 id="resultTitle">Your creation</h3>
+      <p class="judge" id="resultJudge"></p>
+      <p class="spec" id="resultSpec"></p>
+      <div class="game-cta">
+        <button type="button" class="btn btn-primary" id="orderRealBtn">Order this cake for real</button>
+        <a class="btn btn-wa" id="gameWaBtn" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20built%20a%20cake%20in%20your%2060-Second%20Cake%20Studio." target="_blank" rel="noopener">Send my creation to Palak on WhatsApp</a>
+      </div>
+      <div class="wa-preview" id="gameWaPreview"></div>
+      <button type="button" class="copy-btn" id="gameWaCopy">Copy message</button>
+      <p class="wa-order-note">This exact message travels with the WhatsApp button — if WhatsApp opens empty, copy it and paste it in.</p>
     </div>
   </div>
 </section>
@@ -539,7 +692,7 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
         <p class="success-note" id="successRecap"></p>
         <p class="success-note"><b style="color:var(--cocoa)">That's it — your order confirmed instantly.</b> No waiting for a WhatsApp price confirmation, no back-and-forth. A confirmation lands on your phone right away.</p>
         <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:20px">
-          <a class="btn btn-wa" href="https://wa.me/919115703157" target="_blank" rel="noopener">Questions? WhatsApp Palak</a>
+          <a class="btn btn-wa" href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20just%20placed%20an%20order%20on%20your%20website%20and%20have%20a%20question." target="_blank" rel="noopener">Questions? WhatsApp Palak</a>
           <button class="btn btn-ghost" id="orderAgain" type="button">Order another cake</button>
         </div>
       </div>
@@ -557,7 +710,7 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
       </div>
       <div>
         <h4>Talk to us</h4>
-        <p>WhatsApp &amp; calls<br><a href="https://wa.me/919115703157" target="_blank" rel="noopener">+91 91157 03157</a></p>
+        <p>WhatsApp &amp; calls<br><a href="https://wa.me/919115703157?text=Hi%20Palak%20ji!%20I%20have%20a%20question%20about%20a%20cake." target="_blank" rel="noopener">+91 91157 03157</a></p>
         <p style="margin-top:10px">Instagram<br><a href="https://www.instagram.com/palaks_cakes_n_bakes" target="_blank" rel="noopener">@palaks_cakes_n_bakes</a></p>
       </div>
       <div>
@@ -596,6 +749,26 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
   </button>
 </div>
 
+<script>
+/* shared clipboard helper (clipboard API + legacy fallback) */
+window.copyMsgText = function(text, btn){
+  if (!text) return;
+  function done(){
+    if (btn) { var o = btn.textContent; btn.textContent = "Copied"; window.setTimeout(function(){ btn.textContent = o; }, 1600); }
+  }
+  function legacy(){
+    var ta = document.createElement("textarea");
+    ta.value = text; ta.setAttribute("readonly", "");
+    ta.style.position = "fixed"; ta.style.opacity = "0";
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand("copy"); done(); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, legacy);
+  } else { legacy(); }
+};
+</script>
 <script>
 /* ================= cake builder (flow + Palak's rules) ================= */
 (function(){
@@ -742,7 +915,31 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
     $("gateNote").textContent = ok
       ? "Looking good — one tap to payment."
       : "Still needed: " + [!state.flavour && "a flavour", !state.size && "a size", !state.date && "a date"].filter(Boolean).join(", ") + ".";
+    updateWaOrder(ok);
   }
+  /* ---- prefilled WhatsApp order (visible preview + copy fallback) ---- */
+  var waMsgText = "";
+  function composeWaMsg(){
+    var lines = ["Hi Palak ji! I'd like to order a cake from Palak's Cakes N Bakes."];
+    if (state.occasion) lines.push("Occasion: " + state.occasion);
+    lines.push("Flavour: " + state.flavour + " (" + state.tier + ")");
+    lines.push("Size: " + state.size.label + " (" + state.size.serves + ")");
+    if (state.design) lines.push("Design: " + state.design);
+    if (state.msg) lines.push("Message on the cake: \u201C" + state.msg + "\u201D");
+    lines.push("Needed on: " + fmtDate(state.date));
+    if (state.fulfil) lines.push("Fulfilment: " + state.fulfil);
+    lines.push("My name: ");
+    return lines.join("\n");
+  }
+  function updateWaOrder(ok){
+    var box = $("waOrderBox");
+    if (!ok) { box.classList.add("hidden"); waMsgText = ""; return; }
+    waMsgText = composeWaMsg();
+    $("waOrderBtn").href = "https://wa.me/919115703157?text=" + encodeURIComponent(waMsgText);
+    $("waOrderPreview").textContent = waMsgText;
+    box.classList.remove("hidden");
+  }
+  $("waOrderCopy").addEventListener("click", function(){ window.copyMsgText(waMsgText, this); });
   $("toPayment").addEventListener("click", function(){
     var p = $("payment"); p.classList.remove("hidden");
     p.scrollIntoView({behavior:"smooth"});
@@ -847,6 +1044,7 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
       fab = document.getElementById("chatFab"), dot = document.getElementById("chatDot"),
       teaser = document.getElementById("chatTeaser"), closeBtn = document.getElementById("chatClose");
   var greeted = false, enquiry = null;
+  var copyStore = {};
 
   var MAIN_CHIPS = [
     {t:"Flavours", v:"flavours"},
@@ -967,8 +1165,12 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
       enquiry.data.date = clean;
       var d = enquiry.data; enquiry = null;
       var summary = "Hi Palak ji! I'd like to enquire about a cake.\nOccasion: " + d.occasion + "\nSize: " + d.size + "\nNeeded by: " + d.date + "\n— sent from the website chat";
-      botSay("All done! Here's your enquiry:<br><b>Occasion:</b> " + esc(d.occasion) + "<br><b>Size:</b> " + esc(d.size) + "<br><b>Needed by:</b> " + esc(d.date) + "<br>Tap below and it lands straight in Palak's WhatsApp — she'll confirm the design and the exact price with you there." +
-        '<br><a class="chat-wa" href="' + waLink(summary) + '" target="_blank" rel="noopener">Send enquiry on WhatsApp</a>', MAIN_CHIPS);
+      copyStore.enquiry = summary;
+      botSay("All done! This exact message is ready to land in Palak's WhatsApp — she'll confirm the design and the exact price with you there." +
+        '<div class="chat-preview">' + esc(summary) + '</div>' +
+        '<a class="chat-wa" href="' + waLink(summary) + '" target="_blank" rel="noopener">Send enquiry on WhatsApp</a>' +
+        '<button type="button" class="chat-copy" data-copykey="enquiry">Copy message</button>' +
+        '<div class="chat-hint">If WhatsApp opens without the text, tap Copy and paste it in.</div>', MAIN_CHIPS);
     }
   }
 
@@ -991,6 +1193,11 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
     respond(c.v || c.t);
   }
 
+  body.addEventListener("click", function(e){
+    var b = e.target.closest ? e.target.closest("[data-copykey]") : null;
+    if (b) window.copyMsgText(copyStore[b.getAttribute("data-copykey")] || "", b);
+  });
+
   form.addEventListener("submit", function(e){
     e.preventDefault();
     var t = input.value.trim();
@@ -1009,6 +1216,7 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
     hideTeaser();
     if (!greeted) {
       greeted = true;
+      setChips(MAIN_CHIPS); /* prefilled question bubbles visible the moment the chat opens */
       window.setTimeout(function(){
         botSay("Hello! Welcome to <b>Palak's Cakes N Bakes</b> — 100% eggless, preservative-free, and baked fresh to order in Zirakpur. Ask me about flavours, sizes or delivery… or shall I take a quick cake enquiry for you?", MAIN_CHIPS, 550);
       }, 220);
@@ -1027,6 +1235,503 @@ footer h4{font-family:'Jost',sans-serif;font-size:12.5px;letter-spacing:.18em;te
   document.addEventListener("keydown", function(e){ if (e.key === "Escape") closeChat(); });
   window.setTimeout(function(){ if (!greeted) teaser.classList.add("show"); }, 1500);
   window.setTimeout(hideTeaser, 12000);
+})();
+</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.160.0/three.min.js"></script>
+<script>
+/* ================= v3: real 3D hero (Three.js) — SVG scene stays as fallback ================= */
+(function(){
+  "use strict";
+  var wrap = document.getElementById("cake3dWrap");
+  var canvas = document.getElementById("cakeCanvas");
+  var svgScene = document.getElementById("cake3d");
+  if (!wrap || !canvas || !window.THREE) return; /* CDN failed → SVG hero remains */
+  var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var renderer;
+  try {
+    renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, alpha: true});
+  } catch (e) { return; } /* no WebGL → SVG hero remains */
+  if (!renderer) return;
+
+  try {
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.shadowMap.enabled = true;
+    renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+    if ("outputColorSpace" in renderer && THREE.SRGBColorSpace) renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+    var scene = new THREE.Scene();
+    var camera = new THREE.PerspectiveCamera(36, 1, 0.1, 100);
+    camera.position.set(0, 3.0, 10.6);
+    camera.lookAt(0, 2.3, 0);
+
+    scene.add(new THREE.HemisphereLight(0xFFF4E0, 0x8A6F63, 0.75));
+    var key = new THREE.DirectionalLight(0xFFF1DD, 1.6);
+    key.position.set(4.5, 8, 5.5);
+    key.castShadow = true;
+    key.shadow.mapSize.set(2048, 2048);
+    key.shadow.camera.left = -4.4; key.shadow.camera.right = 4.4;
+    key.shadow.camera.top = 6.5; key.shadow.camera.bottom = -1;
+    key.shadow.camera.near = 1; key.shadow.camera.far = 24;
+    key.shadow.bias = -0.0004;
+    scene.add(key);
+    var rim = new THREE.DirectionalLight(0xF2C4B0, 0.5);
+    rim.position.set(-6, 3.5, -3.5);
+    scene.add(rim);
+
+    var ground = new THREE.Mesh(
+      new THREE.CircleGeometry(3.7, 40),
+      new THREE.ShadowMaterial({opacity: 0.16, color: 0x4A2C22})
+    );
+    ground.rotation.x = -Math.PI / 2;
+    ground.position.y = 0.001;
+    ground.receiveShadow = true;
+    scene.add(ground);
+
+    var cake = new THREE.Group();
+    scene.add(cake);
+
+    function std(color, rough, metal){
+      return new THREE.MeshStandardMaterial({color: color, roughness: rough == null ? 0.62 : rough, metalness: metal || 0});
+    }
+
+    /* cake stand — lathe profile */
+    var standPts = [
+      [0.0, 0.0], [1.55, 0.0], [1.55, 0.10], [0.42, 0.22], [0.30, 0.55],
+      [0.30, 0.78], [1.95, 0.92], [2.06, 1.0], [2.06, 1.08], [0.0, 1.08]
+    ].map(function(p){ return new THREE.Vector2(p[0], p[1]); });
+    var stand = new THREE.Mesh(new THREE.LatheGeometry(standPts, 56), std(0xC99B77, 0.32, 0.5));
+    stand.castShadow = true; stand.receiveShadow = true;
+    cake.add(stand);
+
+    var sprinkleCols = [0xC97B63, 0xB9822E, 0x5B7A4E, 0x4A2C22, 0xFFF6EA];
+    var flames = [];
+    function buildTier(r, h, baseY, bodyCol, icingCol, sprinkles){
+      var g = new THREE.Group();
+      var body = new THREE.Mesh(new THREE.CylinderGeometry(r, r * 0.99, h, 52), std(bodyCol, 0.66));
+      body.position.y = h / 2;
+      body.castShadow = true; body.receiveShadow = true;
+      g.add(body);
+      var cap = new THREE.Mesh(new THREE.CylinderGeometry(r * 1.015, r * 1.015, 0.1, 52), std(icingCol, 0.5));
+      cap.position.y = h - 0.05;
+      cap.castShadow = true;
+      g.add(cap);
+      var ring = new THREE.Mesh(new THREE.TorusGeometry(r * 0.995, 0.058, 10, 64), std(icingCol, 0.5));
+      ring.rotation.x = Math.PI / 2;
+      ring.position.y = h - 0.07;
+      g.add(ring);
+      var icingMat = std(icingCol, 0.5);
+      for (var i = 0; i < 16; i++) {
+        var a = (i / 16) * Math.PI * 2 + (Math.random() - 0.5) * 0.14;
+        var blob = new THREE.Mesh(new THREE.SphereGeometry(0.072, 10, 10), icingMat);
+        var sy = 1.15 + Math.random() * 1.25;
+        blob.scale.set(1, sy, 1);
+        blob.position.set(Math.cos(a) * r * 0.985, h - 0.08 - sy * 0.045, Math.sin(a) * r * 0.985);
+        g.add(blob);
+      }
+      if (sprinkles) {
+        for (var s = 0; s < 14; s++) {
+          var geo = THREE.CapsuleGeometry
+            ? new THREE.CapsuleGeometry(0.02, 0.055, 3, 6)
+            : new THREE.BoxGeometry(0.035, 0.012, 0.09);
+          var sp = new THREE.Mesh(geo, std(sprinkleCols[s % sprinkleCols.length], 0.45));
+          var rr = Math.random() * r * 0.74, aa = Math.random() * Math.PI * 2;
+          sp.position.set(Math.cos(aa) * rr, h + 0.012, Math.sin(aa) * rr);
+          sp.rotation.set(Math.PI / 2, 0, Math.random() * Math.PI);
+          g.add(sp);
+        }
+      }
+      g.position.y = baseY;
+      cake.add(g);
+      return h;
+    }
+
+    var y = 1.08;
+    y += buildTier(1.85, 1.15, y, 0xF6E3D3, 0xC97B63, true);
+    y += buildTier(1.42, 1.05, y, 0xF2D7C9, 0xD18A70, true);
+    y += buildTier(1.0, 0.95, y, 0xFBF5EC, 0xC97B63, false);
+    var topY = y; /* 4.23 */
+
+    /* cherries + candles on top */
+    var cherryMat = std(0xB03A2E, 0.28), stemMat = std(0x5B7A4E, 0.6);
+    [0.4, 2.5, 4.4].forEach(function(a){
+      var cx = Math.cos(a) * 0.46, cz = Math.sin(a) * 0.46;
+      var ch = new THREE.Mesh(new THREE.SphereGeometry(0.155, 20, 16), cherryMat);
+      ch.position.set(cx, topY + 0.13, cz);
+      ch.castShadow = true;
+      cake.add(ch);
+      var stem = new THREE.Mesh(new THREE.CylinderGeometry(0.014, 0.014, 0.3, 6), stemMat);
+      stem.position.set(cx + 0.05, topY + 0.33, cz);
+      stem.rotation.z = 0.35;
+      cake.add(stem);
+    });
+    var candleCols = [0xE9BBA6, 0xB9822E, 0xC97B63];
+    [1.5, 3.6, 5.7].forEach(function(a, i){
+      var cx = Math.cos(a) * 0.58, cz = Math.sin(a) * 0.58;
+      var cd = new THREE.Mesh(new THREE.CylinderGeometry(0.042, 0.042, 0.52, 12), std(candleCols[i], 0.5));
+      cd.position.set(cx, topY + 0.26, cz);
+      cd.castShadow = true;
+      cake.add(cd);
+      var fl = new THREE.Mesh(
+        new THREE.SphereGeometry(0.062, 12, 10),
+        new THREE.MeshStandardMaterial({color: 0xF6B93B, emissive: 0xF2992E, emissiveIntensity: 1.8, roughness: 0.4})
+      );
+      fl.scale.set(0.65, 1.35, 0.65);
+      fl.position.set(cx, topY + 0.62, cz);
+      cake.add(fl);
+      flames.push(fl);
+    });
+
+    cake.rotation.x = 0.05;
+
+    /* ---- activate: swap the SVG scene for the WebGL one ---- */
+    wrap.classList.add("on");
+    if (svgScene) svgScene.style.display = "none";
+
+    function fit(){
+      var w = wrap.clientWidth, h = wrap.clientHeight;
+      if (!w || !h) return;
+      renderer.setSize(w, h, false);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
+    }
+    fit();
+    window.addEventListener("resize", fit);
+    renderer.render(scene, camera);
+
+    /* ---- interaction: drag to spin with inertia ---- */
+    var dragging = false, lastX = 0, vel = 0, hintGone = false;
+    canvas.addEventListener("pointerdown", function(e){
+      dragging = true; lastX = e.clientX;
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) {}
+      if (!hintGone) {
+        hintGone = true;
+        var hint = document.getElementById("dragHint");
+        if (hint) hint.classList.add("gone");
+      }
+    });
+    canvas.addEventListener("pointermove", function(e){
+      if (!dragging) return;
+      var dx = e.clientX - lastX;
+      lastX = e.clientX;
+      cake.rotation.y += dx * 0.0085;
+      vel = dx * 0.0085;
+    });
+    function endDrag(){ dragging = false; }
+    canvas.addEventListener("pointerup", endDrag);
+    canvas.addEventListener("pointercancel", endDrag);
+
+    /* ---- render loop, paused off-screen ---- */
+    var running = true;
+    if ("IntersectionObserver" in window) {
+      new IntersectionObserver(function(es){
+        es.forEach(function(en){ running = en.isIntersecting; });
+      }, {threshold: 0.02}).observe(wrap);
+    }
+    var clock = new THREE.Clock();
+    (function loop(){
+      requestAnimationFrame(loop);
+      if (!running) return;
+      var t = clock.getElapsedTime();
+      if (!dragging) {
+        cake.rotation.y += vel;
+        vel *= 0.95;
+        if (!reduced) cake.rotation.y += 0.0042; /* gentle auto-rotate */
+      }
+      if (!reduced) {
+        cake.position.y = Math.sin(t * 1.15) * 0.05; /* gentle float */
+        flames.forEach(function(f, i){
+          var s = 1 + Math.sin(t * 11 + i * 1.7) * 0.07;
+          f.scale.set(0.65, 1.35 * s, 0.65);
+        });
+      }
+      renderer.render(scene, camera);
+    })();
+  } catch (e) {
+    /* any build failure → restore the SVG hero */
+    wrap.classList.remove("on");
+    if (svgScene) svgScene.style.display = "";
+  }
+})();
+
+/* ================= v3: the 60-second cake studio (game) ================= */
+(function(){
+  "use strict";
+  var SVGNS = "http://www.w3.org/2000/svg";
+  var WA = "https://wa.me/919115703157?text=";
+  function $(id){ return document.getElementById(id); }
+  function svgEl(tag, attrs){
+    var n = document.createElementNS(SVGNS, tag);
+    for (var k in attrs) n.setAttribute(k, attrs[k]);
+    return n;
+  }
+
+  var FLAVOURS = [
+    {name:"Chocolate Truffle", tier:"Classic", body:"#6E4636", icing:"#8A5A41", word:"Choco-Truffle"},
+    {name:"Black Forest", tier:"Classic", body:"#4A2C22", icing:"#6B4232", word:"Black Forest"},
+    {name:"Butterscotch Crunch", tier:"Classic", body:"#C99B5F", icing:"#DCB87F", word:"Butterscotch"},
+    {name:"Fresh Strawberry", tier:"Classic", body:"#E3A58C", icing:"#F0C0AC", word:"Strawberry"},
+    {name:"Rasmalai", tier:"Premium", body:"#EBD9A7", icing:"#F4E7C3", word:"Saffron Rasmalai"},
+    {name:"Red Velvet", tier:"Premium", body:"#9E3B2C", icing:"#BC5540", word:"Velvet"},
+    {name:"Belgian Chocolate", tier:"Premium", body:"#54382A", icing:"#75503A", word:"Belgian Cocoa"},
+    {name:"Kesar Pista", tier:"Premium", body:"#A9A05E", icing:"#C2BA7E", word:"Kesar Pista"}
+  ];
+  var FROSTINGS = [
+    {name:"Glossy Rose", color:"#C97B63", adj:"Blushing"},
+    {name:"Cocoa Fudge", color:"#5A3A2C", adj:"Midnight"},
+    {name:"Golden Caramel", color:"#C08A3E", adj:"Golden Hour"},
+    {name:"Berry Blush", color:"#B45A6E", adj:"Berry-Kissed"}
+  ];
+  var SLOTS = [
+    {x:62, y:202, w:196, h:44},
+    {x:82, y:158, w:156, h:44},
+    {x:102, y:114, w:116, h:44}
+  ];
+  var ANCHORS = [
+    [128,102],[160,96],[192,102],[144,107],[176,107],
+    [90,152],[230,152],[108,150],[212,150],
+    [70,196],[250,196],[88,199],[232,199],
+    [112,182],[208,184],[98,228],[222,230],[160,234]
+  ];
+  var TOP_ONE = {cherry:"1 cherry", berries:"1 berry cluster", shards:"1 choco shard", gold:"a dusting of gold dust"};
+  var TOP_MANY = {cherry:"cherries", berries:"berry clusters", shards:"choco shards", gold:"gold dust"};
+
+  var layers = [], layerNodes = [], frosting = null, toppings = [], usedAnchors = {};
+  var selFlavour = null, timerId = null, timeLeft = 60, timerDone = false, resultMsg = "";
+
+  /* ---- flavour + frosting chips ---- */
+  FLAVOURS.forEach(function(f){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip fchip";
+    b.innerHTML = '<span class="sw" style="background:' + f.body + '"></span>' + f.name;
+    b.addEventListener("click", function(){
+      selFlavour = f;
+      $("gameFlavours").querySelectorAll(".chip").forEach(function(c){ c.classList.remove("sel"); });
+      b.classList.add("sel");
+      syncStep1();
+      if (layers.length < 3) $("gameCaption").textContent = f.name + " — lovely. Tap “Stack this layer” when ready.";
+    });
+    $("gameFlavours").appendChild(b);
+  });
+  FROSTINGS.forEach(function(fr){
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "chip fchip";
+    b.innerHTML = '<span class="sw" style="background:' + fr.color + '"></span>' + fr.name;
+    b.addEventListener("click", function(){
+      frosting = fr;
+      $("gameFrostings").querySelectorAll(".chip").forEach(function(c){ c.classList.remove("sel"); });
+      b.classList.add("sel");
+      applyFrosting();
+      $("gStep1").classList.add("locked");
+      $("gStep3").classList.remove("locked");
+      $("gStep4").classList.remove("locked");
+      $("gameCaption").textContent = fr.name + " — glossy and gorgeous. Now the toppings, if you fancy.";
+    });
+    $("gameFrostings").appendChild(b);
+  });
+
+  function dripPath(x, y, w, depth){
+    var n = Math.max(4, Math.round(w / 30)), seg = w / n;
+    var d = "M " + x + " " + y + " L " + (x + w) + " " + y + " L " + (x + w) + " " + (y + 6);
+    for (var i = 0; i < n; i++) d += " q " + (-seg / 2).toFixed(1) + " " + depth + " " + (-seg).toFixed(1) + " 0";
+    d += " L " + x + " " + (y + 6) + " Z";
+    return d;
+  }
+  function drawLayer(idx){
+    var s = SLOTS[idx], f = layers[idx];
+    var g = svgEl("g", {"class":"layer-drop"});
+    g.appendChild(svgEl("rect", {x:s.x, y:s.y, width:s.w, height:s.h, rx:10, fill:f.body}));
+    g.appendChild(svgEl("rect", {x:s.x, y:s.y, width:s.w, height:s.h, rx:10, fill:"url(#glossGrad)", opacity:.16}));
+    g.appendChild(svgEl("path", {d:dripPath(s.x + 2, s.y + 1, s.w - 4, 9), fill:f.icing, "class":"g-drip"}));
+    var dots = svgEl("g", {fill:"#FFF6EA", opacity:.5});
+    var n = Math.floor(s.w / 34);
+    for (var i = 0; i < n; i++) dots.appendChild(svgEl("circle", {cx:s.x + 20 + i * 34, cy:s.y + s.h - 12, r:2.2}));
+    g.appendChild(dots);
+    $("gameLayers").appendChild(g);
+    layerNodes.push(g);
+  }
+  function applyFrosting(){
+    $("gameLayers").querySelectorAll(".g-drip").forEach(function(d){ d.setAttribute("fill", frosting.color); });
+    var top = SLOTS[2], g = $("gameFrost");
+    g.innerHTML = "";
+    var cap = svgEl("g", {"class":"top-pop"});
+    cap.appendChild(svgEl("path", {d:dripPath(top.x - 3, top.y - 8, top.w + 6, 13), fill:frosting.color}));
+    cap.appendChild(svgEl("ellipse", {cx:160, cy:top.y - 7, rx:top.w / 2 + 3, ry:9, fill:frosting.color}));
+    cap.appendChild(svgEl("ellipse", {cx:146, cy:top.y - 10, rx:26, ry:4.5, fill:"#FFFFFF", opacity:.28}));
+    g.appendChild(cap);
+  }
+
+  /* ---- timer ---- */
+  function startTimer(){
+    if (timerId || timerDone) return;
+    timerId = window.setInterval(function(){
+      timeLeft = Math.max(0, timeLeft - 0.25);
+      $("gameClock").textContent = Math.ceil(timeLeft);
+      if (timeLeft <= 0) stopTimer(true);
+    }, 250);
+  }
+  function stopTimer(finished){
+    if (timerId) { window.clearInterval(timerId); timerId = null; }
+    if (finished) {
+      timerDone = true;
+      $("gameTimerLabel").textContent = "Time! Finishing touches still count";
+    }
+  }
+
+  /* ---- step 1: stacking ---- */
+  function syncStep1(){
+    $("layerStatus").textContent = layers.length + " of 3 layers stacked.";
+    $("stackBtn").disabled = !(selFlavour && layers.length < 3 && !frosting);
+    $("undoBtn").disabled = !(layers.length > 0 && !frosting);
+  }
+  $("stackBtn").addEventListener("click", function(){
+    if (!selFlavour || layers.length >= 3 || frosting) return;
+    layers.push(selFlavour);
+    drawLayer(layers.length - 1);
+    $("gameEmpty").style.display = "none";
+    startTimer();
+    if (layers.length === 1) $("gameCaption").textContent = "Layer one down — two to go.";
+    if (layers.length === 2) $("gameCaption").textContent = "Two layers — one more for the full tower.";
+    if (layers.length === 3) {
+      $("gameCaption").textContent = "Three layers! A proper tower. Now choose the frosting.";
+      $("gStep2").classList.remove("locked");
+    }
+    syncStep1();
+  });
+  $("undoBtn").addEventListener("click", function(){
+    if (!layers.length || frosting) return;
+    layers.pop();
+    var node = layerNodes.pop();
+    if (node) node.remove();
+    if (!layers.length) $("gameEmpty").style.display = "";
+    if (layers.length < 3) $("gStep2").classList.add("locked");
+    syncStep1();
+  });
+
+  /* ---- step 3: toppings ---- */
+  function drawTopping(type, x, y){
+    var g = svgEl("g", {"class":"top-pop", transform:"translate(" + x + " " + y + ")"});
+    if (type === "cherry") {
+      g.appendChild(svgEl("path", {d:"M1 -2 q5 -8 11 -9", stroke:"#5B7A4E", "stroke-width":1.8, fill:"none", "stroke-linecap":"round"}));
+      g.appendChild(svgEl("circle", {cx:0, cy:3, r:6.5, fill:"#B03A2E"}));
+      g.appendChild(svgEl("circle", {cx:-2, cy:0.5, r:2, fill:"#E88B7D"}));
+    } else if (type === "berries") {
+      g.appendChild(svgEl("circle", {cx:0, cy:3, r:4.3, fill:"#5E4A7A"}));
+      g.appendChild(svgEl("circle", {cx:7, cy:5, r:3.7, fill:"#7A4A63"}));
+      g.appendChild(svgEl("circle", {cx:-6.5, cy:5, r:3.5, fill:"#46507C"}));
+    } else if (type === "shards") {
+      var r1 = svgEl("rect", {x:-7, y:-3, width:4, height:11, rx:1, fill:"#4A2C22"}); r1.setAttribute("transform", "rotate(-18 -5 2)");
+      var r2 = svgEl("rect", {x:-1, y:-5, width:4, height:13, rx:1, fill:"#54382A"}); r2.setAttribute("transform", "rotate(7 1 1)");
+      var r3 = svgEl("rect", {x:5, y:-3, width:4, height:10, rx:1, fill:"#4A2C22"}); r3.setAttribute("transform", "rotate(24 7 2)");
+      g.appendChild(r1); g.appendChild(r2); g.appendChild(r3);
+    } else if (type === "gold") {
+      g.appendChild(svgEl("path", {d:"M0 -7 L1.8 -1.8 L7 0 L1.8 1.8 L0 7 L-1.8 1.8 L-7 0 L-1.8 -1.8 Z", fill:"#B9822E"}));
+      g.appendChild(svgEl("circle", {cx:8, cy:5, r:1.4, fill:"#B9822E", opacity:.85}));
+      g.appendChild(svgEl("circle", {cx:-8, cy:6, r:1.2, fill:"#B9822E", opacity:.85}));
+    }
+    return g;
+  }
+  $("gameToppings").addEventListener("click", function(e){
+    var b = e.target.closest("[data-top]");
+    if (!b) return;
+    if (toppings.length >= ANCHORS.length) {
+      $("gameCaption").textContent = "That's a fully loaded cake — even Palak is impressed.";
+      return;
+    }
+    var free = [];
+    ANCHORS.forEach(function(a, i){ if (!usedAnchors[i]) free.push(i); });
+    var idx = free[Math.floor(Math.random() * free.length)];
+    usedAnchors[idx] = 1;
+    var pt = ANCHORS[idx];
+    var jx = pt[0] + (Math.random() * 6 - 3), jy = pt[1] + (Math.random() * 4 - 2);
+    $("gameTops").appendChild(drawTopping(b.dataset.top, jx, jy));
+    toppings.push(b.dataset.top);
+    $("topStatus").textContent = toppings.length;
+    $("gameCaption").textContent = toppings.length < 4 ? "Lovely — keep going, or call it perfect."
+      : toppings.length < 9 ? "The judges are leaning in…"
+      : "Sparkle level: celebration-ready.";
+  });
+
+  /* ---- step 4: finish ---- */
+  function tallyText(){
+    var counts = {};
+    toppings.forEach(function(t){ counts[t] = (counts[t] || 0) + 1; });
+    var parts = [];
+    ["cherry","berries","shards","gold"].forEach(function(t){
+      if (!counts[t]) return;
+      parts.push(counts[t] === 1 ? TOP_ONE[t] : counts[t] + " " + TOP_MANY[t]);
+    });
+    return parts.join(", ");
+  }
+  $("finishBtn").addEventListener("click", function(){
+    if (layers.length < 3 || !frosting) return;
+    stopTimer(false);
+    var typed = $("gameName").value.trim();
+    var topF = layers[2];
+    var title = typed || ("The " + frosting.adj + " " + topF.word + " Tower");
+    var n = toppings.length;
+    var judge = n === 0 ? "“Minimalist. Brave. Palak approves of the restraint.”"
+      : n <= 5 ? "“Elegant and balanced — the judges are nodding along.”"
+      : n <= 11 ? "“Generous, joyful, celebration-ready. A proper crowd-pleaser.”"
+      : "“An absolute showstopper. The judges need a moment to recover.”";
+    var layerNames = layers.map(function(f){ return f.name; }).join(" · ");
+    var topTxt = n ? tallyText() : "a clean, minimalist top";
+    $("resultTitle").textContent = title;
+    $("resultJudge").textContent = judge;
+    $("resultSpec").innerHTML = "<b>Layers, bottom to top:</b> " + layerNames +
+      "<br><b>Frosting:</b> " + frosting.name +
+      "<br><b>On top:</b> " + topTxt +
+      "<br>Three layers ≈ a 1 kg cake — and of course, 100% eggless, like everything at Palak's.";
+    resultMsg = "Hi Palak ji! I built a cake in your 60-Second Cake Studio:\n" +
+      "Layers (bottom to top): " + layerNames + "\n" +
+      "Frosting: " + frosting.name + "\n" +
+      "Toppings: " + (n ? tallyText() : "none — keeping it clean and classic") + "\n" +
+      "I named it: \u201C" + title + "\u201D\n" +
+      "Can you make this cake for real? I'd love to order it.";
+    $("gameWaBtn").href = WA + encodeURIComponent(resultMsg);
+    $("gameWaPreview").textContent = resultMsg;
+    var res = $("gameResult");
+    res.classList.remove("hidden");
+    res.scrollIntoView({behavior:"smooth", block:"center"});
+  });
+  $("gameWaCopy").addEventListener("click", function(){ window.copyMsgText(resultMsg, this); });
+
+  /* ---- order it for real: prefill the builder ---- */
+  $("orderRealBtn").addEventListener("click", function(){
+    var f = layers[2];
+    if (!f) return;
+    var chip = document.querySelector('#classicFlavours [data-flavour="' + f.name + '"], #premiumFlavours [data-flavour="' + f.name + '"]');
+    if (chip) chip.click();
+    var sizeChip = document.querySelector('#sizeChips [data-size="1"]');
+    if (sizeChip) sizeChip.click();
+    document.getElementById("builder").scrollIntoView({behavior:"smooth"});
+  });
+
+  /* ---- play again ---- */
+  function resetGame(){
+    layers = []; layerNodes = []; frosting = null; toppings = []; usedAnchors = {};
+    selFlavour = null; resultMsg = "";
+    $("gameLayers").innerHTML = ""; $("gameFrost").innerHTML = ""; $("gameTops").innerHTML = "";
+    $("gameEmpty").style.display = "";
+    $("gameFlavours").querySelectorAll(".chip").forEach(function(c){ c.classList.remove("sel"); });
+    $("gameFrostings").querySelectorAll(".chip").forEach(function(c){ c.classList.remove("sel"); });
+    $("gStep1").classList.remove("locked");
+    $("gStep2").classList.add("locked");
+    $("gStep3").classList.add("locked");
+    $("gStep4").classList.add("locked");
+    $("gameName").value = "";
+    $("gameResult").classList.add("hidden");
+    $("topStatus").textContent = "0";
+    $("gameCaption").textContent = "Pick a flavour on the right, then tap “Stack this layer”. Three layers make a cake.";
+    stopTimer(false);
+    timerDone = false; timeLeft = 60;
+    $("gameClock").textContent = "60";
+    $("gameTimerLabel").textContent = "Studio timer — starts on your first layer";
+    syncStep1();
+  }
+  $("playAgainBtn").addEventListener("click", resetGame);
+  syncStep1();
 })();
 </script>
 </body>
