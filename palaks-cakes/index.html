@@ -357,6 +357,18 @@ body.loaded .hero [data-intro]{opacity:1;transform:none}
 .chat-head .avatar{background:radial-gradient(circle at 35% 30%,#F6E3D3,#E9BBA6)}
 [data-magnet]{will-change:transform}
 
+/* ---------- v5: game entry points ---------- */
+.btn-game{background:linear-gradient(135deg,#C97B63,#A8542F);color:#FFF6EA;padding:15px 26px;font-size:16px;box-shadow:0 14px 28px rgba(168,84,47,.32)}
+.btn-game:hover{background:linear-gradient(135deg,#D0866C,#B05A33)}
+.btn-game svg{flex:none}
+.game-pill{position:fixed;left:20px;bottom:20px;z-index:190;display:inline-flex;align-items:center;gap:9px;background:var(--cocoa);color:#FBF1E4;font-family:'Jost',sans-serif;font-weight:600;font-size:15px;text-decoration:none;padding:12px 20px 12px 14px;border-radius:999px;box-shadow:0 16px 32px -10px rgba(56,34,27,.55);opacity:0;transform:translateY(16px);pointer-events:none;transition:opacity .35s ease,transform .35s ease,background .2s ease}
+.game-pill.show{opacity:1;transform:none;pointer-events:auto}
+.game-pill:hover{background:#3A211A}
+.game-pill .gp-ico{display:flex;animation:bob 3.4s ease-in-out infinite}
+@media (prefers-reduced-motion: reduce){.game-pill .gp-ico{animation:none}}
+@media(max-width:560px){.game-pill{left:14px;bottom:14px;font-size:14px;padding:11px 17px 11px 12px}}
+#game{scroll-margin-top:84px}
+
 </style>
 <noscript><style>.hero [data-intro]{opacity:1!important;transform:none!important}</style></noscript>
 </head>
@@ -389,6 +401,7 @@ body.loaded .hero [data-intro]{opacity:1;transform:none}
       <div class="hero-cta" data-intro style="--d:.18s">
         <a class="btn btn-primary" href="#builder" data-magnet data-i18n="hero.ctaBuild">Build Your Cake →</a>
         <a class="btn btn-ghost" href="#gallery" data-i18n="hero.ctaBrowse">Browse the Range</a>
+        <a class="btn btn-game" href="#game" data-magnet><svg width="21" height="21" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 25.5 h18 l-2.4 13.2 a3.4 3.4 0 0 1 -3.3 2.8 h-6.6 a3.4 3.4 0 0 1 -3.3 -2.8z" fill="#F2C894"/><path d="M19.6 27 l1.3 11.2 M24 27.4 v11.6 M28.4 27 l-1.3 11.2" stroke="#B9822E" stroke-width="1.8" stroke-linecap="round" opacity=".75"/><ellipse cx="13.6" cy="24.6" rx="4.8" ry="3.8" fill="#F6E7D8"/><ellipse cx="34.4" cy="24.6" rx="4.8" ry="3.8" fill="#F6E7D8"/><circle cx="17.6" cy="21.4" r="6.1" fill="#F6E7D8"/><circle cx="30.4" cy="21.4" r="6.1" fill="#F6E7D8"/><circle cx="24" cy="16.6" r="7.1" fill="#FFF6EA"/><path d="M25.6 9.8 q1.8 -3.9 5.6 -4.6" stroke="#7C9A6D" stroke-width="2" fill="none" stroke-linecap="round"/><circle cx="24" cy="10.6" r="3.7" fill="#E88B7D"/><circle cx="22.7" cy="9.3" r="1.2" fill="#F6C6B8"/></svg><span data-i18n="hero.ctaGame">Play the 60-Second Cake Game</span></a>
       </div>
       <div class="trustrow" data-intro style="--d:.24s">
         <span data-i18n-html="hero.trust1"><b>★ 5.0</b> loved by Tricity families</span>
@@ -668,7 +681,7 @@ body.loaded .hero [data-intro]{opacity:1;transform:none}
     <div class="sec-head rv">
       <div class="eyebrow" data-i18n="game.eyebrow">Just for fun</div>
       <h2 data-i18n-html="game.h2">The 60-Second <em>Cake Studio.</em></h2>
-      <p data-i18n="game.p">Stack three layers, frost it, shower it with toppings, name your masterpiece — all in about a minute. Fall in love with what you make? You can order it for real.</p>
+      <p data-i18n="game.p">Stack up to five layers, frost it, shower it with toppings, name your masterpiece — and tap Finish whenever your cake feels done. Fall in love with what you make? You can order it for real.</p>
     </div>
     <div class="game-shell">
       <div class="game-stage rv">
@@ -689,13 +702,13 @@ body.loaded .hero [data-intro]{opacity:1;transform:none}
           <g id="gameFrost"></g>
           <g id="gameTops"></g>
         </svg>
-        <div class="game-caption" id="gameCaption">Pick a flavour on the right, then tap “Stack this layer”. Three layers make a cake.</div>
+        <div class="game-caption" id="gameCaption">Pick a flavour on the right, then tap “Stack this layer”. Stack up to 5 layers — tap Finish whenever your cake feels done.</div>
       </div>
       <div>
         <div class="gstep rv" id="gStep1">
-          <div class="glabel" data-i18n="game.step1">Step 1 · Stack 3 layers</div>
+          <div class="glabel" data-i18n="game.step1">Step 1 · Stack your layers (up to 5)</div>
           <div class="chips" id="gameFlavours"></div>
-          <p class="fnote"><span id="layerStatus">0 of 3 layers stacked.</span> <span data-i18n="game.premNote">Premium flavours stack exactly like at the studio — they just need a 1 kg cake, which three layers happily are.</span></p>
+          <p class="fnote"><span id="layerStatus">No layers yet — pick a flavour to begin.</span> <span data-i18n="game.premNote">Premium flavours stack exactly like at the studio — they just need a 1 kg cake, which in game terms is two layers or more.</span></p>
           <div class="btnrow">
             <button type="button" class="btn btn-primary" id="stackBtn" data-i18n="game.stack" disabled>Stack this layer</button>
             <button type="button" class="btn btn-ghost" id="undoBtn" data-i18n="game.undo" disabled>Undo layer</button>
@@ -806,6 +819,12 @@ body.loaded .hero [data-intro]{opacity:1;transform:none}
   </div>
 </footer>
 
+<!-- ---------- floating game pill ---------- -->
+<a class="game-pill" id="gamePill" href="#game">
+  <span class="gp-ico"><svg width="23" height="23" viewBox="0 0 48 48" aria-hidden="true"><path d="M15 25.5 h18 l-2.4 13.2 a3.4 3.4 0 0 1 -3.3 2.8 h-6.6 a3.4 3.4 0 0 1 -3.3 -2.8z" fill="#C98A5F"/><path d="M19.6 27 l1.3 11.2 M24 27.4 v11.6 M28.4 27 l-1.3 11.2" stroke="#7A4A21" stroke-width="1.6" stroke-linecap="round" opacity=".6"/><ellipse cx="13.6" cy="24.6" rx="4.8" ry="3.8" fill="#F2D7C9"/><ellipse cx="34.4" cy="24.6" rx="4.8" ry="3.8" fill="#F2D7C9"/><circle cx="17.6" cy="21.4" r="6.1" fill="#F2D7C9"/><circle cx="30.4" cy="21.4" r="6.1" fill="#F2D7C9"/><circle cx="24" cy="16.6" r="7.1" fill="#F6E7D8"/><path d="M25.6 9.8 q1.8 -3.9 5.6 -4.6" stroke="#5B7A4E" stroke-width="1.9" fill="none" stroke-linecap="round"/><circle cx="24" cy="10.6" r="3.7" fill="#C0392B"/><circle cx="22.7" cy="9.3" r="1.2" fill="#E88B7D"/><path d="M39 11.5 l.95 2.4 2.4.95 -2.4.95 -.95 2.4 -.95 -2.4 -2.4 -.95 2.4 -.95z" fill="#F2C894"/></svg></span>
+  <span data-i18n="game.pill">Play the Cake Game</span>
+</a>
+
 <!-- ---------- chatbot ---------- -->
 <div class="chatwrap">
   <div class="chat-teaser" id="chatTeaser" role="button" tabindex="0" data-i18n="chat.teaser">Questions about a cake? Chat with us</div>
@@ -861,7 +880,7 @@ window.copyMsgText = function(text, btn){
     "hero.eyebrow":"Peer Muchalla · Zirakpur · Tricity Delivery",
     "hero.h1":"100% eggless cakes that turn celebrations into <em>memories.</em>",
     "hero.lede":"Premium, preservative-free and naturally flavoured — designed around your story, baked fresh in our Zirakpur studio, and now orderable online in about a minute.",
-    "hero.ctaBuild":"Build Your Cake →","hero.ctaBrowse":"Browse the Range",
+    "hero.ctaBuild":"Build Your Cake →","hero.ctaBrowse":"Browse the Range","hero.ctaGame":"Play the 60-Second Cake Game",
     "hero.trust1":"<b>★ 5.0</b> loved by Tricity families","hero.trust2":"<b>35+</b> flavours to choose from","hero.trust3":"<b>0</b> preservatives, ever",
     "hero.note":"baked to order — never stocked","hero.drag":"Drag to spin",
     "gal.eyebrow":"The Range","gal.h2":"Start with a style <em>you love.</em>",
@@ -924,22 +943,24 @@ window.copyMsgText = function(text, btn){
     "strip.h2":"Baked fresh, close to your date","strip.p2":"No preservatives and nothing sitting on a shelf — your cake goes in the oven for your day.",
     "strip.h3":"Pickup or Tricity delivery","strip.p3":"Collect from our Peer Muchalla studio, or get it delivered across Zirakpur, Panchkula, Chandigarh & Mohali.",
     "game.eyebrow":"Just for fun","game.h2":"The 60-Second <em>Cake Studio.</em>",
-    "game.p":"Stack three layers, frost it, shower it with toppings, name your masterpiece — all in about a minute. Fall in love with what you make? You can order it for real.",
+    "game.p":"Stack up to five layers, frost it, shower it with toppings, name your masterpiece — and tap Finish whenever your cake feels done. Fall in love with what you make? You can order it for real.",
     "game.timerIdle":"Studio timer — starts on your first layer","game.timerTime":"Time! Finishing touches still count",
-    "game.caption0":"Pick a flavour on the right, then tap “Stack this layer”. Three layers make a cake.",
-    "game.step1":"Step 1 · Stack 3 layers","game.layersStatus":"{n} of 3 layers stacked.",
-    "game.premNote":"Premium flavours stack exactly like at the studio — they just need a 1 kg cake, which three layers happily are.",
+    "game.caption0":"Pick a flavour on the right, then tap “Stack this layer”. Stack up to 5 layers — tap Finish whenever your cake feels done.",
+    "game.step1":"Step 1 · Stack your layers (up to 5)","game.layersStatus":"Layer {n} of up to 5 stacked — finish any time.","game.layersNone":"No layers yet — pick a flavour to begin.","game.pill":"Play the Cake Game",
+    "game.premNote":"Premium flavours stack exactly like at the studio — they just need a 1 kg cake, which in game terms is two layers or more.",
     "game.stack":"Stack this layer","game.undo":"Undo layer",
     "game.step2":"Step 2 · Choose your frosting","game.frostNote":"One glossy coat over the whole cake — pick the mood.",
     "game.step3":"Step 3 · Toppings — tap to sprinkle","game.topCherry":"Cherry +1","game.topBerries":"Berries +1","game.topShards":"Choco shards +1","game.topGold":"Gold dust +1",
     "game.topSoFar":"Toppings so far:","game.topDone":"· Feeling done? Head to Step 4 any time.",
     "game.step4":"Step 4 · Name your creation","game.namePh":"e.g. The Midnight Choco-Berry Tower — or leave it to us","game.finish":"Finish my cake","game.again":"Play again",
-    "cap.pick":"{f} — lovely. Tap “Stack this layer” when ready.","cap.l1":"Layer one down — two to go.","cap.l2":"Two layers — one more for the full tower.","cap.l3":"Three layers! A proper tower. Now choose the frosting.",
+    "cap.pick":"{f} — lovely. Tap “Stack this layer” when ready.","cap.l1":"Layer one down — stack more, or start frosting whenever it feels done.","cap.l2":"Two layers — a lovely height already. More, or call it done.","cap.l3":"Three layers — the classic tower. Go taller if you dare, or frost it.","cap.l4":"Four layers — properly grand. One more makes it a skyscraper.","cap.l5":"Five layers — that's a tall one! Time to frost this skyscraper.",
     "cap.frost":"{f} — glossy and gorgeous. Now the toppings, if you fancy.","cap.max":"That's a fully loaded cake — even Palak is impressed.",
     "cap.top1":"Lovely — keep going, or call it perfect.","cap.top2":"The judges are leaning in…","cap.top3":"Sparkle level: celebration-ready.",
     "game.resEyebrow":"The judges have tasted it",
     "judge.0":"“Minimalist. Brave. Palak approves of the restraint.”","judge.1":"“Elegant and balanced — the judges are nodding along.”","judge.2":"“Generous, joyful, celebration-ready. A proper crowd-pleaser.”","judge.3":"“An absolute showstopper. The judges need a moment to recover.”",
-    "spec.layers":"Layers, bottom to top:","spec.frosting":"Frosting:","spec.onTop":"On top:","spec.note":"Three layers ≈ a 1 kg cake — and of course, 100% eggless, like everything at Palak's.","spec.cleanTop":"a clean, minimalist top",
+    "judge.l1":"“One elegant layer, frosted to perfection — proof that less can be the whole celebration.”","judge.l4":"“Four storeys of gorgeous — the judges are craning their necks.”","judge.l5":"“Five layers! A sky-high showstopper — the judges are on their feet.”",
+    "ttl.1":"The {adj} {word}","ttl.2":"The {adj} {word} Duo","ttl.3":"The {adj} {word} Tower","ttl.4":"The Grand {adj} {word} Tower","ttl.5":"The Sky-High {adj} {word} Tower",
+    "spec.layers":"Layers, bottom to top:","spec.frosting":"Frosting:","spec.onTop":"On top:","spec.note":"That's roughly a {size} cake at the studio — and of course, 100% eggless, like everything at Palak's.","spec.cleanTop":"a clean, minimalist top",
     "tally.cherry1":"1 cherry","tally.cherryN":"cherries","tally.berries1":"1 berry cluster","tally.berriesN":"berry clusters","tally.shards1":"1 choco shard","tally.shardsN":"choco shards","tally.gold1":"a dusting of gold dust","tally.goldN":"gold dust",
     "game.orderReal":"Order this cake for real","game.sendWa":"Send my creation to Palak on WhatsApp","game.save":"Save my creation",
     "game.waNote":"This exact message travels with the WhatsApp button — if WhatsApp opens empty, copy it and paste it in.",
@@ -958,7 +979,7 @@ window.copyMsgText = function(text, btn){
     "hero.eyebrow":"पीर मुच्छला · ज़ीरकपुर · ट्राइसिटी डिलीवरी",
     "hero.h1":"100% एगलेस केक, जो हर जश्न को बना दें <em>यादगार।</em>",
     "hero.lede":"प्रीमियम, बिना प्रिज़र्वेटिव और नैचुरल फ्लेवर के साथ — आपकी कहानी के हिसाब से डिज़ाइन किया गया, हमारे ज़ीरकपुर स्टूडियो में ताज़ा बेक किया गया, और अब सिर्फ़ एक मिनट में ऑनलाइन ऑर्डर करें।",
-    "hero.ctaBuild":"अपना केक बनाएँ →","hero.ctaBrowse":"रेंज देखें",
+    "hero.ctaBuild":"अपना केक बनाएँ →","hero.ctaBrowse":"रेंज देखें","hero.ctaGame":"60-सेकंड केक गेम खेलें",
     "hero.trust1":"<b>★ 5.0</b> ट्राइसिटी परिवारों का प्यार","hero.trust2":"<b>35+</b> फ्लेवर चुनने के लिए","hero.trust3":"<b>0</b> प्रिज़र्वेटिव, कभी नहीं",
     "hero.note":"ऑर्डर पर ताज़ा बेक — कभी स्टॉक नहीं","hero.drag":"घुमाने के लिए खींचें",
     "gal.eyebrow":"हमारी रेंज","gal.h2":"अपनी पसंद की स्टाइल से <em>शुरुआत करें।</em>",
@@ -1021,22 +1042,24 @@ window.copyMsgText = function(text, btn){
     "strip.h2":"ताज़ा बेक, आपकी तारीख़ के पास","strip.p2":"कोई प्रिज़र्वेटिव नहीं और कुछ भी शेल्फ़ पर नहीं रखा — आपका केक आपके दिन के लिए ओवन में जाता है।",
     "strip.h3":"पिकअप या ट्राइसिटी डिलीवरी","strip.p3":"हमारे पीर मुच्छला स्टूडियो से ले जाएँ, या ज़ीरकपुर, पंचकुला, चंडीगढ़ व मोहाली में डिलीवरी पाएँ।",
     "game.eyebrow":"बस मज़े के लिए","game.h2":"60-सेकंड <em>केक स्टूडियो।</em>",
-    "game.p":"तीन लेयर लगाएँ, फ्रॉस्टिंग करें, टॉपिंग्स की बरसात करें और अपनी मास्टरपीस को नाम दें — सब कुछ लगभग एक मिनट में। जो बनाया, वह पसंद आया? इसे असली में भी ऑर्डर कर सकते हैं।",
+    "game.p":"पाँच तक लेयर लगाएँ, फ्रॉस्टिंग करें, टॉपिंग्स की बरसात करें और अपनी मास्टरपीस को नाम दें — और जब केक पूरा लगे, तभी Finish दबाएँ। जो बनाया, वह पसंद आया? इसे असली में भी ऑर्डर कर सकते हैं।",
     "game.timerIdle":"स्टूडियो टाइमर — आपकी पहली लेयर से शुरू","game.timerTime":"समय ख़त्म! आख़िरी छुअन फिर भी गिनी जाएगी",
-    "game.caption0":"दाईं ओर से फ्लेवर चुनें, फिर “लेयर लगाएँ” दबाएँ। तीन लेयर से केक बनता है।",
-    "game.step1":"स्टेप 1 · 3 लेयर लगाएँ","game.layersStatus":"3 में से {n} लेयर लग गईं।",
-    "game.premNote":"प्रीमियम फ्लेवर बिल्कुल स्टूडियो जैसे लगते हैं — बस उन्हें 1 kg का केक चाहिए, और तीन लेयर का केक उतना होता ही है।",
+    "game.caption0":"दाईं ओर से फ्लेवर चुनें, फिर “लेयर लगाएँ” दबाएँ। पाँच तक लेयर लगा सकते हैं — जब केक पूरा लगे, Finish दबा दें।",
+    "game.step1":"स्टेप 1 · लेयर लगाएँ (पाँच तक)","game.layersStatus":"5 में से {n} लेयर लग गईं — कभी भी Finish कर सकते हैं।","game.layersNone":"अभी कोई लेयर नहीं — शुरू करने के लिए फ्लेवर चुनें।","game.pill":"केक गेम खेलें",
+    "game.premNote":"प्रीमियम फ्लेवर बिल्कुल स्टूडियो जैसे लगते हैं — बस उन्हें 1 kg का केक चाहिए, यानी गेम में दो या उससे ज़्यादा लेयर।",
     "game.stack":"लेयर लगाएँ","game.undo":"लेयर हटाएँ",
     "game.step2":"स्टेप 2 · फ्रॉस्टिंग चुनें","game.frostNote":"पूरे केक पर एक चमकदार परत — अपना मूड चुनें।",
     "game.step3":"स्टेप 3 · टॉपिंग्स — टैप करके छिड़कें","game.topCherry":"चेरी +1","game.topBerries":"बेरीज़ +1","game.topShards":"चॉकलेट शार्ड्स +1","game.topGold":"गोल्ड डस्ट +1",
     "game.topSoFar":"अब तक टॉपिंग्स:","game.topDone":"· हो गया लगे तो कभी भी स्टेप 4 पर जाएँ।",
     "game.step4":"स्टेप 4 · अपनी रचना को नाम दें","game.namePh":"जैसे: द मिडनाइट चॉको-बेरी टावर — या हम पर छोड़ दें","game.finish":"मेरा केक तैयार करें","game.again":"फिर से खेलें",
-    "cap.pick":"{f} — बढ़िया। तैयार हों तो “लेयर लगाएँ” दबाएँ।","cap.l1":"एक लेयर हो गई — दो और बाकी।","cap.l2":"दो लेयर — पूरे टावर के लिए एक और।","cap.l3":"तीन लेयर! एकदम सही टावर। अब फ्रॉस्टिंग चुनें।",
+    "cap.pick":"{f} — बढ़िया। तैयार हों तो “लेयर लगाएँ” दबाएँ।","cap.l1":"एक लेयर हो गई — और लगाएँ, या जब ठीक लगे फ्रॉस्टिंग शुरू करें।","cap.l2":"दो लेयर — बढ़िया ऊँचाई हो गई। और लगाएँ, या यहीं पूरा मानें।","cap.l3":"तीन लेयर — क्लासिक टावर। हिम्मत हो तो और ऊँचा करें, या फ्रॉस्टिंग करें।","cap.l4":"चार लेयर — एकदम शानदार। एक और लगी तो गगनचुंबी केक तैयार।","cap.l5":"पाँच लेयर — वाह, क्या ऊँचाई है! अब इस गगनचुंबी केक पर फ्रॉस्टिंग का समय है।",
     "cap.frost":"{f} — चमकदार और ख़ूबसूरत। अब चाहें तो टॉपिंग्स।","cap.max":"यह तो फुल्ली लोडेड केक है — पलक भी हैरान हैं।",
     "cap.top1":"बढ़िया — जारी रखें, या इसे परफेक्ट कहें।","cap.top2":"जज झुककर देखने लगे हैं…","cap.top3":"चमक का स्तर: जश्न के लिए तैयार।",
     "game.resEyebrow":"जजों ने चख लिया है",
     "judge.0":"“मिनिमलिस्ट। हिम्मत वाला। पलक को यह संयम पसंद आया।”","judge.1":"“शानदार और संतुलित — जज सहमति में सिर हिला रहे हैं।”","judge.2":"“उदार, खुशनुमा, जश्न के लिए तैयार। सबको खुश करने वाला।”","judge.3":"“एकदम शोस्टॉपर। जजों को संभलने के लिए एक पल चाहिए।”",
-    "spec.layers":"लेयर, नीचे से ऊपर:","spec.frosting":"फ्रॉस्टिंग:","spec.onTop":"ऊपर:","spec.note":"तीन लेयर ≈ 1 kg का केक — और हाँ, 100% एगलेस, बिल्कुल Palak's की हर चीज़ की तरह।","spec.cleanTop":"सादा, मिनिमल टॉप",
+    "judge.l1":"“एक शानदार लेयर, बेहतरीन फ्रॉस्टिंग के साथ — सबूत है कि कम भी पूरा जश्न हो सकता है।”","judge.l4":"“चार मंज़िला खूबसूरती — जज गर्दन उठाकर देख रहे हैं।”","judge.l5":"“पाँच लेयर! आसमान छूता शोस्टॉपर — जज खड़े होकर ताली बजा रहे हैं।”",
+    "ttl.1":"The {adj} {word}","ttl.2":"The {adj} {word} Duo","ttl.3":"The {adj} {word} Tower","ttl.4":"The Grand {adj} {word} Tower","ttl.5":"The Sky-High {adj} {word} Tower",
+    "spec.layers":"लेयर, नीचे से ऊपर:","spec.frosting":"फ्रॉस्टिंग:","spec.onTop":"ऊपर:","spec.note":"स्टूडियो के हिसाब से यह लगभग {size} का केक है — और हाँ, 100% एगलेस, बिल्कुल Palak's की हर चीज़ की तरह।","spec.cleanTop":"सादा, मिनिमल टॉप",
     "tally.cherry1":"1 चेरी","tally.cherryN":"चेरी","tally.berries1":"1 बेरी क्लस्टर","tally.berriesN":"बेरी क्लस्टर","tally.shards1":"1 चॉकलेट शार्ड","tally.shardsN":"चॉकलेट शार्ड्स","tally.gold1":"गोल्ड डस्ट की हल्की छिड़क","tally.goldN":"गोल्ड डस्ट",
     "game.orderReal":"यह केक असली में ऑर्डर करें","game.sendWa":"मेरी रचना पलक को WhatsApp पर भेजें","game.save":"मेरी रचना सेव करें",
     "game.waNote":"यही मैसेज WhatsApp बटन के साथ जाता है — अगर WhatsApp खाली खुले, तो इसे कॉपी करके वहाँ पेस्ट कर दें।",
@@ -1055,7 +1078,7 @@ window.copyMsgText = function(text, btn){
     "hero.eyebrow":"ਪੀਰ ਮੁੱਛਲਾ · ਜ਼ੀਰਕਪੁਰ · ਟ੍ਰਾਈਸਿਟੀ ਡਿਲਿਵਰੀ",
     "hero.h1":"100% ਐੱਗਲੈੱਸ ਕੇਕ, ਜੋ ਹਰ ਜਸ਼ਨ ਨੂੰ ਬਣਾ ਦੇਣ <em>ਯਾਦਗਾਰ।</em>",
     "hero.lede":"ਪ੍ਰੀਮੀਅਮ, ਬਿਨਾਂ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ ਅਤੇ ਕੁਦਰਤੀ ਸਵਾਦ ਨਾਲ — ਤੁਹਾਡੀ ਕਹਾਣੀ ਮੁਤਾਬਕ ਡਿਜ਼ਾਈਨ ਕੀਤਾ, ਸਾਡੇ ਜ਼ੀਰਕਪੁਰ ਸਟੂਡੀਓ ਵਿੱਚ ਤਾਜ਼ਾ ਬੇਕ ਕੀਤਾ, ਅਤੇ ਹੁਣ ਸਿਰਫ਼ ਇੱਕ ਮਿੰਟ ਵਿੱਚ ਆਨਲਾਈਨ ਆਰਡਰ ਕਰੋ।",
-    "hero.ctaBuild":"ਆਪਣਾ ਕੇਕ ਬਣਾਓ →","hero.ctaBrowse":"ਰੇਂਜ ਵੇਖੋ",
+    "hero.ctaBuild":"ਆਪਣਾ ਕੇਕ ਬਣਾਓ →","hero.ctaBrowse":"ਰੇਂਜ ਵੇਖੋ","hero.ctaGame":"60-ਸਕਿੰਟ ਕੇਕ ਗੇਮ ਖੇਡੋ",
     "hero.trust1":"<b>★ 5.0</b> ਟ੍ਰਾਈਸਿਟੀ ਪਰਿਵਾਰਾਂ ਦਾ ਪਿਆਰ","hero.trust2":"<b>35+</b> ਸਵਾਦ ਚੁਣਨ ਲਈ","hero.trust3":"<b>0</b> ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ, ਕਦੇ ਨਹੀਂ",
     "hero.note":"ਆਰਡਰ ’ਤੇ ਤਾਜ਼ਾ ਬੇਕ — ਕਦੇ ਸਟਾਕ ਨਹੀਂ","hero.drag":"ਘੁਮਾਉਣ ਲਈ ਖਿੱਚੋ",
     "gal.eyebrow":"ਸਾਡੀ ਰੇਂਜ","gal.h2":"ਆਪਣੀ ਪਸੰਦ ਦੀ ਸਟਾਈਲ ਤੋਂ <em>ਸ਼ੁਰੂਆਤ ਕਰੋ।</em>",
@@ -1118,22 +1141,24 @@ window.copyMsgText = function(text, btn){
     "strip.h2":"ਤਾਜ਼ਾ ਬੇਕ, ਤੁਹਾਡੀ ਤਾਰੀਖ ਦੇ ਨੇੜੇ","strip.p2":"ਕੋਈ ਪ੍ਰੀਜ਼ਰਵੇਟਿਵ ਨਹੀਂ ਅਤੇ ਕੁਝ ਵੀ ਸ਼ੈਲਫ਼ ’ਤੇ ਨਹੀਂ ਰੱਖਿਆ — ਤੁਹਾਡਾ ਕੇਕ ਤੁਹਾਡੇ ਦਿਨ ਲਈ ਓਵਨ ਵਿੱਚ ਜਾਂਦਾ ਹੈ।",
     "strip.h3":"ਪਿਕਅਪ ਜਾਂ ਟ੍ਰਾਈਸਿਟੀ ਡਿਲਿਵਰੀ","strip.p3":"ਸਾਡੇ ਪੀਰ ਮੁੱਛਲਾ ਸਟੂਡੀਓ ਤੋਂ ਲੈ ਜਾਓ, ਜਾਂ ਜ਼ੀਰਕਪੁਰ, ਪੰਚਕੂਲਾ, ਚੰਡੀਗੜ੍ਹ ਅਤੇ ਮੋਹਾਲੀ ਵਿੱਚ ਡਿਲਿਵਰੀ ਪਾਓ।",
     "game.eyebrow":"ਬੱਸ ਮਜ਼ੇ ਲਈ","game.h2":"60-ਸਕਿੰਟ <em>ਕੇਕ ਸਟੂਡੀਓ।</em>",
-    "game.p":"ਤਿੰਨ ਲੇਅਰ ਲਗਾਓ, ਫਰਾਸਟਿੰਗ ਕਰੋ, ਟਾਪਿੰਗਜ਼ ਦੀ ਬਰਸਾਤ ਕਰੋ ਅਤੇ ਆਪਣੀ ਮਾਸਟਰਪੀਸ ਨੂੰ ਨਾਮ ਦਿਓ — ਸਭ ਕੁਝ ਲਗਭਗ ਇੱਕ ਮਿੰਟ ਵਿੱਚ। ਜੋ ਬਣਾਇਆ, ਉਹ ਪਸੰਦ ਆਇਆ? ਇਸਨੂੰ ਅਸਲੀ ਵਿੱਚ ਵੀ ਆਰਡਰ ਕਰ ਸਕਦੇ ਹੋ।",
+    "game.p":"ਪੰਜ ਤੱਕ ਲੇਅਰ ਲਗਾਓ, ਫਰਾਸਟਿੰਗ ਕਰੋ, ਟਾਪਿੰਗਜ਼ ਦੀ ਬਰਸਾਤ ਕਰੋ ਅਤੇ ਆਪਣੀ ਮਾਸਟਰਪੀਸ ਨੂੰ ਨਾਮ ਦਿਓ — ਅਤੇ ਜਦੋਂ ਕੇਕ ਪੂਰਾ ਲੱਗੇ, ਉਦੋਂ ਹੀ Finish ਦਬਾਓ। ਜੋ ਬਣਾਇਆ, ਉਹ ਪਸੰਦ ਆਇਆ? ਇਸਨੂੰ ਅਸਲੀ ਵਿੱਚ ਵੀ ਆਰਡਰ ਕਰ ਸਕਦੇ ਹੋ।",
     "game.timerIdle":"ਸਟੂਡੀਓ ਟਾਈਮਰ — ਤੁਹਾਡੀ ਪਹਿਲੀ ਲੇਅਰ ਤੋਂ ਸ਼ੁਰੂ","game.timerTime":"ਸਮਾਂ ਖ਼ਤਮ! ਆਖ਼ਰੀ ਛੂਹ ਫਿਰ ਵੀ ਗਿਣੀ ਜਾਵੇਗੀ",
-    "game.caption0":"ਸੱਜੇ ਪਾਸੇ ਤੋਂ ਸਵਾਦ ਚੁਣੋ, ਫਿਰ “ਲੇਅਰ ਲਗਾਓ” ਦਬਾਓ। ਤਿੰਨ ਲੇਅਰ ਨਾਲ ਕੇਕ ਬਣਦਾ ਹੈ।",
-    "game.step1":"ਸਟੈਪ 1 · 3 ਲੇਅਰ ਲਗਾਓ","game.layersStatus":"3 ਵਿੱਚੋਂ {n} ਲੇਅਰ ਲੱਗ ਗਈਆਂ।",
-    "game.premNote":"ਪ੍ਰੀਮੀਅਮ ਸਵਾਦ ਬਿਲਕੁਲ ਸਟੂਡੀਓ ਵਾਂਗ ਲੱਗਦੇ ਹਨ — ਬੱਸ ਉਨ੍ਹਾਂ ਨੂੰ 1 kg ਦਾ ਕੇਕ ਚਾਹੀਦਾ ਹੈ, ਅਤੇ ਤਿੰਨ ਲੇਅਰ ਦਾ ਕੇਕ ਉੱਨਾ ਹੁੰਦਾ ਹੀ ਹੈ।",
+    "game.caption0":"ਸੱਜੇ ਪਾਸੇ ਤੋਂ ਸਵਾਦ ਚੁਣੋ, ਫਿਰ “ਲੇਅਰ ਲਗਾਓ” ਦਬਾਓ। ਪੰਜ ਤੱਕ ਲੇਅਰ ਲਗਾ ਸਕਦੇ ਹੋ — ਜਦੋਂ ਕੇਕ ਪੂਰਾ ਲੱਗੇ, Finish ਦਬਾ ਦਿਓ।",
+    "game.step1":"ਸਟੈਪ 1 · ਲੇਅਰ ਲਗਾਓ (ਪੰਜ ਤੱਕ)","game.layersStatus":"5 ਵਿੱਚੋਂ {n} ਲੇਅਰ ਲੱਗ ਗਈਆਂ — ਕਦੋਂ ਵੀ Finish ਕਰ ਸਕਦੇ ਹੋ।","game.layersNone":"ਅਜੇ ਕੋਈ ਲੇਅਰ ਨਹੀਂ — ਸ਼ੁਰੂ ਕਰਨ ਲਈ ਸਵਾਦ ਚੁਣੋ।","game.pill":"ਕੇਕ ਗੇਮ ਖੇਡੋ",
+    "game.premNote":"ਪ੍ਰੀਮੀਅਮ ਸਵਾਦ ਬਿਲਕੁਲ ਸਟੂਡੀਓ ਵਾਂਗ ਲੱਗਦੇ ਹਨ — ਬੱਸ ਉਨ੍ਹਾਂ ਨੂੰ 1 kg ਦਾ ਕੇਕ ਚਾਹੀਦਾ ਹੈ, ਯਾਨੀ ਗੇਮ ਵਿੱਚ ਦੋ ਜਾਂ ਵੱਧ ਲੇਅਰ।",
     "game.stack":"ਲੇਅਰ ਲਗਾਓ","game.undo":"ਲੇਅਰ ਹਟਾਓ",
     "game.step2":"ਸਟੈਪ 2 · ਫਰਾਸਟਿੰਗ ਚੁਣੋ","game.frostNote":"ਸਾਰੇ ਕੇਕ ’ਤੇ ਇੱਕ ਚਮਕਦਾਰ ਪਰਤ — ਆਪਣਾ ਮੂਡ ਚੁਣੋ।",
     "game.step3":"ਸਟੈਪ 3 · ਟਾਪਿੰਗਜ਼ — ਟੈਪ ਕਰਕੇ ਛਿੜਕੋ","game.topCherry":"ਚੈਰੀ +1","game.topBerries":"ਬੈਰੀਜ਼ +1","game.topShards":"ਚਾਕਲੇਟ ਸ਼ਾਰਡਜ਼ +1","game.topGold":"ਗੋਲਡ ਡਸਟ +1",
     "game.topSoFar":"ਹੁਣ ਤੱਕ ਟਾਪਿੰਗਜ਼:","game.topDone":"· ਹੋ ਗਿਆ ਲੱਗੇ ਤਾਂ ਕਦੇ ਵੀ ਸਟੈਪ 4 ’ਤੇ ਜਾਓ।",
     "game.step4":"ਸਟੈਪ 4 · ਆਪਣੀ ਰਚਨਾ ਨੂੰ ਨਾਮ ਦਿਓ","game.namePh":"ਜਿਵੇਂ: ਦ ਮਿਡਨਾਈਟ ਚਾਕੋ-ਬੈਰੀ ਟਾਵਰ — ਜਾਂ ਸਾਡੇ ’ਤੇ ਛੱਡ ਦਿਓ","game.finish":"ਮੇਰਾ ਕੇਕ ਤਿਆਰ ਕਰੋ","game.again":"ਫਿਰ ਖੇਡੋ",
-    "cap.pick":"{f} — ਵਧੀਆ। ਤਿਆਰ ਹੋਵੋ ਤਾਂ “ਲੇਅਰ ਲਗਾਓ” ਦਬਾਓ।","cap.l1":"ਇੱਕ ਲੇਅਰ ਹੋ ਗਈ — ਦੋ ਹੋਰ ਬਾਕੀ।","cap.l2":"ਦੋ ਲੇਅਰ — ਪੂਰੇ ਟਾਵਰ ਲਈ ਇੱਕ ਹੋਰ।","cap.l3":"ਤਿੰਨ ਲੇਅਰ! ਬਿਲਕੁਲ ਸਹੀ ਟਾਵਰ। ਹੁਣ ਫਰਾਸਟਿੰਗ ਚੁਣੋ।",
+    "cap.pick":"{f} — ਵਧੀਆ। ਤਿਆਰ ਹੋਵੋ ਤਾਂ “ਲੇਅਰ ਲਗਾਓ” ਦਬਾਓ।","cap.l1":"ਇੱਕ ਲੇਅਰ ਹੋ ਗਈ — ਹੋਰ ਲਗਾਓ, ਜਾਂ ਜਦੋਂ ਠੀਕ ਲੱਗੇ ਫਰਾਸਟਿੰਗ ਸ਼ੁਰੂ ਕਰੋ।","cap.l2":"ਦੋ ਲੇਅਰ — ਵਧੀਆ ਉਚਾਈ ਹੋ ਗਈ। ਹੋਰ ਲਗਾਓ, ਜਾਂ ਇੱਥੇ ਹੀ ਪੂਰਾ ਮੰਨੋ।","cap.l3":"ਤਿੰਨ ਲੇਅਰ — ਕਲਾਸਿਕ ਟਾਵਰ। ਹਿੰਮਤ ਹੋਵੇ ਤਾਂ ਹੋਰ ਉੱਚਾ ਕਰੋ, ਜਾਂ ਫਰਾਸਟਿੰਗ ਕਰੋ।","cap.l4":"ਚਾਰ ਲੇਅਰ — ਬਿਲਕੁਲ ਸ਼ਾਨਦਾਰ। ਇੱਕ ਹੋਰ ਲੱਗੀ ਤਾਂ ਅਸਮਾਨ ਛੂੰਹਦਾ ਕੇਕ ਤਿਆਰ।","cap.l5":"ਪੰਜ ਲੇਅਰ — ਵਾਹ, ਕੀ ਉਚਾਈ ਹੈ! ਹੁਣ ਇਸ ਅਸਮਾਨ ਛੂੰਹਦੇ ਕੇਕ ’ਤੇ ਫਰਾਸਟਿੰਗ ਦਾ ਸਮਾਂ ਹੈ।",
     "cap.frost":"{f} — ਚਮਕਦਾਰ ਅਤੇ ਖ਼ੂਬਸੂਰਤ। ਹੁਣ ਚਾਹੋ ਤਾਂ ਟਾਪਿੰਗਜ਼।","cap.max":"ਇਹ ਤਾਂ ਫੁੱਲੀ ਲੋਡਿਡ ਕੇਕ ਹੈ — ਪਲਕ ਵੀ ਹੈਰਾਨ ਹੈ।",
     "cap.top1":"ਵਧੀਆ — ਜਾਰੀ ਰੱਖੋ, ਜਾਂ ਇਸਨੂੰ ਪਰਫੈਕਟ ਕਹੋ।","cap.top2":"ਜੱਜ ਝੁਕ ਕੇ ਵੇਖਣ ਲੱਗੇ ਹਨ…","cap.top3":"ਚਮਕ ਦਾ ਪੱਧਰ: ਜਸ਼ਨ ਲਈ ਤਿਆਰ।",
     "game.resEyebrow":"ਜੱਜਾਂ ਨੇ ਚੱਖ ਲਿਆ ਹੈ",
     "judge.0":"“ਮਿਨਿਮਲਿਸਟ। ਹਿੰਮਤ ਵਾਲਾ। ਪਲਕ ਨੂੰ ਇਹ ਸੰਜਮ ਪਸੰਦ ਆਇਆ।”","judge.1":"“ਸ਼ਾਨਦਾਰ ਅਤੇ ਸੰਤੁਲਿਤ — ਜੱਜ ਸਹਿਮਤੀ ਵਿੱਚ ਸਿਰ ਹਿਲਾ ਰਹੇ ਹਨ।”","judge.2":"“ਉਦਾਰ, ਖੁਸ਼ਨੁਮਾ, ਜਸ਼ਨ ਲਈ ਤਿਆਰ। ਸਭ ਨੂੰ ਖੁਸ਼ ਕਰਨ ਵਾਲਾ।”","judge.3":"“ਬਿਲਕੁਲ ਸ਼ੋਸਟਾਪਰ। ਜੱਜਾਂ ਨੂੰ ਸੰਭਲਣ ਲਈ ਇੱਕ ਪਲ ਚਾਹੀਦਾ ਹੈ।”",
-    "spec.layers":"ਲੇਅਰ, ਥੱਲੇ ਤੋਂ ਉੱਪਰ:","spec.frosting":"ਫਰਾਸਟਿੰਗ:","spec.onTop":"ਉੱਪਰ:","spec.note":"ਤਿੰਨ ਲੇਅਰ ≈ 1 kg ਦਾ ਕੇਕ — ਅਤੇ ਹਾਂ, 100% ਐੱਗਲੈੱਸ, ਬਿਲਕੁਲ Palak's ਦੀ ਹਰ ਚੀਜ਼ ਵਾਂਗ।","spec.cleanTop":"ਸਾਦਾ, ਮਿਨਿਮਲ ਟਾਪ",
+    "judge.l1":"“ਇੱਕ ਸ਼ਾਨਦਾਰ ਲੇਅਰ, ਵਧੀਆ ਫਰਾਸਟਿੰਗ ਨਾਲ — ਸਬੂਤ ਹੈ ਕਿ ਘੱਟ ਵੀ ਪੂਰਾ ਜਸ਼ਨ ਹੋ ਸਕਦਾ ਹੈ।”","judge.l4":"“ਚਾਰ ਮੰਜ਼ਿਲਾ ਖੂਬਸੂਰਤੀ — ਜੱਜ ਗਰਦਨ ਚੁੱਕ ਕੇ ਵੇਖ ਰਹੇ ਹਨ।”","judge.l5":"“ਪੰਜ ਲੇਅਰ! ਅਸਮਾਨ ਛੂੰਹਦਾ ਸ਼ੋਸਟਾਪਰ — ਜੱਜ ਖੜ੍ਹੇ ਹੋ ਕੇ ਤਾੜੀਆਂ ਵਜਾ ਰਹੇ ਹਨ।”",
+    "ttl.1":"The {adj} {word}","ttl.2":"The {adj} {word} Duo","ttl.3":"The {adj} {word} Tower","ttl.4":"The Grand {adj} {word} Tower","ttl.5":"The Sky-High {adj} {word} Tower",
+    "spec.layers":"ਲੇਅਰ, ਥੱਲੇ ਤੋਂ ਉੱਪਰ:","spec.frosting":"ਫਰਾਸਟਿੰਗ:","spec.onTop":"ਉੱਪਰ:","spec.note":"ਸਟੂਡੀਓ ਦੇ ਹਿਸਾਬ ਨਾਲ ਇਹ ਲਗਭਗ {size} ਦਾ ਕੇਕ ਹੈ — ਅਤੇ ਹਾਂ, 100% ਐੱਗਲੈੱਸ, ਬਿਲਕੁਲ Palak's ਦੀ ਹਰ ਚੀਜ਼ ਵਾਂਗ।","spec.cleanTop":"ਸਾਦਾ, ਮਿਨਿਮਲ ਟਾਪ",
     "tally.cherry1":"1 ਚੈਰੀ","tally.cherryN":"ਚੈਰੀਆਂ","tally.berries1":"1 ਬੈਰੀ ਕਲਸਟਰ","tally.berriesN":"ਬੈਰੀ ਕਲਸਟਰ","tally.shards1":"1 ਚਾਕਲੇਟ ਸ਼ਾਰਡ","tally.shardsN":"ਚਾਕਲੇਟ ਸ਼ਾਰਡਜ਼","tally.gold1":"ਗੋਲਡ ਡਸਟ ਦੀ ਹਲਕੀ ਛਿੜਕ","tally.goldN":"ਗੋਲਡ ਡਸਟ",
     "game.orderReal":"ਇਹ ਕੇਕ ਅਸਲੀ ਵਿੱਚ ਆਰਡਰ ਕਰੋ","game.sendWa":"ਮੇਰੀ ਰਚਨਾ ਪਲਕ ਨੂੰ WhatsApp ’ਤੇ ਭੇਜੋ","game.save":"ਮੇਰੀ ਰਚਨਾ ਸੇਵ ਕਰੋ",
     "game.waNote":"ਇਹੀ ਸੁਨੇਹਾ WhatsApp ਬਟਨ ਨਾਲ ਜਾਂਦਾ ਹੈ — ਜੇ WhatsApp ਖਾਲੀ ਖੁੱਲ੍ਹੇ, ਤਾਂ ਇਸਨੂੰ ਕਾਪੀ ਕਰਕੇ ਉੱਥੇ ਪੇਸਟ ਕਰ ਦਿਓ।",
@@ -1978,17 +2003,33 @@ window.copyMsgText = function(text, btn){
     {name:"Golden Caramel", color:"#C08A3E", adj:"Golden Hour"},
     {name:"Berry Blush", color:"#B45A6E", adj:"Berry-Kissed"}
   ];
+  var MAXLAYERS = 5;
   var SLOTS = [
     {x:62, y:202, w:196, h:44},
     {x:82, y:158, w:156, h:44},
-    {x:102, y:114, w:116, h:44}
+    {x:102, y:114, w:116, h:44},
+    {x:118, y:70, w:84, h:44},
+    {x:132, y:26, w:56, h:44}
   ];
-  var ANCHORS = [
-    [128,102],[160,96],[192,102],[144,107],[176,107],
-    [90,152],[230,152],[108,150],[212,150],
-    [70,196],[250,196],[88,199],[232,199],
-    [112,182],[208,184],[98,228],[222,230],[160,234]
-  ];
+  /* Topping anchors are generated from the finished stack, so a 1-layer
+     cake gets a handful of spots and a 5-layer tower gets a whole skyline. */
+  var ANCHORS = [];
+  function buildAnchors(){
+    var pts = [], n = layers.length;
+    if (!n) return pts;
+    for (var i = 0; i < n - 1; i++) {
+      var s = SLOTS[i], a = SLOTS[i + 1];
+      pts.push([s.x + 8, s.y - 6], [s.x + s.w - 8, s.y - 6], [a.x + 6, s.y - 9], [a.x + a.w - 6, s.y - 9]);
+    }
+    var top = SLOTS[n - 1], cx = top.x + top.w / 2;
+    pts.push([top.x + top.w * 0.22, top.y - 12], [cx, top.y - 18], [top.x + top.w * 0.78, top.y - 12],
+             [top.x + top.w * 0.36, top.y - 7], [top.x + top.w * 0.64, top.y - 7]);
+    var b = SLOTS[0];
+    pts.push([b.x + 36, b.y + b.h - 18], [b.x + b.w - 36, b.y + b.h - 16], [b.x + b.w / 2, b.y + b.h - 12]);
+    return pts;
+  }
+  var LAYER_KG = {1:0.5, 2:1, 3:1, 4:2, 5:2};
+  var LAYER_SIZE_TXT = {1:"½ kg", 2:"1 kg", 3:"1 kg", 4:"2 kg", 5:"2 kg"};
   var TOP_ONE = {cherry:"1 cherry", berries:"1 berry cluster", shards:"1 choco shard", gold:"a dusting of gold dust"};
   var TOP_MANY = {cherry:"cherries", berries:"berry clusters", shards:"choco shards", gold:"gold dust"};
 
@@ -2005,7 +2046,7 @@ window.copyMsgText = function(text, btn){
       $("gameFlavours").querySelectorAll(".chip").forEach(function(c){ c.classList.remove("sel"); });
       b.classList.add("sel");
       syncStep1();
-      if (layers.length < 3) $("gameCaption").textContent = tt("cap.pick", {f: f.name});
+      if (layers.length < MAXLAYERS) $("gameCaption").textContent = tt("cap.pick", {f: f.name});
     });
     $("gameFlavours").appendChild(b);
   });
@@ -2048,7 +2089,8 @@ window.copyMsgText = function(text, btn){
   }
   function applyFrosting(){
     $("gameLayers").querySelectorAll(".g-drip").forEach(function(d){ d.setAttribute("fill", frosting.color); });
-    var top = SLOTS[2], g = $("gameFrost");
+    if (!toppings.length) { ANCHORS = buildAnchors(); usedAnchors = {}; }
+    var top = SLOTS[layers.length - 1], g = $("gameFrost");
     g.innerHTML = "";
     var cap = svgEl("g", {"class":"top-pop"});
     cap.appendChild(svgEl("path", {d:dripPath(top.x - 3, top.y - 8, top.w + 6, 13), fill:frosting.color}));
@@ -2076,22 +2118,18 @@ window.copyMsgText = function(text, btn){
 
   /* ---- step 1: stacking ---- */
   function syncStep1(){
-    $("layerStatus").textContent = tt("game.layersStatus", {n: layers.length});
-    $("stackBtn").disabled = !(selFlavour && layers.length < 3 && !frosting);
+    $("layerStatus").textContent = layers.length ? tt("game.layersStatus", {n: layers.length}) : t("game.layersNone");
+    $("stackBtn").disabled = !(selFlavour && layers.length < MAXLAYERS && !frosting);
     $("undoBtn").disabled = !(layers.length > 0 && !frosting);
   }
   $("stackBtn").addEventListener("click", function(){
-    if (!selFlavour || layers.length >= 3 || frosting) return;
+    if (!selFlavour || layers.length >= MAXLAYERS || frosting) return;
     layers.push(selFlavour);
     drawLayer(layers.length - 1);
     $("gameEmpty").style.display = "none";
     startTimer();
-    if (layers.length === 1) $("gameCaption").textContent = t("cap.l1");
-    if (layers.length === 2) $("gameCaption").textContent = t("cap.l2");
-    if (layers.length === 3) {
-      $("gameCaption").textContent = t("cap.l3");
-      $("gStep2").classList.remove("locked");
-    }
+    $("gameCaption").textContent = t("cap.l" + layers.length);
+    if (layers.length >= 1) $("gStep2").classList.remove("locked");
     syncStep1();
   });
   $("undoBtn").addEventListener("click", function(){
@@ -2100,7 +2138,7 @@ window.copyMsgText = function(text, btn){
     var node = layerNodes.pop();
     if (node) node.remove();
     if (!layers.length) $("gameEmpty").style.display = "";
-    if (layers.length < 3) $("gStep2").classList.add("locked");
+    if (!layers.length) $("gStep2").classList.add("locked");
     syncStep1();
   });
 
@@ -2167,7 +2205,7 @@ window.copyMsgText = function(text, btn){
     $("resultSpec").innerHTML = "<b>" + t("spec.layers") + "</b> " + layerNames +
       "<br><b>" + t("spec.frosting") + "</b> " + frosting.name +
       "<br><b>" + t("spec.onTop") + "</b> " + topTxt +
-      "<br>" + t("spec.note");
+      "<br>" + tt("spec.note", {size: LAYER_SIZE_TXT[layers.length]});
     resultMsg = t("gwa.greeting") + "\n" +
       t("gwa.layers") + " " + layerNames + "\n" +
       t("gwa.frosting") + " " + frosting.name + "\n" +
@@ -2312,14 +2350,15 @@ window.copyMsgText = function(text, btn){
     return parts.join(", ");
   }
   $("finishBtn").addEventListener("click", function(){
-    if (layers.length < 3 || !frosting) return;
+    if (layers.length < 1 || !frosting) return;
     stopTimer(false);
     var typed = $("gameName").value.trim();
-    var topF = layers[2];
-    var title = typed || ("The " + frosting.adj + " " + topF.word + " Tower");
+    var topF = layers[layers.length - 1];
+    var title = typed || tt("ttl." + layers.length, {adj: frosting.adj, word: topF.word});
     var n = toppings.length;
     lastTitle = title;
-    lastJudgeIdx = n === 0 ? 0 : n <= 5 ? 1 : n <= 11 ? 2 : 3;
+    lastJudgeIdx = layers.length === 1 ? "l1" : layers.length === 4 ? "l4" : layers.length === 5 ? "l5"
+      : n === 0 ? 0 : n <= 5 ? 1 : n <= 11 ? 2 : 3;
     renderResult();
     var res = $("gameResult");
     res.classList.remove("hidden");
@@ -2330,18 +2369,28 @@ window.copyMsgText = function(text, btn){
 
   /* ---- order it for real: prefill the builder ---- */
   $("orderRealBtn").addEventListener("click", function(){
-    var f = layers[2];
+    var f = layers[layers.length - 1];
     if (!f) return;
     var chip = document.querySelector('#classicFlavours [data-flavour="' + f.name + '"], #premiumFlavours [data-flavour="' + f.name + '"]');
     if (chip) chip.click();
-    var sizeChip = document.querySelector('#sizeChips [data-size="1"]');
-    if (sizeChip) sizeChip.click();
+    /* layer count → builder size (1 → ½ kg, 2–3 → 1 kg, 4–5 → 2 kg);
+       if that size is disabled for the flavour, take the nearest enabled one */
+    var targetKg = LAYER_KG[layers.length];
+    var sizeIds = ["0.5", "1", "1.5", "2", "3"];
+    var byNear = sizeIds.slice().sort(function(a, b){
+      var d = Math.abs(parseFloat(a) - targetKg) - Math.abs(parseFloat(b) - targetKg);
+      return d !== 0 ? d : parseFloat(b) - parseFloat(a);
+    });
+    for (var i = 0; i < byNear.length; i++) {
+      var sc = document.querySelector('#sizeChips [data-size="' + byNear[i] + '"]');
+      if (sc && !sc.disabled) { sc.click(); break; }
+    }
     document.getElementById("builder").scrollIntoView({behavior:"smooth"});
   });
 
   /* ---- play again ---- */
   function resetGame(){
-    layers = []; layerNodes = []; frosting = null; toppings = []; usedAnchors = {};
+    layers = []; layerNodes = []; frosting = null; toppings = []; usedAnchors = {}; ANCHORS = [];
     selFlavour = null; resultMsg = "";
     $("gameLayers").innerHTML = ""; $("gameFrost").innerHTML = ""; $("gameTops").innerHTML = "";
     $("gameEmpty").style.display = "";
@@ -2422,6 +2471,7 @@ window.copyMsgText = function(text, btn){
     stats.forEach(function(el){ sio.observe(el); });
   } else { stats.forEach(function(el){ el.innerHTML = finalText(el); }); }
 
+
   /* magnetic hover on the two primary CTAs (desktop pointers only) */
   if (fine && !reduced) {
     document.querySelectorAll("[data-magnet]").forEach(function(el){
@@ -2434,6 +2484,36 @@ window.copyMsgText = function(text, btn){
       });
       el.addEventListener("pointerleave", function(){ el.style.transform = ""; });
     });
+  }
+})();
+</script>
+<script>
+/* ================= v5: floating game pill — appears past the hero, hides at the game ================= */
+(function(){
+  "use strict";
+  var pill = document.getElementById("gamePill");
+  var hero = document.getElementById("hero");
+  var game = document.getElementById("game");
+  if (!pill || !hero || !game) return;
+  var pastHero = false, gameInView = false;
+  function upd(){ pill.classList.toggle("show", pastHero && !gameInView); }
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function(es){
+      es.forEach(function(en){
+        pastHero = !en.isIntersecting && en.boundingClientRect.top < 0;
+        upd();
+      });
+    }, {threshold: 0}).observe(hero);
+    new IntersectionObserver(function(es){
+      es.forEach(function(en){ gameInView = en.isIntersecting; upd(); });
+    }, {threshold: 0.12}).observe(game);
+  } else {
+    window.addEventListener("scroll", function(){
+      pastHero = window.scrollY > hero.offsetTop + hero.offsetHeight - 60;
+      var r = game.getBoundingClientRect();
+      gameInView = r.top < window.innerHeight && r.bottom > 0;
+      upd();
+    }, {passive: true});
   }
 })();
 </script>
